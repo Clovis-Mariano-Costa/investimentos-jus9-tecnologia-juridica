@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard Interativo — Investimentos — Jus 9 Tecnologia Jurídica</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header"><div class="container nav"><a class="logo" href="index.html"><img src="assets/jus9-logo.svg" alt="Jus 9"><span>Investimentos — Jus 9 Tecnologia Jurídica</span></a><nav class="menu"><a href="index.html">Início</a><a href="detalhamento.html">Detalhamento</a><a href="dashboard.html">Dashboard</a><a href="custos.html">Custos</a><a href="web-summit.html">Web Summit</a><a href="documentos.html">Documentos</a></nav><a class="cta" href="https://www.jus9tecnologia.com.br/mvp.html">Ver MVP</a></div></header>
+<main>
+<section class="hero">
+  <div class="container">
+    <div class="eyebrow">Dashboard interativo</div>
+    <h1>Os 5 segundos que abrem o relatório.</h1>
+    <p class="lead">Escolha perfil, prazo e faixa de investimento. Depois clique em qualquer dado para focar a leitura. Use “Limpar foco” para voltar à visão-base.</p>
+    <div class="control-bar">
+      <div class="control-field"><label>Perfil</label><select id="profile">
+        <option value="anjo">Investidor-anjo</option><option value="banco">Banco / crédito</option><option value="fundo">Fundo</option><option value="parceiro">Parceiro estratégico</option><option value="escritorio">Escritório interessado</option><option value="universidade">Universidade</option><option value="patrocinador">Patrocinador</option><option value="aceleradora">Aceleradora / hub</option><option value="mercado">Mercado / visão S.A.</option>
+      </select></div>
+      <div class="control-field"><label>Prazo</label><select id="period">
+        <option value="curtissimo">Curtíssimo prazo</option><option value="curto" selected>Curto prazo</option><option value="medio">Médio prazo</option><option value="longo">Longo prazo</option>
+      </select></div>
+      <div class="control-field"><label>Faixa de investimento</label><select id="range">
+        <option value="50_250">R$ 50 mil a R$ 250 mil</option><option value="250_1m">R$ 250 mil a R$ 1 milhão</option><option value="1m_5m">R$ 1 milhão a R$ 5 milhões</option><option value="5m_plus">Acima de R$ 5 milhões</option>
+      </select></div>
+      <button id="clearFocus" class="clear-btn">Limpar foco</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">Cenário selecionado</div><h2 id="headline">Carregando...</h2></div>
+      <p id="soul"></p>
+    </div>
+    <div id="kpis" class="kpi-strip"></div>
+    <div class="dash-grid">
+      <article class="chart-card">
+        <div class="chart-title"><h3>Alocação do capital</h3><span class="tag">clicável</span></div>
+        <div id="allocation"></div>
+      </article>
+      <aside id="focusPanel" class="focus-panel"></aside>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container dash-grid">
+    <article class="chart-card">
+      <div class="chart-title"><h3>Trajetória receita x despesa</h3><span class="tag">clicável</span></div>
+      <div id="timeline" class="timeline-chart"></div>
+      <p id="periodMessage" style="color:#b8c6da"></p>
+    </article>
+    <article class="chart-card">
+      <div class="chart-title"><h3>O que este perfil quer ver</h3><span class="tag">5 segundos</span></div>
+      <div id="five" class="five-list"></div>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><div class="eyebrow">Tabela analítica</div><h2>Cada centavo precisa de razão.</h2></div><p>A tabela é para o analista: densa, justificável e clicável.</p></div>
+    <table class="cost-table">
+      <thead><tr><th>Categoria</th><th>Item</th><th>Valor estimado</th><th>Razão</th></tr></thead>
+      <tbody id="costRows"></tbody>
+    </table>
+    <div class="note"><strong>Nota:</strong> projeções ilustrativas com hipóteses sinalizadas. Valores finais exigem cotações, contratos, validação operacional e revisão financeira.</div>
+  </div>
+</section>
+</main>
+<footer><div class="container">Jus 9 Tecnologia Jurídica • investimentos.jus9tecnologia.com.br</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

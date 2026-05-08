@@ -1,0 +1,22 @@
+{
+  "curtissimo": {
+    "label": "Curtíssimo prazo",
+    "months": 3,
+    "message": "despesa disciplinada para sair do quarto e criar estrutura mínima."
+  },
+  "curto": {
+    "label": "Curto prazo",
+    "months": 12,
+    "message": "equilibrar despesa e receita, validar pilotos e começar recorrência."
+  },
+  "medio": {
+    "label": "Médio prazo",
+    "months": 36,
+    "message": "início de lucro, expansão controlada e operação previsível."
+  },
+  "longo": {
+    "label": "Longo prazo",
+    "months": 120,
+    "message": "escala, governança e impacto de distribuição de renda pelo ecossistema."
+  }
+}
