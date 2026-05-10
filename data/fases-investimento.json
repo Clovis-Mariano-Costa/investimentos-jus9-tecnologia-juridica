@@ -1,0 +1,166 @@
+{
+  "curtissimo": {
+    "label": "Curtíssimo prazo — 0 a 3 meses",
+    "necessario": [
+      58000,
+      155000
+    ],
+    "opcional": [
+      20000,
+      88000
+    ],
+    "receita": [
+      0,
+      5000
+    ],
+    "lucro": [
+      -155000,
+      -58000
+    ],
+    "alloc": [
+      [
+        "Revisão técnica e MVP",
+        0.28
+      ],
+      [
+        "Jurídico/LGPD/contabilidade",
+        0.2
+      ],
+      [
+        "Cloud, domínios e serviços",
+        0.12
+      ],
+      [
+        "Design, pitch e investidor",
+        0.16
+      ],
+      [
+        "Reserva técnica",
+        0.24
+      ]
+    ]
+  },
+  "curto": {
+    "label": "Curto prazo — 3 a 12 meses",
+    "necessario": [
+      295000,
+      695000
+    ],
+    "opcional": [
+      145000,
+      580000
+    ],
+    "receita": [
+      20000,
+      180000
+    ],
+    "lucro": [
+      -675000,
+      -115000
+    ],
+    "alloc": [
+      [
+        "Backend, frontend e banco",
+        0.38
+      ],
+      [
+        "IA profissional inicial",
+        0.16
+      ],
+      [
+        "LGPD e contratos",
+        0.1
+      ],
+      [
+        "Pilotos, suporte e implantação",
+        0.2
+      ],
+      [
+        "Marketing e reserva",
+        0.16
+      ]
+    ]
+  },
+  "medio": {
+    "label": "Médio prazo — 12 a 36 meses",
+    "necessario": [
+      1250000,
+      3600000
+    ],
+    "opcional": [
+      800000,
+      4800000
+    ],
+    "receita": [
+      600000,
+      5200000
+    ],
+    "lucro": [
+      -300000,
+      1600000
+    ],
+    "alloc": [
+      [
+        "Equipe técnica e produto",
+        0.42
+      ],
+      [
+        "IA, cloud e segurança",
+        0.2
+      ],
+      [
+        "Suporte e implantação",
+        0.15
+      ],
+      [
+        "Comercial e marketing",
+        0.15
+      ],
+      [
+        "Administração e reserva",
+        0.08
+      ]
+    ]
+  },
+  "longo": {
+    "label": "Longo prazo — 36 a 120 meses",
+    "necessario": [
+      6000000,
+      20000000
+    ],
+    "opcional": [
+      5000000,
+      35000000
+    ],
+    "receita": [
+      15000000,
+      80000000
+    ],
+    "lucro": [
+      2000000,
+      25000000
+    ],
+    "alloc": [
+      [
+        "Equipe técnica ampliada",
+        0.3
+      ],
+      [
+        "Comercial e suporte nacional",
+        0.23
+      ],
+      [
+        "Governança, jurídico e compliance",
+        0.13
+      ],
+      [
+        "Cloud, IA, dados e segurança",
+        0.2
+      ],
+      [
+        "Marca, eventos e reserva",
+        0.14
+      ]
+    ]
+  }
+}

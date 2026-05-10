@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="header"><div class="container nav"><a class="logo" href="index.html"><img src="assets/jus9-logo.svg" alt="Jus 9"><span>Investimentos — Jus 9 Tecnologia Jurídica</span></a><nav class="menu"><a href="index.html">Início</a><a href="detalhamento.html">Detalhamento</a><a href="dashboard.html">Dashboard</a><a href="custos.html">Custos</a><a href="web-summit.html">Web Summit</a><a href="documentos.html">Documentos</a></nav><a class="cta" href="https://www.jus9tecnologia.com.br/mvp.html">Ver MVP</a></div></header>
+<header class="header"><div class="container nav"><a class="logo" href="index.html"><img src="assets/jus9-logo.svg" alt="Jus 9"><span>Investimentos — Jus 9 Tecnologia Jurídica</span></a><nav class="menu"><a href="index.html">Início</a><a href="detalhamento.html">Detalhamento</a><a href="dashboard.html">Dashboard</a><a href="custos.html">Custos</a><a href="despesas-lucro.html">Despesas e lucro</a><a href="web-summit.html">Web Summit</a><a href="documentos.html">Documentos</a></nav><a class="cta" href="https://www.jus9tecnologia.com.br/mvp.html">Ver MVP</a></div></header>
 <main>
 <section class="hero">
   <div class="container">
@@ -39,7 +39,7 @@
     <div class="dash-grid">
       <article class="chart-card">
         <div class="chart-title"><h3>Alocação do capital</h3><span class="tag">clicável</span></div>
-        <div id="allocation"></div>
+        <div id="allocation"></div><div id="allocationPie" class="pie-wrap"></div>
       </article>
       <aside id="focusPanel" class="focus-panel"></aside>
     </div>
@@ -50,7 +50,7 @@
   <div class="container dash-grid">
     <article class="chart-card">
       <div class="chart-title"><h3>Trajetória receita x despesa</h3><span class="tag">clicável</span></div>
-      <div id="timeline" class="timeline-chart"></div>
+      <div id="timeline" class="timeline-chart"></div><div id="profitPie" class="pie-wrap"></div>
       <p id="periodMessage" style="color:#b8c6da"></p>
     </article>
     <article class="chart-card">
@@ -58,6 +58,10 @@
       <div id="five" class="five-list"></div>
     </article>
   </div>
+</section>
+
+<section class="section">
+  <div class="container dash-grid"><article class="chart-card"><div class="chart-title"><h3>Necessário x opcional</h3><span class="tag">pizza</span></div><div id="needOptionalPie" class="pie-wrap"></div></article><article class="chart-card"><div class="chart-title"><h3>Caminho de maturidade</h3><span class="tag">degraus</span></div><div class="maturity-path"><span>Quarto</span><span>MVP real</span><span>Pilotos</span><span>Receita</span><span>Escala</span><span>Governança</span></div><p style="color:#b8c6da">A leitura deve mostrar que o capital entra por fase, com uso rastreável, risco documentado e marcos claros de entrega.</p></article></div>
 </section>
 
 <section class="section">
