@@ -10,11 +10,16 @@ E-mail de contato: clovis@jus9tecnologia.com.br
 DNA de referência de Charlie Echo da Costa: charlieecho-jus9-tecnologia-juridica
 -->
 
-# Preparação Web Summit Rio — Jus 9
+# Relatório de segurança — investimentos-jus9-tecnologia-juridica
 
-Site oficial: https://www.jus9tecnologia.com.br/
-MVP: https://www.jus9tecnologia.com.br/app-demo.html
+## Ações aplicadas
 
-Acesso demo:
-- demo@jus9tecnologia.com.br
-- Jus9MVP#2026
+- Remoção de pastas `.git/` do pacote público.
+- Remoção de caches, dependências instaladas e backups técnicos conhecidos, quando encontrados.
+- Inclusão de `.gitignore`, `LICENSE`, `NOTICE`, `SECURITY.md`, `PRIVACY.md` e assinatura institucional.
+- Inserção de assinatura em arquivos textuais/código quando tecnicamente seguro.
+- Preservação de arquivos de DNA sem alteração direta.
+
+## Arquivos removidos neste pacote
+
+Nenhum arquivo removido além de regras gerais.

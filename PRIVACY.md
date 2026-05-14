@@ -10,11 +10,12 @@ E-mail de contato: clovis@jus9tecnologia.com.br
 DNA de referência de Charlie Echo da Costa: charlieecho-jus9-tecnologia-juridica
 -->
 
-# Preparação Web Summit Rio — Jus 9
+# Privacidade — investimentos-jus9-tecnologia-juridica
 
-Site oficial: https://www.jus9tecnologia.com.br/
-MVP: https://www.jus9tecnologia.com.br/app-demo.html
+Este projeto deve observar cuidados de privacidade e proteção de dados.
 
-Acesso demo:
-- demo@jus9tecnologia.com.br
-- Jus9MVP#2026
+Quando houver formulários, coleta de dados, envio de mensagens, analytics,
+cookies ou integração com APIs, revisar a política pública antes da publicação.
+
+Referência institucional: https://investidores.jus9tecnologia.com.br/
+Contato: clovis@jus9tecnologia.com.br
