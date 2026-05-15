@@ -1,11 +1,21 @@
 # Sugestão de commit
 
-**Summary**
-```text
-docs: atualizar governança e narrativa institucional de investimentos-jus9-tecnologia-juridica
+## Repertório
+
+`investimentos-jus9-tecnologia-juridica`
+
+## Summary
+
+```txt
+docs: atualizar investimentos com governança e estratégia
 ```
 
-**Description**
-```text
-Adiciona/organiza registros de governança, narrativa institucional, autoria, segurança e relação com o ecossistema Jus 9/Charlie Echo, preservando a distinção entre material público e conteúdo interno/sensível.
+## Description
+
+```txt
+Atualiza o repertório de investimentos com plano para Web Summit, MVPs, backend futuro, equipe, Charlie Echo, modelos de produção, materiais para investidores e governança estratégica.
+
+Inclui arquivos de governança, segurança, classificação de conteúdo, instruções para Charlie, .gitignore, .env.example, manifesto e sugestão de commit.
+
+Este commit encerra o Pacote Governança em pré-Mão na Massa e prepara a base para o próximo pacote de alterações visuais.
 ```
