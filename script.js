@@ -1,57 +1,51 @@
-/**
- * Jus 9 Tecnologia Jurídica
- * Repositório: investimentos-jus9-tecnologia-juridica
- * Software livre com autoria preservada.
- * Direitos autorais reservados para Jus 9 Tecnologia Jurídica.
-Produção do site: © Jus 9 Tecnologia Jurídica. Direitos autorais da produção reservados.
- * A licença livre não remove autoria, origem, assinatura institucional nem direitos autorais.
- * Referência oficial: https://investidores.jus9tecnologia.com.br/
- * E-mail de contato: clovis@jus9tecnologia.com.br
- * DNA de referência de Charlie Echo da Costa: charlieecho-jus9-tecnologia-juridica
- */
-
-
 let scenarios = {};
 let currentFocus = null;
 
 function brl(v){
-  return "R$ " + Number(v).toLocaleString("pt-BR");
+  return Number(v || 0).toLocaleString("pt-BR", {style:"currency", currency:"BRL", maximumFractionDigits:0});
 }
+function pct(v){ return Math.round(Number(v || 0) * 100) + "%"; }
+function safe(id){ return document.getElementById(id); }
+
 async function loadData(){
+  const profile = safe("profile");
+  const period = safe("period");
+  const range = safe("range");
+  if(!profile || !period || !range){ return; }
   scenarios = await fetch("data/cenarios.json").then(r => r.json());
   ["profile","period","range"].forEach(id => {
-    document.getElementById(id).addEventListener("change", () => { currentFocus=null; render(); });
+    safe(id).addEventListener("change", () => { currentFocus=null; render(); });
   });
-  document.getElementById("clearFocus").addEventListener("click", () => { currentFocus=null; render(); });
+  const clear = safe("clearFocus");
+  if(clear) clear.addEventListener("click", () => { currentFocus=null; render(); });
   render();
 }
-function key(){
-  return `${document.getElementById("profile").value}|${document.getElementById("period").value}|${document.getElementById("range").value}`;
-}
-function scenario(){
-  return scenarios[key()] || scenarios["anjo|curto|50_250"];
-}
+function key(){ return `${safe("profile").value}|${safe("period").value}|${safe("range").value}`; }
+function scenario(){ return scenarios[key()] || scenarios["anjo|curto|50_250"]; }
 function focus(type, data){
   currentFocus = {type, data};
   render();
-  document.getElementById("focusPanel").scrollIntoView({behavior:"smooth", block:"center"});
+  const panel = safe("focusPanel");
+  if(panel) panel.scrollIntoView({behavior:"smooth", block:"center"});
+}
+function horizonResult(s){
+  const last = (s.timeline || [])[s.timeline.length - 1] || {revenue:0, expense:0};
+  return Number(last.revenue || 0) - Number(last.expense || 0);
 }
 function render(){
   const s = scenario();
-  document.getElementById("headline").textContent = s.headline;
-  document.getElementById("soul").textContent = s.soul;
-  document.getElementById("periodMessage").textContent = s.periodMessage;
-  renderKpis(s);
-  renderAllocation(s);
-  renderTimeline(s);
-  renderFive(s);
-  renderCostTable(s);
-  renderFocus(s);
+  if(safe("headline")) safe("headline").textContent = s.headline;
+  if(safe("soul")) safe("soul").textContent = s.soul;
+  if(safe("periodMessage")) safe("periodMessage").textContent = s.periodMessage;
+  renderKpis(s); renderAllocation(s); renderTimeline(s); renderFive(s); renderCostTable(s); renderFocus(s);
 }
 function renderKpis(s){
-  const el = document.getElementById("kpis");
+  const el = safe("kpis"); if(!el) return;
   el.innerHTML = "";
-  s.kpis.forEach(k => {
+  const extra = [
+    {label:"Resultado no horizonte", value: brl(horizonResult(s)), why:"receita projetada menos despesa projetada no horizonte selecionado"}
+  ];
+  [...(s.kpis || []), ...extra].forEach(k => {
     const div = document.createElement("div");
     div.className = "kpi-card";
     div.onclick = () => focus("indicador", k);
@@ -60,34 +54,34 @@ function renderKpis(s){
   });
 }
 function renderAllocation(s){
-  const el = document.getElementById("allocation");
+  const el = safe("allocation"); if(!el) return;
   el.innerHTML = "";
-  s.allocation.forEach(a => {
+  (s.allocation || []).forEach(a => {
     const div = document.createElement("div");
     div.className = "bar-row clickable";
     div.onclick = () => focus("uso do capital", a);
-    div.innerHTML = `<div class="bar-label">${a.label}</div><div class="bar-track"><div class="bar-fill" style="width:${Math.round(a.pct*100)}%"></div></div><div class="bar-value">${Math.round(a.pct*100)}%</div>`;
+    div.innerHTML = `<div class="bar-label">${a.label}<small>${brl(a.value)}</small></div><div class="bar-track"><div class="bar-fill" style="width:${pct(a.pct)}"></div></div><div class="bar-value">${pct(a.pct)}</div>`;
     el.appendChild(div);
   });
 }
 function renderTimeline(s){
-  const el = document.getElementById("timeline");
+  const el = safe("timeline"); if(!el) return;
   el.innerHTML = "";
-  const max = Math.max(...s.timeline.map(x => Math.max(x.revenue, x.expense)));
-  s.timeline.forEach(t => {
+  const max = Math.max(1, ...(s.timeline || []).map(x => Math.max(x.revenue || 0, x.expense || 0)));
+  (s.timeline || []).forEach(t => {
     const div = document.createElement("div");
     div.className = "timeline-col clickable";
     div.onclick = () => focus("trajetória", t);
-    const revH = Math.max(14, (t.revenue/max)*190);
-    const expH = Math.max(14, (t.expense/max)*190);
-    div.innerHTML = `<div class="timeline-bar" title="Receita" style="height:${revH}px"></div><div class="timeline-expense" title="Despesa" style="height:${expH}px"></div><div class="timeline-label">${t.label}</div>`;
+    const revH = Math.max(14, ((t.revenue || 0)/max)*190);
+    const expH = Math.max(14, ((t.expense || 0)/max)*190);
+    div.innerHTML = `<div class="timeline-bar" title="Receita: ${brl(t.revenue)}" style="height:${revH}px"></div><div class="timeline-expense" title="Despesa: ${brl(t.expense)}" style="height:${expH}px"></div><div class="timeline-label">${t.label}</div>`;
     el.appendChild(div);
   });
 }
 function renderFive(s){
-  const el = document.getElementById("five");
+  const el = safe("five"); if(!el) return;
   el.innerHTML = "";
-  s.fiveSeconds.forEach((item, i) => {
+  (s.fiveSeconds || []).forEach((item, i) => {
     const div = document.createElement("div");
     div.className = "five-item clickable";
     div.onclick = () => focus("5 segundos", {label:item, value:i+1, why:s.soul});
@@ -96,9 +90,9 @@ function renderFive(s){
   });
 }
 function renderCostTable(s){
-  const tbody = document.getElementById("costRows");
+  const tbody = safe("costRows"); if(!tbody) return;
   tbody.innerHTML = "";
-  s.costTable.forEach(r => {
+  (s.costTable || []).forEach(r => {
     const tr = document.createElement("tr");
     tr.className = "clickable";
     tr.onclick = () => focus("custo", r);
@@ -107,12 +101,13 @@ function renderCostTable(s){
   });
 }
 function renderFocus(s){
-  const el = document.getElementById("focusPanel");
+  const el = safe("focusPanel"); if(!el) return;
   if(!currentFocus){
-    el.innerHTML = `<h3>Leitura em 5 segundos</h3><p><strong>${s.profileLabel}</strong> quer ver: ${s.fiveSeconds.join(", ")}.</p><p>${s.riskLanguage}</p><p><strong>Manobra declarada:</strong> projeções ilustrativas e hipóteses sinalizadas; dados finais dependem de validação operacional, cotações e contratos.</p>`;
+    el.innerHTML = `<h3>Leitura em 5 segundos</h3><p><strong>${s.profileLabel}</strong> quer ver: ${(s.fiveSeconds || []).join(", ")}.</p><p>${s.riskLanguage}</p><p><strong>Capital selecionado:</strong> ${brl(s.amount)} · <strong>Runway:</strong> ${s.runway} meses · <strong>Resultado horizonte:</strong> ${brl(horizonResult(s))}</p><p><strong>Manobra declarada:</strong> projeções ilustrativas e hipóteses sinalizadas; dados finais dependem de validação operacional, cotações e contratos.</p>`;
     return;
   }
-  const d = currentFocus.data;
-  el.innerHTML = `<h3>Foco: ${currentFocus.type}</h3><p><strong>${d.label || d.item || d.category || "Dado selecionado"}</strong></p><p>${d.why || d.reason || d.note || d.value || ""}</p><p>Este foco reorganiza a leitura do relatório para explicar a razão do número, seu impacto e o risco associado.</p>`;
+  const d = currentFocus.data || {};
+  const value = d.value !== undefined && typeof d.value === "number" ? brl(d.value) : (d.value || "");
+  el.innerHTML = `<h3>Foco: ${currentFocus.type}</h3><p><strong>${d.label || d.item || d.category || "Dado selecionado"}</strong></p><p>${d.why || d.reason || d.note || value || ""}</p><p>${value ? `<strong>Valor:</strong> ${value}. ` : ""}Este foco reorganiza a leitura do relatório para explicar a razão do número, seu impacto e o risco associado.</p>`;
 }
 document.addEventListener("DOMContentLoaded", loadData);
