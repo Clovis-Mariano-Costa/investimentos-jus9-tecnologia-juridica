@@ -8,6 +8,12 @@ REVISAO: humana obrigatoria antes de apresentacao externa
 
 Repertorio destinado a materiais institucionais, apresentacoes, paginas e documentos de investimento da Jus 9 Tecnologia Juridica.
 
+## Memoria operacional
+
+- Lembrar de investimento como frente estrategica permanente.
+- Manter `dashboard.html` como dashboard demonstrativo/revisavel da frente de investimentos.
+- Conectar proximos passos ao Dashboard do Clovis no repertorio `admin-painel-jus9-tecnologia-juridica`.
+
 ## Regras principais
 
 - Nao exagerar estagio de produto.
