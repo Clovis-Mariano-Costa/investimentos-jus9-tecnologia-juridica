@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard de Prioridades - Investimentos Jus 9</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="priority-page">
+<header class="header"><div class="container nav"><a class="logo" href="index.html"><span>Jus 9 Investimentos</span></a><nav class="menu"><a href="index.html">Inicio</a><a href="dashboard.html">Dashboard</a><a class="is-active" href="prioridades.html">Prioridades</a><a href="custos.html">Orcamento</a><a href="web-summit.html">Web Summit</a><a href="busca-parcerias.html">Busca de Parcerias</a><a href="documentos.html">Documentos</a></nav><a class="cta" href="busca-parcerias.html">Parcerias</a></div></header>
+<main id="priorityDashboard">
+  <section class="hero"><div class="container"><div class="eyebrow">Dashboard de prioridade</div><h1>Emergencia, urgencia, viagem e investimento por prazo.</h1><p class="lead">Uma tela para decidir o que precisa ser resolvido antes da viagem e o que deve entrar em curto, medio e longo prazo.</p></div></section>
+  <section class="section"><div class="container dashboard-shell"><aside class="card filters"><label>Classificacao<select id="priorityFilter"><option value="todos">Todos</option><option value="Emergencia">Emergencia</option><option value="Urgencia">Urgencia</option><option value="Necessidade imediata">Necessidade imediata</option><option value="Curto prazo">Curto prazo</option><option value="Medio prazo">Medio prazo</option><option value="Longo prazo">Longo prazo</option></select></label><label>Prazo<select id="deadlineFilter"><option value="todos">Todos</option><option value="Antes da viagem">Antes da viagem</option><option value="0-90 dias">0-90 dias</option><option value="90-180 dias">90-180 dias</option><option value="180-365 dias">180-365 dias</option></select></label><p class="notice">Viagem, material e demonstracao entram como necessidade imediata antes da viagem.</p></aside><section><div class="kpi-grid"><div class="kpi"><span>Total filtrado</span><strong id="priorityTotal">R$ 0</strong></div><div class="kpi"><span>Antes da viagem</span><strong id="beforeTripTotal">R$ 0</strong></div><div class="kpi"><span>Itens</span><strong id="priorityCount">0</strong></div><div class="kpi"><span>Maior risco</span><strong id="priorityRisk">0</strong></div></div><div class="chart-grid"><article class="chart-card"><h3>Prioridade por valor</h3><canvas id="priorityBarChart" height="280"></canvas></article><article class="chart-card"><h3>Distribuicao por prazo</h3><canvas id="priorityDonutChart" height="280"></canvas></article></div></section></div></section>
+  <section class="section light"><div class="container"><div class="section-head"><div><div class="eyebrow">Tabela executiva</div><h2>Plano de decisao.</h2></div><p>Use esta tabela para conversar com bancos, parceiros, investidores, escritorios, universidades e fornecedores.</p></div><div class="table-wrap"><table><thead><tr><th>Classificacao</th><th>Frente</th><th>Prazo</th><th>Valor</th><th>Risco</th><th>Acao</th></tr></thead><tbody id="priorityBody"></tbody></table></div></div></section>
+</main>
+<footer class="footer"><div class="container">Dashboard demonstrativo. Nao e oferta publica de investimento, promessa de credito ou parceria firmada.</div></footer>
+<script src="script.js"></script>
+</body>
+</html>

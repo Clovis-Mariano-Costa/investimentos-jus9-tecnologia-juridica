@@ -2,16 +2,18 @@ const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL",
 const pct = new Intl.NumberFormat("pt-BR", { style: "percent", maximumFractionDigits: 1 });
 
 const budget = [
-  { area: "Produto e engenharia", fase: "0-90 dias", tipo: "Indispensavel", valor: 118000, impacto: 95, risco: 24, descricao: "MVP navegavel, DAJ, perfis, agenda, IA profissional demonstrativa e base de publicacao." },
-  { area: "Backend seguro", fase: "90-180 dias", tipo: "Indispensavel", valor: 142000, impacto: 92, risco: 18, descricao: "Autenticacao, banco, permissoes por perfil, logs e armazenamento privado." },
-  { area: "Governanca e juridico", fase: "0-180 dias", tipo: "Indispensavel", valor: 48000, impacto: 86, risco: 12, descricao: "LGPD, termos, politicas, classificacao de documentos e revisao humana." },
-  { area: "Design e frontend", fase: "0-120 dias", tipo: "Necessario", valor: 62000, impacto: 78, risco: 20, descricao: "Paineis, dashboards, responsividade, narrativa publica e rotas institucionais." },
-  { area: "Cloud, dominios e seguranca", fase: "12 meses", tipo: "Necessario", valor: 36000, impacto: 74, risco: 10, descricao: "Cloudflare, dominios, monitoramento, backups, ambiente e protecao." },
-  { area: "Web Summit e captacao", fase: "2026", tipo: "Necessario", valor: 72000, impacto: 81, risco: 26, descricao: "Materiais, agenda, viagem, demonstracao, follow-up e relacionamento." },
-  { area: "Conteudo e documentacao", fase: "0-180 dias", tipo: "Necessario", valor: 28000, impacto: 66, risco: 16, descricao: "Documentos, pitch, demonstrativos, manuais e relatorios." },
-  { area: "Comercial e parcerias", fase: "180-365 dias", tipo: "Crescimento", valor: 96000, impacto: 84, risco: 35, descricao: "Prospecao, pilotos com escritorios, universidades e parceiros." },
-  { area: "IA e automacao avancada", fase: "180-365 dias", tipo: "Crescimento", valor: 124000, impacto: 88, risco: 42, descricao: "Orquestracao, agentes, revisao assistida e integracoes com fluxos juridicos." },
-  { area: "Reserva tecnica", fase: "12 meses", tipo: "Contingencia", valor: 52000, impacto: 54, risco: 5, descricao: "Margem para imprevistos, retrabalho, compliance e infraestrutura." },
+  { area: "Seguranca minima e backup", fase: "Antes da viagem", tipo: "Emergencia", valor: 18000, impacto: 94, risco: 12, descricao: "Varredura de segredos, backup offline, demonstracao sem dados reais e plano de contingencia." },
+  { area: "Material de conversa", fase: "Antes da viagem", tipo: "Urgencia", valor: 26000, impacto: 86, risco: 18, descricao: "One-page, QR codes, roteiro, pitch curto, pagina de parcerias e follow-up." },
+  { area: "Viagem e evento", fase: "Antes da viagem", tipo: "Necessidade imediata", valor: 72000, impacto: 91, risco: 26, descricao: "Ingresso, deslocamento, hospedagem, alimentacao, transporte local, internet e contingencia." },
+  { area: "Produto e engenharia", fase: "0-90 dias", tipo: "Curto prazo", valor: 118000, impacto: 95, risco: 24, descricao: "MVP navegavel, DAJ, perfis, agenda, IA profissional demonstrativa e base de publicacao." },
+  { area: "Design e frontend", fase: "0-90 dias", tipo: "Curto prazo", valor: 62000, impacto: 78, risco: 20, descricao: "Paineis, dashboards, responsividade, narrativa publica e rotas institucionais." },
+  { area: "Conteudo e documentacao", fase: "0-90 dias", tipo: "Curto prazo", valor: 28000, impacto: 66, risco: 16, descricao: "Documentos, pitch, demonstrativos, manuais, relatorios e orientacao para IAs." },
+  { area: "Backend seguro", fase: "90-180 dias", tipo: "Medio prazo", valor: 142000, impacto: 92, risco: 18, descricao: "Autenticacao, banco, permissoes por perfil, logs e armazenamento privado." },
+  { area: "Governanca e juridico", fase: "90-180 dias", tipo: "Medio prazo", valor: 48000, impacto: 86, risco: 12, descricao: "LGPD, termos, politicas, classificacao de documentos e revisao humana." },
+  { area: "Cloud, dominios e seguranca", fase: "90-180 dias", tipo: "Medio prazo", valor: 36000, impacto: 74, risco: 10, descricao: "Cloudflare, dominios, monitoramento, backups, ambiente e protecao." },
+  { area: "Comercial e parcerias", fase: "180-365 dias", tipo: "Longo prazo", valor: 96000, impacto: 84, risco: 35, descricao: "Prospecao, pilotos com escritorios, universidades, bancos, hubs e parceiros." },
+  { area: "IA e automacao avancada", fase: "180-365 dias", tipo: "Longo prazo", valor: 124000, impacto: 88, risco: 42, descricao: "Orquestracao, agentes, revisao assistida e integracoes com fluxos juridicos." },
+  { area: "Reserva tecnica", fase: "180-365 dias", tipo: "Longo prazo", valor: 52000, impacto: 54, risco: 5, descricao: "Margem para imprevistos, retrabalho, compliance e infraestrutura." },
 ];
 
 const scenarios = {
@@ -54,20 +56,27 @@ function drawBars(canvas, rows) {
   ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
   const w = canvas.clientWidth;
   const h = canvas.clientHeight;
-  const max = Math.max(...rows.map((r) => r.ajustado));
+  if (!rows.length) {
+    ctx.fillStyle = "#dce8f4";
+    ctx.font = "14px Inter, Arial";
+    ctx.fillText("Sem itens para o filtro selecionado.", 12, 28);
+    return;
+  }
+  const max = Math.max(...rows.map((r) => r.ajustado ?? r.valor));
   const gap = 10;
   const barH = Math.max(14, (h - gap * (rows.length + 1)) / rows.length);
   ctx.font = "12px Inter, Arial";
   rows.forEach((row, index) => {
     const y = gap + index * (barH + gap);
-    const bw = (row.ajustado / max) * (w - 170);
+    const value = row.ajustado ?? row.valor;
+    const bw = (value / max) * (w - 170);
     ctx.fillStyle = "rgba(217,173,89,.22)";
     ctx.fillRect(150, y, w - 170, barH);
     ctx.fillStyle = "#d9ad59";
     ctx.fillRect(150, y, bw, barH);
     ctx.fillStyle = "#dce8f4";
     ctx.fillText(row.area.slice(0, 21), 6, y + barH * .7);
-    ctx.fillText(brl.format(row.ajustado), 158 + bw, y + barH * .7);
+    ctx.fillText(brl.format(value), 158 + bw, y + barH * .7);
   });
 }
 
@@ -85,6 +94,12 @@ function drawDonut(canvas, rows) {
     return acc;
   }, {}));
   const sum = total(rows);
+  if (!rows.length || !sum) {
+    ctx.fillStyle = "#dce8f4";
+    ctx.font = "14px Inter, Arial";
+    ctx.fillText("Sem itens", 12, 28);
+    return;
+  }
   const cx = canvas.clientWidth / 2;
   const cy = canvas.clientHeight / 2;
   const radius = Math.min(cx, cy) - 18;
@@ -162,6 +177,97 @@ function initDashboard() {
 }
 
 document.addEventListener("DOMContentLoaded", initDashboard);
+
+function priorityRows() {
+  const priority = q("#priorityFilter")?.value || "todos";
+  const deadline = q("#deadlineFilter")?.value || "todos";
+  return budget
+    .filter((row) => priority === "todos" || row.tipo === priority)
+    .filter((row) => deadline === "todos" || row.fase === deadline);
+}
+
+function renderPriorityTable(rows) {
+  const body = q("#priorityBody");
+  if (!body) return;
+  body.innerHTML = rows.map((row) => `
+    <tr>
+      <td><span class="pill">${row.tipo}</span></td>
+      <td><strong>${row.area}</strong><br><small>${row.descricao}</small></td>
+      <td>${row.fase}</td>
+      <td>${brl.format(row.valor)}</td>
+      <td>${row.risco}</td>
+      <td>${row.fase === "Antes da viagem" ? "Resolver antes de embarcar" : "Planejar captacao por fase"}</td>
+    </tr>
+  `).join("");
+}
+
+function drawPriorityDonut(canvas, rows) {
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = canvas.clientWidth * dpr;
+  canvas.height = canvas.clientHeight * dpr;
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+  const grouped = Object.values(rows.reduce((acc, row) => {
+    acc[row.fase] ||= { tipo: row.fase, valor: 0 };
+    acc[row.fase].valor += row.valor;
+    return acc;
+  }, {}));
+  const sum = rows.reduce((n, row) => n + row.valor, 0) || 1;
+  if (!rows.length) {
+    ctx.fillStyle = "#dce8f4";
+    ctx.font = "14px Inter, Arial";
+    ctx.fillText("Sem itens", 12, 28);
+    return;
+  }
+  const cx = canvas.clientWidth / 2;
+  const cy = canvas.clientHeight / 2;
+  const radius = Math.min(cx, cy) - 18;
+  const colors = ["#d9ad59", "#4fd5e8", "#4fb477", "#f4d58d"];
+  let start = -Math.PI / 2;
+  grouped.forEach((item, index) => {
+    const angle = (item.valor / sum) * Math.PI * 2;
+    ctx.beginPath();
+    ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, radius, start, start + angle);
+    ctx.closePath();
+    ctx.fillStyle = colors[index % colors.length];
+    ctx.fill();
+    start += angle;
+  });
+  ctx.beginPath();
+  ctx.fillStyle = "#071323";
+  ctx.arc(cx, cy, radius * .58, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = "#fff";
+  ctx.font = "700 18px Inter, Arial";
+  ctx.textAlign = "center";
+  ctx.fillText(brl.format(sum), cx, cy + 6);
+  ctx.textAlign = "left";
+}
+
+function renderPriorityDashboard() {
+  if (!q("#priorityDashboard")) return;
+  const rows = priorityRows();
+  const beforeTrip = budget.filter((row) => row.fase === "Antes da viagem");
+  q("#priorityTotal").textContent = brl.format(rows.reduce((n, row) => n + row.valor, 0));
+  q("#beforeTripTotal").textContent = brl.format(beforeTrip.reduce((n, row) => n + row.valor, 0));
+  q("#priorityCount").textContent = String(rows.length);
+  q("#priorityRisk").textContent = String(Math.max(...rows.map((row) => row.risco), 0));
+  drawBars(q("#priorityBarChart"), rows);
+  drawPriorityDonut(q("#priorityDonutChart"), rows);
+  renderPriorityTable(rows);
+}
+
+function initPriorityDashboard() {
+  if (!q("#priorityDashboard")) return;
+  ["#priorityFilter", "#deadlineFilter"].forEach((selector) => q(selector).addEventListener("change", renderPriorityDashboard));
+  window.addEventListener("resize", renderPriorityDashboard);
+  renderPriorityDashboard();
+}
+
+document.addEventListener("DOMContentLoaded", initPriorityDashboard);
 
 function moneyInput(id) {
   return Number(document.getElementById(id)?.value || 0);

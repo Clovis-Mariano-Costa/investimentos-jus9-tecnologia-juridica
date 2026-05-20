@@ -23,7 +23,7 @@ O primeiro MVP a ficar demonstravel para o evento e a **Agenda Jus 9**, porque e
 
 1. Agenda Jus 9: compromissos, prazos, reunioes, Google Calendar e ICS.
 2. MVP Advogados: DAJ, processos, prazos, documentos, cofre, workspace e IA profissional.
-3. Investidores: dashboard, orcamento, Web Summit, perfis e kit Santander.
+3. Investidores: dashboard, orcamento, Web Summit, perfis e kit de busca de parcerias.
 4. IA Estudantes: estudo, resumo, explicacao, exemplos, voz e anexos governados.
 5. IA Profissional: revisao assistida, peticao, jurisprudencia, resumo e limites humanos.
 6. Jus9 Verde / Charlie Echo Social: impacto, gratuidade, educacao e encaminhamento.
@@ -37,7 +37,7 @@ O primeiro MVP a ficar demonstravel para o evento e a **Agenda Jus 9**, porque e
 
 - Agenda MVP funcional: localStorage, Google Calendar por link e ICS.
 - Pagina investidores detalhada com calculadora de viagem e materiais.
-- Kit Santander: valor minimo, valor recomendado, uso do recurso e cronograma.
+- Kit de busca de parcerias: valor minimo, valor recomendado, uso do recurso e cronograma.
 - Roteiro de demo de 7 minutos.
 - Lista de materiais: QR codes, one-page, deck curto, backup offline.
 
