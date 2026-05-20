@@ -1,4 +1,190 @@
 <!doctype html>
 <html lang="pt-BR">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Web Summit — Investimentos Jus 9</title><link rel="icon" href="assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"></head>
-<body><header class="header"><div class="container nav"><a class="logo" href="index.html"><span>Jus 9 Investimentos</span></a><nav class="menu"><a href="index.html">Início</a><a href="detalhamento.html">Detalhamento</a><a href="dashboard.html">Dashboard</a><a href="custos.html">Orçamento</a><a href="perfis.html">Perfis</a><a class="is-active" href="web-summit.html">Web Summit</a><a href="documentos.html">Documentos</a></nav><a class="cta" href="documentos.html">Kit</a></div></header><main><section class="hero"><div class="container"><div class="eyebrow">Web Summit Rio 2026</div><h1>Preparar a conversa antes do evento.</h1><p class="lead">A meta é chegar com MVP navegável, orçamento claro, dashboards, equipe, materiais e trilha de follow-up por perfil.</p></div></section><section class="section light"><div class="container grid four"><article class="card"><span class="big">1</span><h3>Antes</h3><p>Pitch, demo, agenda, landing pages e lista de contatos.</p></article><article class="card"><span class="big">2</span><h3>Durante</h3><p>Reuniões, captura de interesse, anotações e classificação de leads.</p></article><article class="card"><span class="big">3</span><h3>Depois</h3><p>Follow-up, propostas, pilotos e documentação.</p></article><article class="card"><span class="big">4</span><h3>Métrica</h3><p>Conversas qualificadas, pilotos, cartas de intenção e oportunidades.</p></article></div></section></main><footer class="footer"><div class="container">Plano Web Summit em construção.</div></footer></body></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Web Summit Rio 2026 — Investimentos Jus 9</title>
+  <meta name="description" content="Plano de preparação da Jus 9 Tecnologia Jurídica para Web Summit Rio 2026, com orçamento de viagem, materiais, agenda, MVPs e follow-up.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="index.html"><span>Jus 9 Investimentos</span></a>
+    <nav class="menu">
+      <a href="index.html">Início</a>
+      <a href="detalhamento.html">Detalhamento</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="custos.html">Orçamento</a>
+      <a href="perfis.html">Perfis</a>
+      <a class="is-active" href="web-summit.html">Web Summit</a>
+      <a href="documentos.html">Documentos</a>
+    </nav>
+    <a class="cta" href="https://www.jus9tecnologia.com.br/mvp">Ver MVP</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Web Summit Rio 2026 • 8 a 11 de junho</div>
+        <h1>Chegar ao evento com demo, agenda e proposta de investimento.</h1>
+        <p class="lead">O objetivo é transformar a viagem ao Rio em rodada organizada de validação: investidores, bancos, universidades, escritórios, parceiros públicos e compradores de piloto.</p>
+        <div class="actions">
+          <a class="btn primary" href="#calculadora">Calcular viagem</a>
+          <a class="btn" href="#cronograma">Ver cronograma</a>
+          <a class="btn" href="#mvps">Priorizar MVPs</a>
+        </div>
+      </div>
+      <aside class="card">
+        <div class="eyebrow">Dados oficiais consultados</div>
+        <span class="big">Riocentro</span>
+        <h3>Av. Salvador Allende, 6555 - Camorim</h3>
+        <p>O suporte oficial informa Web Summit Rio 2026 no Riocentro, de 8 a 11 de junho de 2026. A página de tickets mostra ingresso General attendee em R$1.195 e Executive em R$7.495, sujeito a mudança.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section light" id="calculadora">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Cálculo de viagem e materiais</div>
+          <h2>Orçamento editável para levar ao Santander e a investidores.</h2>
+        </div>
+        <p>Valores iniciais são estimativas operacionais para planejamento. Ajuste cada campo conforme cotação real de passagem, hospedagem, gráfica e equipamentos.</p>
+      </div>
+
+      <div class="dashboard-shell summit-calc" id="summitCalc">
+        <aside class="filters">
+          <label>Ingresso oficial
+            <input type="number" id="summitTicket" value="1195" min="0" step="50">
+          </label>
+          <label>Passagem Florianópolis/Rio
+            <input type="number" id="summitFlight" value="1800" min="0" step="50">
+          </label>
+          <label>Noites
+            <input type="number" id="summitNights" value="5" min="1" step="1">
+          </label>
+          <label>Hospedagem por noite
+            <input type="number" id="summitHotelNight" value="750" min="0" step="50">
+          </label>
+          <label>Alimentação por dia
+            <input type="number" id="summitFoodDay" value="240" min="0" step="20">
+          </label>
+          <label>Transporte local
+            <input type="number" id="summitLocalTransport" value="900" min="0" step="50">
+          </label>
+          <label>Materiais impressos
+            <input type="number" id="summitPrint" value="1800" min="0" step="50">
+          </label>
+          <label>Demo kit e contingência técnica
+            <input type="number" id="summitDemoKit" value="2200" min="0" step="50">
+          </label>
+          <label>Reserva técnica (%)
+            <input type="number" id="summitReservePct" value="20" min="0" step="5">
+          </label>
+        </aside>
+
+        <div>
+          <div class="kpi-grid">
+            <article class="kpi"><span>Total base</span><strong id="summitBaseTotal">R$ 0</strong></article>
+            <article class="kpi"><span>Reserva</span><strong id="summitReserve">R$ 0</strong></article>
+            <article class="kpi"><span>Total recomendado</span><strong id="summitGrandTotal">R$ 0</strong></article>
+            <article class="kpi"><span>Meta mínima</span><strong id="summitMinimum">R$ 0</strong></article>
+          </div>
+
+          <article class="chart-card">
+            <h3>Composição do orçamento</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Categoria</th><th>Valor</th><th>Uso no evento</th></tr></thead>
+                <tbody id="summitBudgetBody"></tbody>
+              </table>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="mvps">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">MVPs para levar funcionando</div>
+          <h2>Prioridade sem esquecer o ecossistema.</h2>
+        </div>
+        <p>A linha de frente deve caber em uma demonstração de 7 minutos e abrir conversas mais longas por perfil.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><span class="big">1</span><h3>Agenda Jus 9</h3><p>Agenda própria com vínculo a DAJ, processo, cliente, equipe e Google Calendar por link/ICS. É o MVP de tempo do evento.</p></article>
+        <article class="card"><span class="big">2</span><h3>MVP Advogados</h3><p>DAJ, prazos, documentos, área secreta, workspace, IA profissional e trilha de revisão humana.</p></article>
+        <article class="card"><span class="big">3</span><h3>Investidores</h3><p>Página detalhada, dashboard, custos, orçamento Web Summit, perfis de investimento e kit de reunião.</p></article>
+      </div>
+      <div class="grid" style="margin-top:1rem">
+        <article class="card"><span class="big">4</span><h3>IA Estudantes</h3><p>Uso educacional, explicação, resumo, exemplos e estudos com governança de privacidade.</p></article>
+        <article class="card"><span class="big">5</span><h3>IA Profissional</h3><p>Assistência jurídica supervisionada, sem decisão autônoma e sem dados reais no front-end público.</p></article>
+        <article class="card"><span class="big">6</span><h3>Jus9 Verde e social</h3><p>Camada social, gratuita, educativa e de impacto, com Charlie Echo Social e trilhas de parceria.</p></article>
+      </div>
+      <div class="grid" style="margin-top:1rem">
+        <article class="card"><span class="big">7</span><h3>Equipe e governança</h3><p>Quem faz, quem revisa, quem autoriza, como dados são classificados e como o Fundador decide.</p></article>
+        <article class="card"><span class="big">8</span><h3>Livros e autoridade</h3><p>Livros gratuitos, narrativa autoral, base intelectual e ponte com universidade e cultura jurídica.</p></article>
+        <article class="card"><span class="big">9</span><h3>Backend seguro</h3><p>Rota para autenticação, banco de dados, logs, permissões, criptografia, e-mail e WhatsApp governado.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light" id="cronograma">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Cronograma Mão na Massa</div>
+          <h2>De agora até o evento.</h2>
+        </div>
+        <p>Como a agenda oficial completa ainda será lançada mais perto do evento, o plano usa blocos de preparação e deixa espaço para atualização final.</p>
+      </div>
+      <div class="timeline">
+        <div><strong>20 a 24 de maio:</strong> Agenda MVP funcional, página investidores completa, orçamento de viagem, kit Santander, pitch de 1 página e lista de MVPs.</div>
+        <div><strong>25 a 31 de maio:</strong> Backend local, Cloudflare/túnel governado, ensaio de demo, materiais impressos, cartões, QR codes e landing pages.</div>
+        <div><strong>1 a 7 de junho:</strong> fechar hospedagem/passagem, revisar agenda de reuniões, preparar follow-up por perfil e backup offline.</div>
+        <div><strong>8 a 11 de junho:</strong> Web Summit Rio no Riocentro: conversas qualificadas, coleta de contatos, demonstração curta, registro de interesse e classificação de leads.</div>
+        <div><strong>12 a 19 de junho:</strong> follow-up, propostas de piloto, cartas de intenção, reunião com banco/parceiros e priorização pós-evento.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="panel">
+        <div class="eyebrow">Kit de material</div>
+        <h2>O que levar pronto.</h2>
+        <div class="grid four">
+          <article class="card"><h3>QR codes</h3><p>MVP, Agenda, Investidores, Equipe, Charlie Echo e contato.</p></article>
+          <article class="card"><h3>One-page</h3><p>Problema, solução, mercado, MVPs, governança e pedido de investimento.</p></article>
+          <article class="card"><h3>Deck curto</h3><p>10 slides para conversa de investidor, banco e parceiro institucional.</p></article>
+          <article class="card"><h3>Demo offline</h3><p>Notebook, backup local, capturas e roteiro se a internet falhar.</p></article>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="links-semanticos-jus9-v1-5">
+    <strong>Links Jus 9:</strong>
+    <a href="https://www.jus9tecnologia.com.br/equipe/">Equipe</a> ·
+    <a href="https://investimentos.jus9tecnologia.com.br/">Investidores</a> ·
+    <a href="https://www.jus9tecnologia.com.br/mvp">MVP</a> ·
+    <a href="https://charlieecho.jus9tecnologia.com.br/">Charlie Echo</a> ·
+    <a href="https://jus9verde.jus9tecnologia.com.br/charlie-echo-social">Charlie Echo Social</a> ·
+    <a href="mailto:Contato@jus9tecnologia.com.br">Contato</a>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">Plano Web Summit Rio 2026 • material informativo, sujeito a cotação e revisão humana.</div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

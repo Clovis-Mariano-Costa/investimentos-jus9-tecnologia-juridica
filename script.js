@@ -162,3 +162,54 @@ function initDashboard() {
 }
 
 document.addEventListener("DOMContentLoaded", initDashboard);
+
+function moneyInput(id) {
+  return Number(document.getElementById(id)?.value || 0);
+}
+
+function renderSummitCalculator() {
+  if (!document.getElementById("summitCalc")) return;
+  const ticket = moneyInput("summitTicket");
+  const flight = moneyInput("summitFlight");
+  const nights = moneyInput("summitNights");
+  const hotelNight = moneyInput("summitHotelNight");
+  const foodDay = moneyInput("summitFoodDay");
+  const localTransport = moneyInput("summitLocalTransport");
+  const print = moneyInput("summitPrint");
+  const demoKit = moneyInput("summitDemoKit");
+  const reservePct = moneyInput("summitReservePct") / 100;
+  const hotel = nights * hotelNight;
+  const food = (nights + 1) * foodDay;
+  const rows = [
+    { categoria: "Ingresso Web Summit Rio", valor: ticket, uso: "Acesso ao evento, meetups, talks, expo e Night Summit." },
+    { categoria: "Passagem", valor: flight, uso: "Deslocamento Florianópolis/Rio/Florianópolis." },
+    { categoria: "Hospedagem", valor: hotel, uso: `${nights} noites para chegada, evento e saída com margem.` },
+    { categoria: "Alimentação", valor: food, uso: `${nights + 1} dias de alimentação sem depender do improviso.` },
+    { categoria: "Transporte local", valor: localTransport, uso: "Aeroporto, hotel, Riocentro e reuniões laterais." },
+    { categoria: "Materiais impressos", valor: print, uso: "One-page, cartões, QR codes, pasta, pitch e documentos de apoio." },
+    { categoria: "Demo kit", valor: demoKit, uso: "Backup offline, adaptadores, internet reserva, manutenção e contingência técnica." },
+  ];
+  const base = rows.reduce((sum, row) => sum + row.valor, 0);
+  const reserve = Math.round(base * reservePct);
+  const grand = base + reserve;
+  const minimum = ticket + flight + hotel + food + localTransport;
+  document.getElementById("summitBaseTotal").textContent = brl.format(base);
+  document.getElementById("summitReserve").textContent = brl.format(reserve);
+  document.getElementById("summitGrandTotal").textContent = brl.format(grand);
+  document.getElementById("summitMinimum").textContent = brl.format(minimum);
+  document.getElementById("summitBudgetBody").innerHTML = rows.map((row) => `
+    <tr>
+      <td><strong>${row.categoria}</strong></td>
+      <td>${brl.format(row.valor)}</td>
+      <td>${row.uso}</td>
+    </tr>
+  `).join("");
+}
+
+function initSummitCalculator() {
+  if (!document.getElementById("summitCalc")) return;
+  document.querySelectorAll("#summitCalc input").forEach((input) => input.addEventListener("input", renderSummitCalculator));
+  renderSummitCalculator();
+}
+
+document.addEventListener("DOMContentLoaded", initSummitCalculator);
