@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Categorias de Investimento - Jus 9</title>
+  <meta name="description" content="Matriz completa de emergência, urgência, curtíssimo prazo, curto prazo, médio prazo, longo prazo, perfis de investidores e faixas de captação da Jus 9.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="categories-page">
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="index.html"><span>Jus 9 Investimentos</span></a>
+    <nav class="menu" aria-label="Navegação de investimentos">
+      <a href="index.html">Início</a>
+      <a class="is-active" href="categorias.html">Categorias</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="prioridades.html">Prioridades</a>
+      <a href="custos.html">Orçamento</a>
+      <a href="web-summit.html">Web Summit</a>
+      <a href="busca-parcerias.html">Parcerias</a>
+      <a href="documentos.html">Documentos</a>
+    </nav>
+    <a class="cta" href="dashboard.html">Simular</a>
+  </div>
+</header>
+
+<main id="categoriesDashboard">
+  <section class="hero compact-hero">
+    <div class="container">
+      <h1>Todas as categorias de investimento.</h1>
+      <p class="lead">Mapa executivo para separar o que é emergencial, o que é urgente, o que é curtíssimo prazo antes da viagem, e o que pertence às etapas de curto, médio e longo prazo.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="kpi-grid">
+        <div class="kpi"><span>Total operacional</span><strong id="categoryTotal">R$ 822 mil</strong></div>
+        <div class="kpi"><span>Curtíssimo prazo</span><strong id="categoryBeforeTrip">R$ 116 mil</strong></div>
+        <div class="kpi"><span>Maior item</span><strong id="categoryLargest">Backend</strong></div>
+        <div class="kpi"><span>Perfis ativos</span><strong>6</strong></div>
+      </div>
+      <div class="chart-grid">
+        <article class="chart-card"><h3>Valores por categoria</h3><canvas id="categoryStackChart" height="320"></canvas></article>
+        <article class="chart-card"><h3>Tickets por perfil</h3><canvas id="profileTicketChart" height="320"></canvas></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="container">
+      <div class="section-head">
+        <div><h2>Matriz por prazo.</h2></div>
+        <p>Esta tabela é a base para reuniões: cada linha tem valor, frente, finalidade e cautela de publicação.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Categoria</th><th>Prazo</th><th>Valor</th><th>Frente</th><th>Finalidade</th><th>Cautela</th></tr></thead>
+          <tbody id="categoryBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div><h2>Faixas de captação externa.</h2></div>
+        <p>As faixas abaixo vêm dos documentos de prospecção e servem para orientar conversas, não para substituir negociação jurídica, contábil ou societária.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>Curto prazo - 0 a 6 meses</h3><p><strong>R$ 20 mil a R$ 200 mil.</strong> Validar proposta, obter pilotos e preparar material de investidor.</p><p>Participação citada: 5% a 12% para anjo inicial, evitando superar 15% no primeiro cheque.</p></article>
+        <article class="card"><h3>Médio prazo - 6 a 18 meses</h3><p><strong>R$ 300 mil a R$ 1,5 milhão.</strong> Produto funcional, clientes pagantes, backend real, IA profissional e primeiras integrações.</p><p>Participação citada: 10% a 20% em pré-seed ou 20% a 35% da receita líquida em parceria operacional.</p></article>
+        <article class="card"><h3>Longo prazo - 18 a 48 meses</h3><p><strong>R$ 2 milhões a R$ 8 milhões.</strong> Escalar como SaaS jurídico, IA vertical, comunidade, eventos, marketplace e rede de parceiros.</p><p>Condicionado a tração, governança, operação e validação real.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="container">
+      <div class="section-head">
+        <div><h2>Perfis de conversa.</h2></div>
+        <p>Cada perfil olha para um risco diferente. O mesmo material deve ser traduzido conforme o interlocutor.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Perfil</th><th>Ticket referência</th><th>Tese</th><th>Pedido adequado</th><th>Link</th></tr></thead>
+          <tbody id="profileBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <article class="panel">
+        <h2>Regra de segurança desta frente.</h2>
+        <p>Material de investimento pode ser público quando estiver sanitizado. Estratégia confidencial de captação, nomes de terceiros, negociações, planilhas sensíveis, documentos de investidores e dados financeiros não revisados ficam fora da publicação até revisão humana do Fundador.</p>
+        <div class="actions">
+          <a class="btn primary" href="prioridades.html">Abrir prioridades</a>
+          <a class="btn" href="dashboard.html">Simular orçamento</a>
+          <a class="btn" href="ORIENTACOES/MAPA_DE_LINKS_SEMANTICOS_OFICIAIS.md">Mapa semântico</a>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container">Categorias de investimento Jus 9 - material informativo, público-controlado e sujeito a revisão humana.</div></footer>
+<script src="script.js"></script>
+</body>
+</html>
