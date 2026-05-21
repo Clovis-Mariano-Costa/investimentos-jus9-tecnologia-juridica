@@ -64,7 +64,7 @@ Objetivo: preparar narrativa de investimento de curto prazo e materiais minimos 
 - Ajustar dashboard com totais, prioridades, status e proximas acoes.
 - Preparar bloco "Por que investir agora".
 - Preparar bloco "O que ja existe", "O que e MVP" e "O que ainda e futuro".
-- Criar ou revisar kit basico: one-page, resumo executivo, pitch curto, perguntas frequentes e checklist de follow-up.
+- Criar ou revisar kit basico: one-page, resumo executivo, pitch curto, deck curto, perguntas frequentes e checklist de follow-up.
 - Conferir responsividade mobile e desktop.
 - Preparar linguagem prudente para investidores: sem promessa de retorno financeiro, sem promessa tecnica nao implementada.
 
@@ -185,5 +185,15 @@ Entregavel: dossie de investimento mais robusto e pronto para nova rodada de con
 - Uso do recurso organizado por prioridade.
 - Riscos declarados com honestidade.
 - Proximo passo claro: reuniao, piloto, carta de intencao, parceria ou aporte.
+
+## Materiais publicados do kit investidor
+
+- `one-page-investidor.html`: resumo executivo para abertura de conversa.
+- `pitch-investidor.html`: pitch de 30 segundos, 3 minutos e 20 minutos.
+- `deck-curto-investidor.html`: apresentacao curta em HTML para reuniao e tela compartilhada.
+- `perguntas-investidor.html`: perguntas dificeis de diligencia inicial.
+- `uso-do-recurso.html`: explicacao de destino dos recursos por camada.
+- `perfis-investidor.html`: roteiros por interlocutor.
+- `follow-up-investidores.html`: checklist pos-contato e cadencia segura.
 
 © Jus 9 Tecnologia Juridica - planejamento publico sujeito a revisao humana.

@@ -14,6 +14,10 @@ Sempre que uma expressão pública relevante aparecer em página, README, rodap�
 | Dashboard de Prioridades | https://investimentos.jus9tecnologia.com.br/prioridades.html |
 | Busca de Parcerias | https://investimentos.jus9tecnologia.com.br/busca-parcerias.html |
 | Web Summit Rio 2026 | https://investimentos.jus9tecnologia.com.br/web-summit.html |
+| Confira nossa Participacao no Web Summit Rio 2026, clicando aqui | https://rio.websummit.com/appearances/rio26/863ce669-b06e-4962-88f3-9b878d259913/jus-9-tecnologia-jur%C3%ADdica/?utm_source=sharing&utm_campaign=social-cards&utm_medium=url |
+| Pitch do investidor | https://investimentos.jus9tecnologia.com.br/pitch-investidor.html |
+| Deck curto do investidor | https://investimentos.jus9tecnologia.com.br/deck-curto-investidor.html |
+| Follow-up de investidores | https://investimentos.jus9tecnologia.com.br/follow-up-investidores.html |
 | Orçamento | https://investimentos.jus9tecnologia.com.br/custos.html |
 | Documentos para investidores | https://investimentos.jus9tecnologia.com.br/documentos.html |
 | MVP | https://www.jus9tecnologia.com.br/mvp |
@@ -34,6 +38,9 @@ No cabeçalho do site principal, o link **Equipe** deve ficar visível e, quando
 - A página `dashboard.html` é a simulação dinâmica de cenários, tickets e orçamento.
 - A página `prioridades.html` é a tela de decisão por prazo e risco.
 - A página `busca-parcerias.html` organiza conversas com bancos, investidores, escritórios, universidades, fornecedores e programas de inovação.
+- A página `pitch-investidor.html` organiza pitch de 30 segundos, 3 minutos e 20 minutos.
+- A página `deck-curto-investidor.html` serve como apresentacao curta em HTML para reuniao, evento e tela compartilhada.
+- A página `follow-up-investidores.html` orienta registro publico-controlado de conversas, sem expor dados pessoais, negociacoes ou documentos sensiveis.
 - Não publicar nomes de terceiros, documentos de investidores, negociações, planilhas sensíveis ou estratégia confidencial de captação sem revisão humana do Fundador.
 
 © Jus 9 Tecnologia Jurídica - software livre, autoria preservada.
