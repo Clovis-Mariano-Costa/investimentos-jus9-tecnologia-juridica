@@ -195,5 +195,9 @@ Entregavel: dossie de investimento mais robusto e pronto para nova rodada de con
 - `uso-do-recurso.html`: explicacao de destino dos recursos por camada.
 - `perfis-investidor.html`: roteiros por interlocutor.
 - `follow-up-investidores.html`: checklist pos-contato e cadencia segura.
+- `roteiro-demo-investidor.html`: roteiro publico-controlado de demo de 7 minutos.
+- `kit-offline-web-summit.html`: backup offline para apresentacao sem internet e sem dados reais.
+- `mensagens-follow-up-investidores.html`: modelos de mensagens por perfil.
+- `leads-investidores-template.csv`: modelo demonstrativo de controle de leads, sem dados reais.
 
 © Jus 9 Tecnologia Juridica - planejamento publico sujeito a revisao humana.

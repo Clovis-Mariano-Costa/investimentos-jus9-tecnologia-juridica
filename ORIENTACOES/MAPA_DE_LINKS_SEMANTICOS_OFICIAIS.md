@@ -18,6 +18,10 @@ Sempre que uma expressão pública relevante aparecer em página, README, rodap�
 | Pitch do investidor | https://investimentos.jus9tecnologia.com.br/pitch-investidor.html |
 | Deck curto do investidor | https://investimentos.jus9tecnologia.com.br/deck-curto-investidor.html |
 | Follow-up de investidores | https://investimentos.jus9tecnologia.com.br/follow-up-investidores.html |
+| Roteiro de demo para investidores | https://investimentos.jus9tecnologia.com.br/roteiro-demo-investidor.html |
+| Kit offline Web Summit | https://investimentos.jus9tecnologia.com.br/kit-offline-web-summit.html |
+| Mensagens de follow-up por perfil | https://investimentos.jus9tecnologia.com.br/mensagens-follow-up-investidores.html |
+| Modelo de leads de investidores | https://investimentos.jus9tecnologia.com.br/leads-investidores-template.csv |
 | Orçamento | https://investimentos.jus9tecnologia.com.br/custos.html |
 | Documentos para investidores | https://investimentos.jus9tecnologia.com.br/documentos.html |
 | MVP | https://www.jus9tecnologia.com.br/mvp |
@@ -41,6 +45,10 @@ No cabeçalho do site principal, o link **Equipe** deve ficar visível e, quando
 - A página `pitch-investidor.html` organiza pitch de 30 segundos, 3 minutos e 20 minutos.
 - A página `deck-curto-investidor.html` serve como apresentacao curta em HTML para reuniao, evento e tela compartilhada.
 - A página `follow-up-investidores.html` orienta registro publico-controlado de conversas, sem expor dados pessoais, negociacoes ou documentos sensiveis.
+- A página `roteiro-demo-investidor.html` orienta a demonstracao publica de 7 minutos.
+- A página `kit-offline-web-summit.html` organiza backup offline sem segredos ou dados reais.
+- A página `mensagens-follow-up-investidores.html` reune modelos de mensagens por perfil de interlocutor.
+- O arquivo `leads-investidores-template.csv` e apenas modelo demonstrativo, sem dados reais.
 - Não publicar nomes de terceiros, documentos de investidores, negociações, planilhas sensíveis ou estratégia confidencial de captação sem revisão humana do Fundador.
 
 © Jus 9 Tecnologia Jurídica - software livre, autoria preservada.
