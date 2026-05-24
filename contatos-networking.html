@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contatos e Networking - Jus 9</title>
+  <meta name="description" content="Modulo demonstrativo de contatos e networking da Jus 9 para Web Summit, investidores e parceiros, sem dados reais.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="index.html"><span>Jus 9 Investimentos</span></a>
+    <nav class="menu" aria-label="Navegacao de contatos">
+      <a href="index.html">Inicio</a>
+      <a href="web-summit.html">Web Summit</a>
+      <a href="documentos.html">Documentos</a>
+      <a href="mensagens-follow-up-investidores.html">Follow-up</a>
+      <a class="is-active" href="contatos-networking.html">Contatos</a>
+    </nav>
+    <a class="cta" href="leads-investidores-template.csv">Modelo CSV</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero compact-hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Networking demonstrativo</div>
+        <h1>Organizar conversas sem expor contatos reais.</h1>
+        <p class="lead">Esta tela e um prototipo local para classificar oportunidades, proximas acoes e follow-up. Use apenas dados ficticios neste MVP; contatos reais devem ficar em ambiente privado aprovado pelo Fundador.</p>
+        <div class="actions">
+          <a class="btn primary" href="#novo-contato">Adicionar contato demo</a>
+          <button class="btn" type="button" id="exportContacts">Exportar JSON demo</button>
+          <button class="btn" type="button" id="resetContacts">Restaurar exemplos</button>
+        </div>
+      </div>
+      <aside class="card">
+        <span class="big">LGPD</span>
+        <h2>Sem dados reais.</h2>
+        <p>Nome, e-mail, telefone, WhatsApp, cargo e observacoes reais nao devem ser inseridos nesta pagina publico-controlada. O objetivo e validar fluxo, nao armazenar relacionamento real.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="container">
+      <div class="kpi-grid">
+        <article class="kpi"><span>Total demo</span><strong id="metricTotal">0</strong></article>
+        <article class="kpi"><span>Alta prioridade</span><strong id="metricHigh">0</strong></article>
+        <article class="kpi"><span>Precisa follow-up</span><strong id="metricFollow">0</strong></article>
+        <article class="kpi"><span>Sem dados reais</span><strong>OK</strong></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="novo-contato">
+    <div class="container dashboard-shell">
+      <aside class="filters">
+        <label>Nome ficticio
+          <input id="contactName" value="Pessoa Demo 01">
+        </label>
+        <label>Instituicao ficticia
+          <input id="contactOrg" value="Instituicao Demo">
+        </label>
+        <label>Tipo
+          <select id="contactType">
+            <option>Investidor</option>
+            <option>Banco</option>
+            <option>Parceiro juridico</option>
+            <option>Mentor</option>
+            <option>Patrocinador social</option>
+            <option>Imprensa</option>
+          </select>
+        </label>
+        <label>Prioridade
+          <select id="contactPriority">
+            <option>Alta</option>
+            <option>Media</option>
+            <option>Baixa</option>
+          </select>
+        </label>
+        <label>Status
+          <select id="contactStatus">
+            <option>Conhecido no evento</option>
+            <option>Enviar material</option>
+            <option>Marcar reuniao</option>
+            <option>Aguardando resposta</option>
+            <option>Sem aderencia</option>
+          </select>
+        </label>
+        <label>Proxima acao
+          <input id="contactNext" value="Enviar one-page publico-controlado">
+        </label>
+        <label>Origem
+          <input id="contactSource" value="Web Summit Rio 2026">
+        </label>
+        <label>Observacao demo
+          <textarea id="contactNotes" rows="4">Registro ficticio para validar fluxo de follow-up. Sem dados reais.</textarea>
+        </label>
+        <button class="btn primary" type="button" id="saveContact">Salvar contato demo</button>
+      </aside>
+
+      <div>
+        <article class="chart-card">
+          <h3>Fila de networking demonstrativa</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>Contato</th><th>Tipo</th><th>Prioridade</th><th>Status</th><th>Proxima acao</th><th>Acoes</th></tr>
+              </thead>
+              <tbody id="contactsBody"></tbody>
+            </table>
+          </div>
+        </article>
+        <div class="notice" id="contactsFeedback">Modo demonstrativo: nada e enviado para servidor, CRM, WhatsApp, e-mail ou Google.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="container grid">
+      <article class="card"><h3>Versao 1</h3><p>Prototipo estatico e local para validar campos, prioridade, status e rotina de follow-up.</p></article>
+      <article class="card"><h3>Versao 2</h3><p>Planilha privada ou Google Sheets autorizado, com controle de acesso e dados reais apenas quando aprovado.</p></article>
+      <article class="card"><h3>Versao 3</h3><p>Backend/CRM proprio, logs, permissoes, politica LGPD e integracoes seguras.</p></article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="container">Contatos e networking - MVP demonstrativo, sem dados reais e sem integracao externa.</div></footer>
+
+<script>
+const contactsKey = "jus9_networking_demo_v1";
+const demoContacts = [
+  { name: "Pessoa Demo 01", org: "Banco Demo", type: "Banco", priority: "Alta", status: "Enviar material", next: "Enviar one-page e pitch curto", source: "Web Summit Rio 2026", notes: "Conversa ficticia para validar follow-up." },
+  { name: "Pessoa Demo 02", org: "Hub Juridico Demo", type: "Parceiro juridico", priority: "Media", status: "Marcar reuniao", next: "Propor piloto demonstrativo sem dados reais", source: "Networking", notes: "Sem contato real nesta fase." },
+  { name: "Pessoa Demo 03", org: "Instituto Social Demo", type: "Patrocinador social", priority: "Alta", status: "Aguardando resposta", next: "Enviar proposta Jus 9 Verde", source: "Indicacao ficticia", notes: "Validar trilha social sem dados sensiveis." }
+];
+
+function loadContacts() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(contactsKey) || "null");
+    return Array.isArray(saved) ? saved : demoContacts;
+  } catch {
+    return demoContacts;
+  }
+}
+
+function saveContacts(items) {
+  localStorage.setItem(contactsKey, JSON.stringify(items));
+}
+
+function escapeHtml(value) {
+  return String(value || "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;"
+  }[char]));
+}
+
+function renderContacts() {
+  const contacts = loadContacts();
+  const body = document.getElementById("contactsBody");
+  body.innerHTML = contacts.map((item, index) => `
+    <tr>
+      <td><strong>${escapeHtml(item.name)}</strong><br><span class="small">${escapeHtml(item.org)}<br>${escapeHtml(item.source)}</span></td>
+      <td>${escapeHtml(item.type)}</td>
+      <td>${escapeHtml(item.priority)}</td>
+      <td>${escapeHtml(item.status)}</td>
+      <td>${escapeHtml(item.next)}</td>
+      <td><button class="btn" type="button" data-remove="${index}">Remover</button></td>
+    </tr>
+  `).join("");
+  document.getElementById("metricTotal").textContent = contacts.length;
+  document.getElementById("metricHigh").textContent = contacts.filter(item => item.priority === "Alta").length;
+  document.getElementById("metricFollow").textContent = contacts.filter(item => item.status !== "Sem aderencia").length;
+}
+
+document.getElementById("saveContact").addEventListener("click", () => {
+  const contacts = loadContacts();
+  contacts.unshift({
+    name: document.getElementById("contactName").value || "Pessoa Demo",
+    org: document.getElementById("contactOrg").value || "Instituicao Demo",
+    type: document.getElementById("contactType").value,
+    priority: document.getElementById("contactPriority").value,
+    status: document.getElementById("contactStatus").value,
+    next: document.getElementById("contactNext").value || "Definir proxima acao",
+    source: document.getElementById("contactSource").value || "Origem demo",
+    notes: document.getElementById("contactNotes").value || "Sem dados reais."
+  });
+  saveContacts(contacts);
+  document.getElementById("contactsFeedback").textContent = "Contato demonstrativo salvo apenas neste navegador.";
+  renderContacts();
+});
+
+document.getElementById("contactsBody").addEventListener("click", event => {
+  const index = event.target.dataset.remove;
+  if (index === undefined) return;
+  const contacts = loadContacts();
+  contacts.splice(Number(index), 1);
+  saveContacts(contacts);
+  document.getElementById("contactsFeedback").textContent = "Contato demonstrativo removido.";
+  renderContacts();
+});
+
+document.getElementById("resetContacts").addEventListener("click", () => {
+  saveContacts(demoContacts);
+  document.getElementById("contactsFeedback").textContent = "Exemplos ficticios restaurados.";
+  renderContacts();
+});
+
+document.getElementById("exportContacts").addEventListener("click", () => {
+  const blob = new Blob([JSON.stringify(loadContacts(), null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "contatos-networking-demo-jus9.json";
+  a.click();
+  URL.revokeObjectURL(url);
+  document.getElementById("contactsFeedback").textContent = "JSON demonstrativo gerado localmente.";
+});
+
+renderContacts();
+</script>
+</body>
+</html>
