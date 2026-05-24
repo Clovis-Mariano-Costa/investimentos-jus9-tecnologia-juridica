@@ -61,7 +61,7 @@ Objetivo: escala com governança.
 
 - Pilotos pagos ou institucionais.
 - Equipe técnica e jurídica.
-- IA assistiva com logs e limites.
+- I.A Generativa Multimodal Jurista com logs, revisao humana e limites.
 - Integrações avançadas.
 - Comercial, parcerias e suporte.
 - Revisão final de segurança, privacidade e sustentabilidade financeira.

@@ -26,7 +26,7 @@ O primeiro MVP a ficar demonstravel para o evento e a **Agenda Jus 9**, porque e
 3. Investidores: dashboard, orcamento, Web Summit, perfis e kit de busca de parcerias.
 4. IA Estudantes: estudo, resumo, explicacao, exemplos, voz e anexos governados.
 5. IA Profissional: revisao assistida, peticao, jurisprudencia, resumo e limites humanos.
-6. Jus9 Verde / Charlie Echo Social: impacto, gratuidade, educacao e encaminhamento.
+6. Jus 9 Verde / Charlie Echo Social: impacto, gratuidade, educacao e encaminhamento.
 7. Equipe e governanca: responsabilidade humana, classificacao, licencas, criptografia e revisao.
 8. Livros e autoridade: narrativa, pesquisa, publicacao, universidade e autoria.
 9. Backend seguro: autenticacao, banco, permissoes, logs, e-mail, WhatsApp e Cloudflare.

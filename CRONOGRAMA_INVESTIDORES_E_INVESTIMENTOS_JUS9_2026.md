@@ -164,7 +164,7 @@ Entregavel: dossie de investimento mais robusto e pronto para nova rodada de con
 | Medio prazo | 31 a 90 dias | backend seguro e piloto | foco em estrutura |
 | Longo prazo | 91 a 365 dias | escala e produto | foco em sustentabilidade |
 | Estrategico | variavel | parcerias, equipe, mercado | depende de oportunidade |
-| Social/institucional | variavel | Jus9 Verde, impacto, educacao | separar de retorno financeiro |
+| Social/institucional | variavel | Jus 9 Verde, impacto, educacao | separar de retorno financeiro |
 
 ## Ritmo semanal deste chat
 

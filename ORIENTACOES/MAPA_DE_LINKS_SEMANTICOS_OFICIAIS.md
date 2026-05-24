@@ -27,7 +27,7 @@ Sempre que uma expressão pública relevante aparecer em página, README, rodap�
 | MVP | https://www.jus9tecnologia.com.br/mvp |
 | Charlie Echo | https://charlieecho.jus9tecnologia.com.br/ |
 | Charlie Echo Social | https://jus9verde.jus9tecnologia.com.br/charlie-echo-social#chat-social |
-| Jus9 Verde | https://jus9verde.jus9tecnologia.com.br/ |
+| Jus 9 Verde | https://jus9verde.jus9tecnologia.com.br/ |
 | Laboratório | https://laboratorio.jus9tecnologia.com.br/ |
 | Aeon Primevo | https://aeonprimevo.com.br/ |
 | CRETA | https://creta.org.br/trabalho-charlieecho |
