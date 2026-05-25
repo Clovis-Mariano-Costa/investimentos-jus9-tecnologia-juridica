@@ -6,6 +6,7 @@ Data: 2026-05-25
 
 - Publicado o video `Jus 9 Tecnologia Juridica em 40 palavras` em `downloads/videos/`.
 - Criado card em `documentos.html` com video incorporado e link para baixar MP4.
+- Adicionada a versao em PDF no mesmo card, a partir do arquivo enviado em Downloads.
 - Texto institucional em 40 palavras registra a pergunta ao pai, o Direito como "tudo", o abaco, a informatica e a origem conceitual da Jus 9 Tecnologia Juridica.
 
 ## Cuidados
