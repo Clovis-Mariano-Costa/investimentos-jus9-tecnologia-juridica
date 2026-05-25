@@ -1,5 +1,5 @@
 %PDF-1.4
-% ASCII PDF - Jus 9
+%Jus9
 1 0 obj
 << /Type /Catalog /Pages 2 0 R >>
 endobj
@@ -7,39 +7,57 @@ endobj
 << /Type /Pages /Kids [3 0 R] /Count 1 >>
 endobj
 3 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R /Annots [6 0 R] >>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R /Annots [7 0 R] >>
 endobj
 4 0 obj
-<< /Length 383 >>
-stream
-BT
-/F1 18 Tf
-50 760 Td (Jus 9 Tecnologia Juridica em 40 palavras) Tj
-/F1 11 Tf
-0 -40 Td (Versao em PDF com link para o video institucional.) Tj
-0 -22 Td (Video MP4:) Tj
-0 -16 Td (https://investimentos.jus9tecnologia.com.br/downloads/videos/jus9-tecnologia-juridica-em-40-palavras.mp4) Tj
-0 -32 Td (Material publico-controlado. Revisao humana recomendada antes de uso externo.) Tj
-ET
-endstream
-endobj
-5 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
 endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
 6 0 obj
-<< /Type /Annot /Subtype /Link /Rect [50 650 545 670] /Border [0 0 0] /A << /S /URI /URI (https://investimentos.jus9tecnologia.com.br/downloads/videos/jus9-tecnologia-juridica-em-40-palavras.mp4) >> >>
+<< /Length 1603 >>
+stream
+0.015 0.033 0.075 rg 0 0 595 842 re f
+0.82 0.62 0.22 rg 42 70 511 704 re S
+0.06 0.10 0.17 rg 68 130 459 585 re f
+0.82 0.62 0.22 rg 68 670 459 45 re f
+1 1 1 rg BT /F2 18 Tf 92 688 Td (VIDEO INSTITUCIONAL) Tj ET
+0.95 0.86 0.58 rg BT /F2 28 Tf 92 620 Td (Jus 9 Tecnologia Juridica) Tj ET
+1 1 1 rg BT /F2 23 Tf 92 588 Td (em 40 palavras) Tj ET
+0.92 0.94 0.98 rg BT /F1 13 Tf 92 535 Td (Certo dia perguntei ao meu pai:) Tj ET
+0.92 0.94 0.98 rg BT /F1 13 Tf 92 512 Td (Pai, o que o Direito estuda?) Tj ET
+0.92 0.94 0.98 rg BT /F1 13 Tf 92 489 Td (Ele respondeu: Tudo, meu filho.) Tj ET
+0.92 0.94 0.98 rg BT /F1 13 Tf 92 454 Td (Desde o abaco, a informatica busca pertencer a esse tudo.) Tj ET
+0.92 0.94 0.98 rg BT /F1 13 Tf 92 431 Td (Hoje, com tecnologia, finalmente alcanca o Direito;) Tj ET
+0.92 0.94 0.98 rg BT /F1 13 Tf 92 408 Td (nasce a Jus 9 Tecnologia Juridica.) Tj ET
+0.82 0.62 0.22 rg 92 330 210 46 re f
+0.015 0.033 0.075 rg BT /F2 14 Tf 119 348 Td (Assistir video MP4) Tj ET
+0.10 0.15 0.23 rg 320 330 166 46 re f
+0.95 0.86 0.58 rg 320 330 166 46 re S
+0.95 0.86 0.58 rg BT /F2 13 Tf 350 348 Td (Link oficial) Tj ET
+0.75 0.80 0.88 rg BT /F1 9 Tf 92 285 Td (PDF com link clicavel para o video criado por Charlie Fox / Codex.) Tj ET
+0.75 0.80 0.88 rg BT /F1 9 Tf 92 270 Td (Material publico-controlado. Revisao humana recomendada antes de uso externo.) Tj ET
+0.82 0.62 0.22 rg 92 220 402 1 re f
+0.75 0.80 0.88 rg BT /F1 8 Tf 92 198 Td (URL:) Tj ET
+0.75 0.80 0.88 rg BT /F1 7 Tf 92 184 Td (https://investimentos.jus9tecnologia.com.br/downloads/videos/jus9-tecnologia-juridica-em-40-palavras.mp4) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Annot /Subtype /Link /Rect [92 330 302 376] /Border [0 0 0] /A << /S /URI /URI (https://investimentos.jus9tecnologia.com.br/downloads/videos/jus9-tecnologia-juridica-em-40-palavras.mp4) >> >>
 endobj
 xref
-0 7
+0 8
 0000000000 65535 f 
-0000000029 00000 n 
-0000000078 00000 n 
-0000000135 00000 n 
-0000000277 00000 n 
-0000000710 00000 n 
-0000000780 00000 n 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000273 00000 n 
+0000000343 00000 n 
+0000000418 00000 n 
+0000002072 00000 n 
 trailer
-<< /Size 7 /Root 1 0 R >>
+<< /Size 8 /Root 1 0 R >>
 startxref
-997
+2289
 %%EOF
