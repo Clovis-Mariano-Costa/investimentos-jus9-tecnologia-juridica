@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Jus9//Modelos Investidores//PT-BR
+BEGIN:VEVENT
+UID:modelo-agenda-web-summit-jus9@jus9tecnologia.com.br
+DTSTAMP:20260525T120000Z
+DTSTART:20260608T120000Z
+DTEND:20260608T123000Z
+SUMMARY:Jus 9 - conversa de investidores e parceiros
+DESCRIPTION:Modelo demonstrativo. Confirmar horario real, local, pessoa responsavel, permissao e contexto antes de usar.
+LOCATION:Web Summit Rio 2026 - Riocentro
+END:VEVENT
+END:VCALENDAR
+

@@ -1,0 +1,25 @@
+{
+  "classificacao": "PUBLICO-CONTROLADO / MODELO / FOLLOW-UP",
+  "origem": "Jus 9 Tecnologia Juridica",
+  "historia_base": "O Direito estuda tudo. A tecnologia pode ajudar a organizar esse tudo com responsabilidade.",
+  "campos": {
+    "nome_contato": "",
+    "organizacao": "",
+    "perfil": "",
+    "temperatura": "frio | morno | quente",
+    "interesse": "",
+    "material_enviado": [],
+    "pergunta_principal": "",
+    "risco_linguagem": "",
+    "proxima_acao": "",
+    "prazo": "",
+    "responsavel_humano": ""
+  },
+  "limites": [
+    "Nao prometer investimento.",
+    "Nao afirmar parceria oficial sem confirmacao.",
+    "Nao usar dados reais sensiveis em modelo publico.",
+    "Nao afirmar substituicao de profissional habilitado."
+  ]
+}
+
