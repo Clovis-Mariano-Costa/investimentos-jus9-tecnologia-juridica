@@ -1,0 +1,52 @@
+﻿[
+    {
+        "Label":  "Portal Jus 9",
+        "Url":  "https://jus9tecnologia.com.br/",
+        "Slug":  "portal-jus9"
+    },
+    {
+        "Label":  "Documentos para investidores",
+        "Url":  "https://investimentos.jus9tecnologia.com.br/documentos",
+        "Slug":  "documentos-investidores"
+    },
+    {
+        "Label":  "MVP Jus 9",
+        "Url":  "https://www.jus9tecnologia.com.br/mvp",
+        "Slug":  "mvp-jus9"
+    },
+    {
+        "Label":  "Web Summit Rio 2026",
+        "Url":  "https://investimentos.jus9tecnologia.com.br/web-summit",
+        "Slug":  "web-summit-rio-2026"
+    },
+    {
+        "Label":  "Cronograma investidores",
+        "Url":  "https://investimentos.jus9tecnologia.com.br/cronograma-investidores",
+        "Slug":  "cronograma-investidores"
+    },
+    {
+        "Label":  "Equipe Jus 9",
+        "Url":  "https://equipe.jus9tecnologia.com.br/",
+        "Slug":  "equipe-jus9"
+    },
+    {
+        "Label":  "Jus 9 Verde",
+        "Url":  "https://jus9verde.jus9tecnologia.com.br/",
+        "Slug":  "jus9-verde"
+    },
+    {
+        "Label":  "Charlie Echo Social",
+        "Url":  "https://jus9verde.jus9tecnologia.com.br/charlie-echo-social#chat-social",
+        "Slug":  "charlie-echo-social"
+    },
+    {
+        "Label":  "Contatos e networking",
+        "Url":  "https://investimentos.jus9tecnologia.com.br/contatos-networking",
+        "Slug":  "contatos-networking"
+    },
+    {
+        "Label":  "Pitch Deck atualizado PDF",
+        "Url":  "https://investimentos.jus9tecnologia.com.br/downloads/documentos-publicos/jus9-pitch-deck-web-summit-rio-2026-atualizado.pdf",
+        "Slug":  "pitch-deck-atualizado-pdf"
+    }
+]
