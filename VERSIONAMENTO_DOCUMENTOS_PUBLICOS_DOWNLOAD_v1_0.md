@@ -9,9 +9,7 @@ Escopo: biblioteca publica-controlada de downloads para parceiros, investidores 
 - Criada a pasta `downloads/documentos-publicos/`.
 - Copiados materiais institucionais/Web Summit com nomes seguros para URL.
 - Atualizada `documentos.html` com o bloco `Documentos para download`.
-- Criado `_redirects` para:
-  - `/documentos` -> `/documentos.html`
-  - `/web-summit` -> `/web-summit.html`
+- Mantidas as URLs limpas ja servidas pelo provedor, como `/documentos` e `/web-summit`, sem `_redirects` local para evitar loop de redirecionamento.
 
 ## Arquivos publicados
 
