@@ -15,6 +15,16 @@
         "Slug":  "mvp-jus9"
     },
     {
+        "Label":  "Instalar app Jus 9",
+        "Url":  "https://jus9tecnologia.com.br/instalar-app",
+        "Slug":  "instalar-app-jus9"
+    },
+    {
+        "Label":  "Versionamento Jus 9",
+        "Url":  "https://jus9tecnologia.com.br/versionamento.html",
+        "Slug":  "versionamento-jus9"
+    },
+    {
         "Label":  "Web Summit Rio 2026",
         "Url":  "https://investimentos.jus9tecnologia.com.br/web-summit",
         "Slug":  "web-summit-rio-2026"
