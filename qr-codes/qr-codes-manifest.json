@@ -20,6 +20,11 @@
         "Slug":  "instalar-app-jus9"
     },
     {
+        "Label":  "Instalar app Jus 9 Verde",
+        "Url":  "https://jus9verde.jus9tecnologia.com.br/instalar-app",
+        "Slug":  "instalar-app-jus9-verde"
+    },
+    {
         "Label":  "Versionamento Jus 9",
         "Url":  "https://jus9tecnologia.com.br/versionamento.html",
         "Slug":  "versionamento-jus9"
