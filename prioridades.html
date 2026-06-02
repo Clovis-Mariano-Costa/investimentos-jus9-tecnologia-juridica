@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Dashboard de Prioridades - Investimentos Jus 9</title>
-  <meta name="description" content="Painel de emergência, urgência, curtíssimo prazo, curto prazo, médio prazo e longo prazo para investimentos Jus 9.">
+  <meta name="description" content="Painel de curto, medio e longo prazo para investimentos renovaveis Jus 9.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -29,8 +29,8 @@
 <main id="priorityDashboard">
   <section class="hero compact-hero">
     <div class="container">
-      <h1>Emergência, urgência e investimento por prazo.</h1>
-      <p class="lead">Uma tela para decidir o que precisa ser resolvido antes da viagem e o que deve entrar em curtíssimo, curto, médio e longo prazo.</p>
+      <h1>Prioridades renovaveis de investimento por prazo.</h1>
+      <p class="lead">Uma tela para decidir o que entra em curto, medio e longo prazo depois do evento, com estimativas sujeitas a revisao.</p>
     </div>
   </section>
 
@@ -40,9 +40,6 @@
         <label>Classificação
           <select id="priorityFilter">
             <option value="todos">Todos</option>
-            <option value="Emergência">Emergência</option>
-            <option value="Urgência">Urgência</option>
-            <option value="Necessidade imediata">Necessidade imediata</option>
             <option value="Curto prazo">Curto prazo</option>
             <option value="Médio prazo">Médio prazo</option>
             <option value="Longo prazo">Longo prazo</option>
@@ -51,19 +48,18 @@
         <label>Prazo
           <select id="deadlineFilter">
             <option value="todos">Todos</option>
-            <option value="Antes da viagem">Antes da viagem</option>
             <option value="0-90 dias">0-90 dias</option>
             <option value="90-180 dias">90-180 dias</option>
             <option value="180-365 dias">180-365 dias</option>
           </select>
         </label>
-        <p class="notice">Viagem, material e demonstração entram como curtíssimo prazo operacional, tratado nos arquivos como "Antes da viagem".</p>
+        <p class="notice">O ciclo pre-evento foi encerrado. Valores historicos de viagem e materiais exigem nova cotacao antes de qualquer reutilizacao.</p>
         <a class="btn" href="categorias.html">Ver matriz completa</a>
       </aside>
       <section>
         <div class="kpi-grid">
           <div class="kpi"><span>Total filtrado</span><strong id="priorityTotal">R$ 0</strong></div>
-          <div class="kpi"><span>Antes da viagem</span><strong id="beforeTripTotal">R$ 0</strong></div>
+          <div class="kpi"><span>Ciclo pre-evento</span><strong id="beforeTripTotal">R$ 0</strong></div>
           <div class="kpi"><span>Itens</span><strong id="priorityCount">0</strong></div>
           <div class="kpi"><span>Maior risco</span><strong id="priorityRisk">0</strong></div>
         </div>

@@ -2,7 +2,7 @@
 
 CLASSIFICAÇÃO: PÚBLICO / PLANEJAMENTO / REVISÃO HUMANA
 
-## Fase 0 - Antes da viagem
+## Fase 0 - Preparacao pre-evento encerrada
 
 Objetivo: chegar ao evento com demonstração funcional, materiais revisados e risco reduzido.
 

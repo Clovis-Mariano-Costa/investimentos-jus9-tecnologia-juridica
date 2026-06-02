@@ -2,6 +2,10 @@
 
 Data: 2026-05-18 00:00:00.00000 -03:00
 
+## Status historico
+
+Este relatorio registra a versao anterior. O cenario-base publico renovavel foi atualizado para R$ 706.000 no ciclo pos-evento.
+
 ## Entrega
 
 - Reconstruida a pagina publica de investimentos.

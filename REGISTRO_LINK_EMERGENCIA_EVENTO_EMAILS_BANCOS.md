@@ -1,3 +1,9 @@
+# AVISO - REGISTRO SUPERADO
+
+Nao usar este pedido emergencial em novas comunicacoes. A fase emergencial pre-evento foi encerrada por decisao institucional. Para novas conversas, usar: https://investimentos.jus9tecnologia.com.br/busca-parcerias
+
+---
+
 # Registro — Link de emergência para comunicações bancárias
 
 **Repositório:** investimentos-jus9-tecnologia-juridica  

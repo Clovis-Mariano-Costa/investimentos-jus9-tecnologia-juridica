@@ -38,7 +38,7 @@ No cabeçalho do site principal, o link **Equipe** deve ficar visível e, quando
 
 ## Regra da frente de investimentos
 
-- A página `categorias.html` é a matriz executiva para emergência, urgência, curtíssimo prazo, curto prazo, médio prazo, longo prazo, perfis de investidor e faixas de captação.
+- A pagina `categorias.html` e a matriz executiva para curto, medio e longo prazo, perfis de investidor e faixas renovaveis de captacao. O ciclo emergencial pre-evento permanece apenas como historico.
 - A página `dashboard.html` é a simulação dinâmica de cenários, tickets e orçamento.
 - A página `prioridades.html` é a tela de decisão por prazo e risco.
 - A página `busca-parcerias.html` organiza conversas com bancos, investidores, escritórios, universidades, fornecedores e programas de inovação.

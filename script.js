@@ -2,9 +2,6 @@ const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL",
 const pct = new Intl.NumberFormat("pt-BR", { style: "percent", maximumFractionDigits: 1 });
 
 const budget = [
-  { area: "Segurança mínima e backup", fase: "Antes da viagem", tipo: "Emergência", valor: 18000, impacto: 94, risco: 12, descricao: "Varredura de segredos, backup offline, demonstração sem dados reais e plano de contingência.", cautela: "Não expor senhas, tokens, .env, dados reais ou documentos sigilosos." },
-  { area: "Material de conversa", fase: "Antes da viagem", tipo: "Urgência", valor: 26000, impacto: 86, risco: 18, descricao: "One-page, QR Codes, roteiro, pitch curto, página de parcerias e follow-up.", cautela: "Usar somente material público revisado e sem promessa de retorno." },
-  { area: "Viagem e evento", fase: "Antes da viagem", tipo: "Necessidade imediata", valor: 72000, impacto: 91, risco: 26, descricao: "Ingresso, deslocamento, hospedagem, alimentação, transporte local, internet e contingência.", cautela: "Confirmar cotações, autorização de materiais e logística real." },
   { area: "Produto e engenharia", fase: "0-90 dias", tipo: "Curto prazo", valor: 118000, impacto: 95, risco: 24, descricao: "MVP navegável, DAJ, perfis, agenda, IA profissional demonstrativa e base de publicação.", cautela: "Separar demonstração de produção; usar dados fictícios." },
   { area: "Design e frontend", fase: "0-90 dias", tipo: "Curto prazo", valor: 62000, impacto: 78, risco: 20, descricao: "Painéis, dashboards, responsividade, narrativa pública e rotas institucionais.", cautela: "Preservar links antigos e revisar codificação visual." },
   { area: "Conteúdo e documentação", fase: "0-90 dias", tipo: "Curto prazo", valor: 28000, impacto: 66, risco: 16, descricao: "Documentos, pitch, demonstrativos, manuais, relatórios e orientação para IAs.", cautela: "Classificar público, interno, sigiloso e secreto antes de publicar." },
@@ -18,7 +15,7 @@ const budget = [
 
 const scenarios = {
   conservador: { label: "Conservador", factor: 0.74, runway: 9, foco: "provar MVP, reduzir custo fixo e validar demanda" },
-  base: { label: "Base", factor: 1, runway: 12, foco: "produto seguro, pilotos e Web Summit" },
+  base: { label: "Base", factor: 1, runway: 12, foco: "produto seguro, pilotos e relacionamento pos-evento" },
   expansao: { label: "Expansão", factor: 1.42, runway: 18, foco: "backend, time, go-to-market e IA avançada" },
 };
 
@@ -202,7 +199,7 @@ function renderPriorityTable(rows) {
       <td>${brl.format(row.valor)}</td>
       <td>${row.impacto}</td>
       <td>${row.risco}</td>
-      <td>${row.fase === "Antes da viagem" ? "Resolver antes de embarcar" : "Planejar captação por fase"}</td>
+      <td>Planejar captacao por fase</td>
     </tr>
   `).join("");
 }
@@ -210,9 +207,8 @@ function renderPriorityTable(rows) {
 function renderPriorityDashboard() {
   if (!q("#priorityDashboard")) return;
   const rows = priorityRows();
-  const beforeTrip = budget.filter((row) => row.fase === "Antes da viagem");
   q("#priorityTotal").textContent = brl.format(sumRaw(rows));
-  q("#beforeTripTotal").textContent = brl.format(sumRaw(beforeTrip));
+  q("#beforeTripTotal").textContent = "Encerrado";
   q("#priorityCount").textContent = String(rows.length);
   q("#priorityRisk").textContent = String(Math.max(...rows.map((row) => row.risco), 0));
   drawBars(q("#priorityBarChart"), rows);
@@ -230,11 +226,11 @@ function initPriorityDashboard() {
 function renderCategories() {
   if (!q("#categoriesDashboard")) return;
   const categoryRows = budget.map((row) => {
-    const prazo = row.fase === "Antes da viagem" ? "Curtíssimo prazo / antes da viagem" : row.fase;
+    const prazo = row.fase;
     return { ...row, prazo };
   });
   q("#categoryTotal").textContent = brl.format(sumRaw(budget));
-  q("#categoryBeforeTrip").textContent = brl.format(sumRaw(budget.filter((row) => row.fase === "Antes da viagem")));
+  q("#categoryBeforeTrip").textContent = "Encerrado";
   q("#categoryLargest").textContent = budget.reduce((max, row) => row.valor > max.valor ? row : max, budget[0]).area;
   drawBars(q("#categoryStackChart"), budget);
   const profileRows = Object.entries(profiles).map(([key, profile]) => ({
