@@ -31,10 +31,46 @@ const profiles = {
 let sortKey = "valor";
 let sortDir = -1;
 
+const typeColors = {
+  "Curto prazo": "#d9ad59",
+  "Médio prazo": "#4fd5e8",
+  "Longo prazo": "#4fb477",
+};
+
+const fallbackColors = ["#d9ad59", "#4fd5e8", "#4fb477", "#f4d58d", "#e98686", "#9f8cff"];
+
 function q(selector) { return document.querySelector(selector); }
 function qa(selector) { return [...document.querySelectorAll(selector)]; }
 function sumRaw(rows) { return rows.reduce((sum, row) => sum + row.valor, 0); }
 function total(rows) { return rows.reduce((sum, row) => sum + (row.ajustado ?? row.valor), 0); }
+
+function colorFor(label, index = 0) {
+  return typeColors[label] || fallbackColors[index % fallbackColors.length];
+}
+
+function groupedBy(rows, key) {
+  return Object.values(rows.reduce((acc, row) => {
+    const label = row[key];
+    acc[label] ||= { label, valor: 0, count: 0 };
+    acc[label].valor += row.ajustado ?? row.valor;
+    acc[label].count += 1;
+    return acc;
+  }, {}));
+}
+
+function renderLegend(selector, items, note = "") {
+  const legend = q(selector);
+  if (!legend) return;
+  if (!items.length) {
+    legend.innerHTML = "";
+    return;
+  }
+  legend.innerHTML = items.map((item, index) => {
+    const color = item.color || colorFor(item.label, index);
+    const value = item.valor ? ` <strong>${brl.format(item.valor)}</strong>` : "";
+    return `<span><i style="background:${color}"></i>${item.label}${value}</span>`;
+  }).join("") + (note ? `<small>${note}</small>` : "");
+}
 
 function scaledRows() {
   const scenario = scenarios[q("#scenario")?.value || "base"];
@@ -72,9 +108,10 @@ function drawBars(canvas, rows) {
     const y = gap + index * (barH + gap);
     const value = row.ajustado ?? row.valor;
     const bw = (value / max) * (w - 182);
-    ctx.fillStyle = "rgba(217,173,89,.22)";
+    const color = colorFor(row.tipo, index);
+    ctx.fillStyle = "rgba(217,173,89,.18)";
     ctx.fillRect(156, y, w - 178, barH);
-    ctx.fillStyle = "#d9ad59";
+    ctx.fillStyle = color;
     ctx.fillRect(156, y, bw, barH);
     ctx.fillStyle = "#dce8f4";
     ctx.fillText(fitLabel(row.area, 22), 6, y + barH * .68);
@@ -90,12 +127,7 @@ function drawDonut(canvas, rows, groupKey = "tipo") {
   canvas.height = canvas.clientHeight * dpr;
   ctx.scale(dpr, dpr);
   ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-  const grouped = Object.values(rows.reduce((acc, row) => {
-    const key = row[groupKey];
-    acc[key] ||= { label: key, valor: 0 };
-    acc[key].valor += row.ajustado ?? row.valor;
-    return acc;
-  }, {}));
+  const grouped = groupedBy(rows, groupKey);
   const sum = total(rows);
   if (!rows.length || !sum) {
     ctx.fillStyle = "#dce8f4";
@@ -106,7 +138,6 @@ function drawDonut(canvas, rows, groupKey = "tipo") {
   const cx = canvas.clientWidth / 2;
   const cy = canvas.clientHeight / 2;
   const radius = Math.min(cx, cy) - 18;
-  const colors = ["#d9ad59", "#4fd5e8", "#4fb477", "#f4d58d", "#e98686", "#9f8cff"];
   let start = -Math.PI / 2;
   grouped.forEach((item, index) => {
     const angle = (item.valor / sum) * Math.PI * 2;
@@ -114,7 +145,7 @@ function drawDonut(canvas, rows, groupKey = "tipo") {
     ctx.moveTo(cx, cy);
     ctx.arc(cx, cy, radius, start, start + angle);
     ctx.closePath();
-    ctx.fillStyle = colors[index % colors.length];
+    ctx.fillStyle = colorFor(item.label, index);
     ctx.fill();
     start += angle;
   });
@@ -153,6 +184,7 @@ function renderTable(rows) {
 function renderDashboard() {
   if (!q("#dashboard")) return;
   const rows = scaledRows();
+  const selectedType = q("#typeFilter")?.value || "todos";
   const scenario = scenarios[q("#scenario").value];
   const profile = profiles[q("#profile").value];
   const sum = total(rows);
@@ -164,6 +196,12 @@ function renderDashboard() {
   q("#scenarioNote").textContent = `${scenario.label}: ${scenario.foco}. Perfil selecionado: ${profile.label}; tese de conversa: ${profile.tese}.`;
   drawBars(q("#barChart"), rows);
   drawDonut(q("#donutChart"), rows);
+  const typeGroups = groupedBy(rows, "tipo").map((item, index) => ({ ...item, color: colorFor(item.label, index) }));
+  const legendNote = selectedType === "todos"
+    ? "Cada cor representa um tipo de despesa."
+    : `Filtro ativo: ${selectedType}. A cor destaca o tipo selecionado.`;
+  renderLegend("#barLegend", typeGroups, legendNote);
+  renderLegend("#donutLegend", typeGroups, legendNote);
   renderTable(rows);
 }
 
