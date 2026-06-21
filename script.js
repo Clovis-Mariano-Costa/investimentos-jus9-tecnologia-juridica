@@ -13,6 +13,64 @@ const budget = [
   { area: "IA e automacao avancada", fase: "180-365 dias", tipo: "Longo prazo", valor: 168000, impacto: 89, risco: 42, descricao: "Memoria governada, agentes, PDF/download, triagem juridica, automacoes, classificacao documental e integracoes assistidas.", cautela: "Manter limites de IA, supervisao humana, logs seguros e fallback sem dados reais." },
   { area: "Reserva tecnica", fase: "180-365 dias", tipo: "Longo prazo", valor: 80000, impacto: 58, risco: 5, descricao: "Margem para imprevistos, retrabalho, compliance, infraestrutura, contingencia de evento e ajustes de seguranca.", cautela: "Usar apenas para risco real, nao para expansao nao revisada." },
 ];
+
+const budgetDetails = [
+  { area: "Produto e engenharia", item: "DAJ e fluxos de MVP", valor: 42000, entrega: "Refino de DAJ, cadastros, estados e fluxos por perfil.", governanca: "Dados ficticios ate producao." },
+  { area: "Produto e engenharia", item: "Agenda real e eventos", valor: 24000, entrega: "Google Agenda, retorno por modulo, listagem e testes.", governanca: "Escopos minimos e revisao humana." },
+  { area: "Produto e engenharia", item: "Documentos e Drive Saver", valor: 30000, entrega: "Mini backend, classificacao e salvamento governado.", governanca: "Cofre nunca automatico." },
+  { area: "Produto e engenharia", item: "Perfis, formularios e MVPs", valor: 38000, entrega: "Perfis de usuario, modulos, formularios e Demo Autor/Editor.", governanca: "Separar publico, interno e sensivel." },
+  { area: "Produto e engenharia", item: "Testes e integracoes", valor: 42000, entrega: "QA, rotas, PWA, downloads, scripts e regressao.", governanca: "Registrar falhas antes do uso real." },
+
+  { area: "Design e frontend", item: "Refino visual dos portais", valor: 26000, entrega: "Home, historia, MVPs, investimentos e paginas de apoio.", governanca: "Preservar identidade visual." },
+  { area: "Design e frontend", item: "Dashboards e graficos", valor: 18000, entrega: "Tabelas, filtros, legendas, graficos e leitura mobile.", governanca: "Estimativas nao vinculantes." },
+  { area: "Design e frontend", item: "Chat Charlie Echo", valor: 16000, entrega: "Menus, memoria, acoes, PDF/download e padroes de tela.", governanca: "Avisos proporcionais." },
+  { area: "Design e frontend", item: "PWA, responsividade e formularios", valor: 28000, entrega: "Service worker, mobile, scroll, foto/avatar e estados.", governanca: "Consentimento e minimizacao." },
+
+  { area: "Conteudo e documentacao", item: "Pitch, one-page e deck", valor: 11000, entrega: "Materiais para investidores, parceiros, bancos e evento.", governanca: "Distinguir visao e compromisso formal." },
+  { area: "Conteudo e documentacao", item: "Governanca publica", valor: 9000, entrega: "Termos, politicas, versoes publicas e avisos de MVP.", governanca: "Sem detalhes sensiveis." },
+  { area: "Conteudo e documentacao", item: "Guias internos para IA", valor: 9000, entrega: "Instrucoes para Charlie Echo operar modulos e mini backend.", governanca: "Sem chaves ou tokens." },
+  { area: "Conteudo e documentacao", item: "Roteiros e versionamento", valor: 13000, entrega: "Follow-up, roteiro de demo, versionamento e registro.", governanca: "Separar publico e interno." },
+
+  { area: "Backend seguro", item: "Login real", valor: 42000, entrega: "OAuth Google, sessao, cookies seguros, callback por modulo e logout.", governanca: "Segredos somente em ambiente autorizado." },
+  { area: "Backend seguro", item: "Permissoes por perfil", valor: 32000, entrega: "Papeis como fundador, advogado lider, assessor, equipe, laboratorio, autor e editora.", governanca: "Menor privilegio." },
+  { area: "Backend seguro", item: "Banco de dados operacional", valor: 38000, entrega: "Modelos, migracoes, registros e relacionamento entre modulos.", governanca: "Backup, minimizacao e LGPD." },
+  { area: "Backend seguro", item: "Logs e auditoria", valor: 24000, entrega: "Quem acessou, quando, origem, acao, modulo e alteracao.", governanca: "Sem conteudo sigiloso desnecessario." },
+  { area: "Backend seguro", item: "APIs governadas", valor: 28000, entrega: "Rotas para agenda, documentos, perfis, permissao, contexto da IA e status.", governanca: "Validacao, rate limit e origem permitida." },
+  { area: "Backend seguro", item: "Drive Saver e Agenda", valor: 30000, entrega: "Google Drive Saver, Google Calendar, retorno por modulo e execucao segura.", governanca: "COFRE_NAO_AUTOMATICO bloqueado." },
+  { area: "Backend seguro", item: "Areas privadas e cofre write-only", valor: 26000, entrega: "Separar publico, interno, entrada para revisao e escrita restrita no cofre.", governanca: "Sem leitura ampla por IA publica." },
+  { area: "Backend seguro", item: "Backup, testes e rollback", valor: 16000, entrega: "Recuperacao, teste de falha, rollback e verificacao de deploy.", governanca: "Procedimento documentado." },
+
+  { area: "Governanca e juridico", item: "LGPD e privacidade", valor: 18000, entrega: "Finalidade, consentimento, retencao e direitos do titular.", governanca: "Revisao humana juridica." },
+  { area: "Governanca e juridico", item: "Termos, politicas e contratos", valor: 16000, entrega: "Uso, privacidade, cookies, pilotos e parcerias.", governanca: "Sem promessa de producao antecipada." },
+  { area: "Governanca e juridico", item: "Classificacao documental", valor: 12000, entrega: "Publico, interno, sigiloso, revisao e cofre.", governanca: "Responsavel humano." },
+  { area: "Governanca e juridico", item: "Familia Virtual e riscos", valor: 28000, entrega: "Papeis, limites, continuidade e mapa de riscos.", governanca: "Governanca primeva sob aviso humano." },
+
+  { area: "Cloud, dominios e seguranca", item: "Cloudflare, DNS e dominios", valor: 20000, entrega: "Workers, Pages, assets, DNS, SSL e subdominios.", governanca: "Rollback e responsaveis." },
+  { area: "Cloud, dominios e seguranca", item: "Secrets e variaveis", valor: 8000, entrega: "Wrangler secrets, rotacao e checklist.", governanca: "Nunca commitar segredo." },
+  { area: "Cloud, dominios e seguranca", item: "Monitoramento, e-mail e rotas", valor: 18000, entrega: "Saude, alertas, e-mails institucionais e rotas.", governanca: "Evitar coleta excessiva." },
+  { area: "Cloud, dominios e seguranca", item: "Protecao de rotas", valor: 8000, entrega: "Headers, cache seguro e regras de acesso.", governanca: "Menor acesso." },
+
+  { area: "Comercial e parcerias", item: "Follow-up pos-evento", valor: 26000, entrega: "Contatos, mensagens, reunioes e funil apos Web Summit.", governanca: "Nao expor leads." },
+  { area: "Comercial e parcerias", item: "Parcerias institucionais", valor: 28000, entrega: "Bancos, universidades, hubs, escritorios e entidades.", governanca: "Registrar status." },
+  { area: "Comercial e parcerias", item: "Materiais comerciais", valor: 22000, entrega: "Decks, one-page, propostas e paginas de apoio.", governanca: "Valores como estimativa." },
+  { area: "Comercial e parcerias", item: "Pilotos e canais", valor: 62000, entrega: "Pilotos controlados, canais, comunidade e relacionamento.", governanca: "Dados reais so com contrato e backend seguro." },
+
+  { area: "Equipe e operacao", item: "Bolsa operacional do fundador", valor: 48000, entrega: "Foco de execucao, reunioes, produto e direcao.", governanca: "Prestacao por marcos." },
+  { area: "Equipe e operacao", item: "Apoio tecnico", valor: 42000, entrega: "Desenvolvimento, QA, publicacao, infraestrutura e automacoes.", governanca: "Revisao de codigo." },
+  { area: "Equipe e operacao", item: "Atendimento, cadastro e administracao", valor: 46000, entrega: "Triagem, perfis, formularios, agenda e relatorios.", governanca: "Minimizar dados pessoais." },
+  { area: "Equipe e operacao", item: "Conteudo e revisao humana", valor: 56000, entrega: "Textos, guias, treinamento e revisao especializada.", governanca: "Decisoes finais humanas." },
+
+  { area: "IA e automacao avancada", item: "Memoria governada", valor: 32000, entrega: "Memoria por sala, modulo, usuario, perfil e contexto.", governanca: "Usuario controla memoria." },
+  { area: "IA e automacao avancada", item: "Agentes por modulo", valor: 30000, entrega: "Especialistas para DAJ, autor/editor, universidade, laboratorio e social.", governanca: "Limites por ambiente." },
+  { area: "IA e automacao avancada", item: "PDF, download e pacotes", valor: 22000, entrega: "Relatorios, fichas, arquivos locais e historico.", governanca: "Sem segredo em pacote publico." },
+  { area: "IA e automacao avancada", item: "Triagem e automacoes", valor: 52000, entrega: "Classificar pedidos, documentos, agenda, tarefas e status.", governanca: "Cofre sem automacao aberta." },
+  { area: "IA e automacao avancada", item: "Integracoes e fallback", valor: 32000, entrega: "API segura, fallback local, observabilidade e continuidade.", governanca: "Nao pedir chave em chat." },
+
+  { area: "Reserva tecnica", item: "Contingencia de infraestrutura", valor: 22000, entrega: "Instabilidade, escala, cache, dominios e incidentes.", governanca: "Uso com registro." },
+  { area: "Reserva tecnica", item: "Retrabalho e seguranca", valor: 20000, entrega: "Correcoes emergenciais, bugs e reforco tecnico.", governanca: "Priorizar risco real." },
+  { area: "Reserva tecnica", item: "Compliance e evento", valor: 28000, entrega: "Ajustes juridicos, materiais, deslocamento e demonstracao.", governanca: "Revisao humana." },
+  { area: "Reserva tecnica", item: "Margem tecnica final", valor: 10000, entrega: "Ferramentas, testes e emergencias controladas.", governanca: "Justificar uso." },
+];
 const scenarios = {
   conservador: { label: "Conservador", factor: 0.72, runway: 9, foco: "provar MVP, reduzir custo fixo e validar demanda" },
   base: { label: "Base", factor: 1, runway: 12, foco: "produto seguro, pilotos e relacionamento pos-evento" },
@@ -76,6 +134,26 @@ function scaledRows() {
   const type = q("#typeFilter")?.value || "todos";
   return budget
     .map((row) => ({ ...row, ajustado: Math.round(row.valor * scenario.factor) }))
+    .filter((row) => type === "todos" || row.tipo === type);
+}
+
+function parentForDetail(detail) {
+  return budget.find((row) => row.area === detail.area) || {};
+}
+
+function detailRows() {
+  const scenario = scenarios[q("#scenario")?.value || "base"];
+  const type = q("#typeFilter")?.value || "todos";
+  return budgetDetails
+    .map((detail) => {
+      const parent = parentForDetail(detail);
+      return {
+        ...detail,
+        tipo: parent.tipo || "",
+        fase: parent.fase || "",
+        ajustado: Math.round(detail.valor * scenario.factor),
+      };
+    })
     .filter((row) => type === "todos" || row.tipo === type);
 }
 
@@ -180,9 +258,65 @@ function renderTable(rows) {
   `).join("");
 }
 
+function renderDetailTables(details) {
+  const detailBody = q("#detailBudgetBody");
+  if (detailBody) {
+    detailBody.innerHTML = details.map((row) => `
+      <tr>
+        <td><strong>${row.area}</strong></td>
+        <td>${row.item}</td>
+        <td>${row.fase}</td>
+        <td>${brl.format(row.ajustado)}</td>
+        <td>${row.entrega}</td>
+        <td>${row.governanca}</td>
+      </tr>
+    `).join("");
+  }
+
+  const areaSummary = Object.values(details.reduce((acc, row) => {
+    acc[row.area] ||= { area: row.area, fase: row.fase, tipo: row.tipo, total: 0, count: 0, max: row };
+    acc[row.area].total += row.ajustado;
+    acc[row.area].count += 1;
+    if (row.ajustado > acc[row.area].max.ajustado) acc[row.area].max = row;
+    return acc;
+  }, {}));
+  const areaBody = q("#areaSummaryBody");
+  if (areaBody) {
+    areaBody.innerHTML = areaSummary.map((row) => `
+      <tr>
+        <td><strong>${row.area}</strong></td>
+        <td>${row.fase}</td>
+        <td>${row.count}</td>
+        <td>${brl.format(row.total)}</td>
+        <td>${row.max.item} (${brl.format(row.max.ajustado)})</td>
+      </tr>
+    `).join("");
+  }
+
+  const phaseSummary = Object.values(details.reduce((acc, row) => {
+    acc[row.fase] ||= { fase: row.fase, tipo: row.tipo, total: 0, count: 0 };
+    acc[row.fase].total += row.ajustado;
+    acc[row.fase].count += 1;
+    return acc;
+  }, {}));
+  const phaseBody = q("#phaseSummaryBody");
+  if (phaseBody) {
+    phaseBody.innerHTML = phaseSummary.map((row) => `
+      <tr>
+        <td><strong>${row.fase}</strong></td>
+        <td><span class="pill">${row.tipo}</span></td>
+        <td>${row.count}</td>
+        <td>${brl.format(row.total)}</td>
+        <td>${row.tipo === "Medio prazo" ? "fundacao tecnica segura" : row.tipo === "Curto prazo" ? "prova e demonstracao" : "escala e operacao"}</td>
+      </tr>
+    `).join("");
+  }
+}
+
 function renderDashboard() {
   if (!q("#dashboard")) return;
   const rows = scaledRows();
+  const details = detailRows();
   const selectedType = q("#typeFilter")?.value || "todos";
   const scenario = scenarios[q("#scenario").value];
   const profile = profiles[q("#profile").value];
@@ -195,13 +329,24 @@ function renderDashboard() {
   q("#scenarioNote").textContent = `${scenario.label}: ${scenario.foco}. Perfil selecionado: ${profile.label}; tese de conversa: ${profile.tese}.`;
   drawBars(q("#barChart"), rows);
   drawDonut(q("#donutChart"), rows);
+  const phaseRows = groupedBy(details, "fase").map((row) => ({ area: row.label, tipo: row.label, valor: row.valor, ajustado: row.valor }));
+  drawBars(q("#phaseChart"), phaseRows);
+  const backendDetails = details
+    .filter((row) => row.area === "Backend seguro")
+    .map((row) => ({ area: row.item, tipo: row.area, valor: row.ajustado, ajustado: row.ajustado }));
+  drawBars(q("#backendDetailChart"), backendDetails);
   const typeGroups = groupedBy(rows, "tipo").map((item, index) => ({ ...item, color: colorFor(item.label, index) }));
+  const phaseGroups = groupedBy(details, "fase").map((item, index) => ({ ...item, color: colorFor(item.label, index) }));
+  const backendLegend = backendDetails.map((row, index) => ({ label: row.area, valor: row.valor, color: fallbackColors[index % fallbackColors.length] }));
   const legendNote = selectedType === "todos"
     ? "Cada cor representa um tipo de despesa."
     : `Filtro ativo: ${selectedType}. A cor destaca o tipo selecionado.`;
   renderLegend("#barLegend", typeGroups, legendNote);
   renderLegend("#donutLegend", typeGroups, legendNote);
+  renderLegend("#phaseLegend", phaseGroups, "Fases recalculadas conforme o cenario selecionado.");
+  renderLegend("#backendDetailLegend", backendLegend, "Abertura do bloco Backend seguro; Login real e um item proprio.");
   renderTable(rows);
+  renderDetailTables(details);
 }
 
 function initDashboard() {

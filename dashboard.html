@@ -76,6 +76,8 @@
         <div class="chart-grid">
           <article class="chart-card"><h3>Orçamento por área</h3><canvas id="barChart" height="300"></canvas><div id="barLegend" class="chart-legend" aria-label="Legenda do orçamento por área"></div></article>
           <article class="chart-card"><h3>Distribuição por prioridade</h3><canvas id="donutChart" height="300"></canvas><div id="donutLegend" class="chart-legend" aria-label="Legenda da distribuição por prioridade"></div></article>
+          <article class="chart-card"><h3>Total por fase</h3><canvas id="phaseChart" height="300"></canvas><div id="phaseLegend" class="chart-legend" aria-label="Legenda do total por fase"></div></article>
+          <article class="chart-card"><h3>Backend seguro por item</h3><canvas id="backendDetailChart" height="300"></canvas><div id="backendDetailLegend" class="chart-legend" aria-label="Legenda do backend seguro"></div></article>
         </div>
       </section>
     </div>
@@ -95,8 +97,43 @@
       </div>
     </div>
   </section>
+
+  <section class="section light">
+    <div class="container">
+      <div class="section-head">
+        <div><h2>Orçamento mastigado por item.</h2></div>
+        <p>Esta abertura mostra o que existe dentro de cada bloco. Exemplo: em Backend seguro, Login real aparece como item próprio, com valor estimado e entrega esperada.</p>
+      </div>
+      <div class="chart-grid detail-dashboard-grid">
+        <article class="chart-card">
+          <h3>Resumo por área</h3>
+          <div class="table-wrap compact-table">
+            <table>
+              <thead><tr><th>Área</th><th>Fase</th><th>Itens</th><th>Total</th><th>Maior item</th></tr></thead>
+              <tbody id="areaSummaryBody"></tbody>
+            </table>
+          </div>
+        </article>
+        <article class="chart-card">
+          <h3>Resumo por fase</h3>
+          <div class="table-wrap compact-table">
+            <table>
+              <thead><tr><th>Fase</th><th>Tipo</th><th>Itens</th><th>Total</th><th>Leitura rápida</th></tr></thead>
+              <tbody id="phaseSummaryBody"></tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+      <div class="table-wrap budget-detail-table">
+        <table>
+          <thead><tr><th>Área</th><th>Subitem</th><th>Fase</th><th>Valor</th><th>Entrega prática</th><th>Observação de governança</th></tr></thead>
+          <tbody id="detailBudgetBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 </main>
 <footer class="footer"><div class="container">Dashboard demonstrativo. Não é oferta pública de valores mobiliários nem recomendação de investimento.</div></footer>
-<script src="script.js?v=20260621-orcamento-1248-v1"></script>
+<script src="script.js?v=20260621-orcamento-detalhado-v2"></script>
 </body>
 </html>
