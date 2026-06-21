@@ -1,4 +1,4 @@
-# Versionamento - Governanca Minima v1.0
+﻿# Versionamento - Governanca Minima v1.0
 
 CLASSIFICACAO: INTERNO / VERSIONAMENTO
 AUTORIZACAO: Fundador / revisao humana
@@ -15,4 +15,4 @@ REVISAO: humana recomendada
 - Adiciona `SECURITY.md`.
 - Adiciona `NAO_PUBLICAR_SEM_REVISAR.md`.
 
-© Jus 9 Tecnologia Juridica - software livre, autoria preservada.
+(c) Jus 9 Tecnologia Juridica - software livre, autoria preservada.

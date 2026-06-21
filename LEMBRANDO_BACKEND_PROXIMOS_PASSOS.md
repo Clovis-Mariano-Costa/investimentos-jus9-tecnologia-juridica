@@ -1,4 +1,4 @@
-# LEMBRANDO - Backend Jus 9
+﻿# LEMBRANDO - Backend Jus 9
 
 Data: 2026-05-19
 Repertorio: investimentos-jus9-tecnologia-juridica
@@ -49,4 +49,4 @@ Se nao puder ser feito imediatamente com seguranca, nao simular como se estivess
 
 Antes de mexer neste repertorio, ler este arquivo, verificar se a demanda exige backend e consultar as regras centrais em governanca/documentacao. Se a parte real ainda nao puder ser feita, deixar o proximo passo aqui em vez de criar uma promessa falsa no frontend.
 
-© Jus 9 Tecnologia Juridica - software livre, autoria preservada.
+(c) Jus 9 Tecnologia Juridica - software livre, autoria preservada.

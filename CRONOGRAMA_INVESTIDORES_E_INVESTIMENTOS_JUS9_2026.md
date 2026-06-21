@@ -1,4 +1,4 @@
-# Cronograma - Investidores e Investimentos Jus 9 2026
+﻿# Cronograma - Investidores e Investimentos Jus 9 2026
 
 CLASSIFICACAO: PUBLICO / PLANEJAMENTO / INVESTIDORES / REVISAO HUMANA
 DATA BASE: 2026-05-20
@@ -200,4 +200,4 @@ Entregavel: dossie de investimento mais robusto e pronto para nova rodada de con
 - `mensagens-follow-up-investidores.html`: modelos de mensagens por perfil.
 - `leads-investidores-template.csv`: modelo demonstrativo de controle de leads, sem dados reais.
 
-© Jus 9 Tecnologia Juridica - planejamento publico sujeito a revisao humana.
+(c) Jus 9 Tecnologia Juridica - planejamento publico sujeito a revisao humana.

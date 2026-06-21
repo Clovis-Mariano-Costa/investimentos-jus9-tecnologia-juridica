@@ -1,4 +1,4 @@
-# Nao Publicar Sem Revisar
+﻿# Nao Publicar Sem Revisar
 
 CLASSIFICACAO: PUBLICO / ALERTA DE GOVERNANCA
 AUTORIZACAO: publicacao permitida
@@ -19,4 +19,4 @@ Antes de publicar material para investidores, revisar:
 - links externos;
 - informacoes ainda em MVP.
 
-© Jus 9 Tecnologia Juridica - software livre, autoria preservada.
+(c) Jus 9 Tecnologia Juridica - software livre, autoria preservada.

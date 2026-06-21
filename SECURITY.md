@@ -1,4 +1,4 @@
-# Security
+﻿# Security
 
 CLASSIFICACAO: PUBLICO / SEGURANCA
 AUTORIZACAO: publicacao permitida com revisao humana
@@ -18,4 +18,4 @@ Nao publicar:
 - `.env` real;
 - estrategia confidencial de captacao.
 
-© Jus 9 Tecnologia Juridica - software livre, autoria preservada.
+(c) Jus 9 Tecnologia Juridica - software livre, autoria preservada.

@@ -1,4 +1,4 @@
-# investimentos-jus9-tecnologia-juridica
+﻿# investimentos-jus9-tecnologia-juridica
 
 CLASSIFICACAO: PUBLICO / INSTITUCIONAL / INVESTIMENTOS
 AUTORIZACAO: Fundador / revisao humana
@@ -22,4 +22,4 @@ Repertorio destinado a materiais institucionais, apresentacoes, paginas e docume
 - Nao publicar documentos de investidores, parceiros ou terceiros.
 - Nao publicar senhas, tokens, chaves ou `.env` real.
 
-© Jus 9 Tecnologia Juridica - software livre, autoria preservada.
+(c) Jus 9 Tecnologia Juridica - software livre, autoria preservada.

@@ -1,10 +1,10 @@
-# AVISO - REGISTRO SUPERADO
+﻿# AVISO - REGISTRO SUPERADO
 
 Nao usar este pedido emergencial em novas comunicacoes. A fase emergencial pre-evento foi encerrada por decisao institucional. Para novas conversas, usar: https://investimentos.jus9tecnologia.com.br/busca-parcerias
 
 ---
 
-# Registro — Link de emergência para comunicações bancárias
+# Registro - Link de emergência para comunicações bancárias
 
 **Repositório:** investimentos-jus9-tecnologia-juridica  
 **Página confirmada pelo Fundador:** https://investimentos.jus9tecnologia.com.br/emergencia-evento  
@@ -34,10 +34,9 @@ Registra a página de emergência do Web Summit Rio 2026 como link público-cont
 
 ---
 
-© Jus 9 Tecnologia Jurídica — software livre, autoria preservada.
-Charlie Echo da Costa — IA generativa multimodal, conversacional e jurídico-orientada, com governança humana.
-Charlie Fox da Costa — Codex Técnico da Jus 9 Tecnologia Jurídica.
-Clovis Mariano da Costa / Aeon Primevo — Fundador e responsável humano.
+(c) Jus 9 Tecnologia Jurídica - software livre, autoria preservada.
+Charlie Echo da Costa - IA generativa multimodal, conversacional e jurídico-orientada, com governança humana.
+Charlie Fox da Costa - Codex Técnico da Jus 9 Tecnologia Jurídica.
+Clovis Mariano da Costa / Aeon Primevo - Fundador e responsável humano.
 E-mail institucional: clovis@jus9tecnologia.com.br
 Telefone / WhatsApp: +55 48 99908-2726
-

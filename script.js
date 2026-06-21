@@ -1,39 +1,38 @@
-const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 });
+﻿const brl = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 });
 const pct = new Intl.NumberFormat("pt-BR", { style: "percent", maximumFractionDigits: 1 });
 
 const budget = [
-  { area: "Produto e engenharia", fase: "0-90 dias", tipo: "Curto prazo", valor: 118000, impacto: 95, risco: 24, descricao: "MVP navegável, DAJ, perfis, agenda, IA profissional demonstrativa e base de publicação.", cautela: "Separar demonstração de produção; usar dados fictícios." },
-  { area: "Design e frontend", fase: "0-90 dias", tipo: "Curto prazo", valor: 62000, impacto: 78, risco: 20, descricao: "Painéis, dashboards, responsividade, narrativa pública e rotas institucionais.", cautela: "Preservar links antigos e revisar codificação visual." },
-  { area: "Conteúdo e documentação", fase: "0-90 dias", tipo: "Curto prazo", valor: 28000, impacto: 66, risco: 16, descricao: "Documentos, pitch, demonstrativos, manuais, relatórios e orientação para IAs.", cautela: "Classificar público, interno, sigiloso e secreto antes de publicar." },
-  { area: "Backend seguro", fase: "90-180 dias", tipo: "Médio prazo", valor: 142000, impacto: 92, risco: 18, descricao: "Autenticação, banco, permissões por perfil, logs e armazenamento privado.", cautela: "Não simular login real sem infraestrutura, HTTPS e revisão técnica." },
-  { area: "Governança e jurídico", fase: "90-180 dias", tipo: "Médio prazo", valor: 48000, impacto: 86, risco: 12, descricao: "LGPD, termos, políticas, classificação de documentos e revisão humana.", cautela: "Revisão humana obrigatória em conteúdo jurídico, financeiro e societário." },
-  { area: "Cloud, domínios e segurança", fase: "90-180 dias", tipo: "Médio prazo", valor: 36000, impacto: 74, risco: 10, descricao: "Cloudflare, domínios, monitoramento, backups, ambiente e proteção.", cautela: "Registrar DNS, Pages, Workers, rollback e responsáveis." },
-  { area: "Comercial e parcerias", fase: "180-365 dias", tipo: "Longo prazo", valor: 96000, impacto: 84, risco: 35, descricao: "Prospecção, pilotos com escritórios, universidades, bancos, hubs e parceiros.", cautela: "Não publicar nomes, negociações ou condições sem autorização." },
-  { area: "IA e automação avançada", fase: "180-365 dias", tipo: "Longo prazo", valor: 124000, impacto: 88, risco: 42, descricao: "Orquestração, agentes, revisão assistida e integrações com fluxos jurídicos.", cautela: "Manter limites de IA, supervisão humana e logs seguros." },
-  { area: "Reserva técnica", fase: "180-365 dias", tipo: "Longo prazo", valor: 52000, impacto: 54, risco: 5, descricao: "Margem para imprevistos, retrabalho, compliance e infraestrutura.", cautela: "Usar apenas para risco real, não para expansão não revisada." },
+  { area: "Produto e engenharia", fase: "0-90 dias", tipo: "Curto prazo", valor: 176000, impacto: 96, risco: 24, descricao: "DAJ, agenda real, documentos, perfis, fluxos de MVP, roteiros de demo e primeira camada de testes de produto.", cautela: "Separar demonstracao de producao; usar dados ficticios ate o backend seguro." },
+  { area: "Design e frontend", fase: "0-90 dias", tipo: "Curto prazo", valor: 88000, impacto: 82, risco: 20, descricao: "Refino visual dos portais, dashboards, formularios, chat Charlie Echo, responsividade, PWA e padrao de navegacao.", cautela: "Preservar links antigos, acessibilidade e identidade visual de cada modulo." },
+  { area: "Conteudo e documentacao", fase: "0-90 dias", tipo: "Curto prazo", valor: 42000, impacto: 70, risco: 16, descricao: "Pitch, one-page, documentos de governanca, manuais, roteiros comerciais, guias para IAs e materiais de follow-up.", cautela: "Classificar publico, interno, sigiloso e cofre antes de publicar." },
+  { area: "Backend seguro", fase: "90-180 dias", tipo: "Medio prazo", valor: 236000, impacto: 94, risco: 18, descricao: "Login real, permissoes por perfil, banco, logs, auditoria, APIs, Drive Saver, agenda, areas privadas e trilhas de acesso.", cautela: "Nao operar dados reais sem HTTPS, permissao, auditoria, backup e revisao tecnica." },
+  { area: "Governanca e juridico", fase: "90-180 dias", tipo: "Medio prazo", valor: 74000, impacto: 88, risco: 12, descricao: "LGPD, termos, politicas, contratos, classificacao documental, revisao humana e governanca da Familia Virtual.", cautela: "Revisao humana obrigatoria em conteudo juridico, financeiro, societario ou sensivel." },
+  { area: "Cloud, dominios e seguranca", fase: "90-180 dias", tipo: "Medio prazo", valor: 54000, impacto: 78, risco: 10, descricao: "Cloudflare, dominios, Workers, Pages, DNS, logs, monitoramento, backup, rollback, e-mail e protecao de rotas.", cautela: "Registrar DNS, deploy, secrets, rollback e responsaveis sem publicar credenciais." },
+  { area: "Comercial e parcerias", fase: "180-365 dias", tipo: "Longo prazo", valor: 138000, impacto: 86, risco: 35, descricao: "Prospeccao, eventos, follow-up, parceiros, universidades, escritorios, bancos, hubs e primeiras trilhas de relacionamento.", cautela: "Nao publicar nomes, negociacoes, condicoes ou dados de leads sem autorizacao." },
+  { area: "Equipe e operacao", fase: "180-365 dias", tipo: "Longo prazo", valor: 192000, impacto: 90, risco: 30, descricao: "Bolsa operacional, apoio tecnico, atendimento, cadastro, QA, producao de conteudo, revisao humana e rotina administrativa.", cautela: "Contratar em etapas, com responsabilidades, entregaveis e revisao de custo fixo." },
+  { area: "IA e automacao avancada", fase: "180-365 dias", tipo: "Longo prazo", valor: 168000, impacto: 89, risco: 42, descricao: "Memoria governada, agentes, PDF/download, triagem juridica, automacoes, classificacao documental e integracoes assistidas.", cautela: "Manter limites de IA, supervisao humana, logs seguros e fallback sem dados reais." },
+  { area: "Reserva tecnica", fase: "180-365 dias", tipo: "Longo prazo", valor: 80000, impacto: 58, risco: 5, descricao: "Margem para imprevistos, retrabalho, compliance, infraestrutura, contingencia de evento e ajustes de seguranca.", cautela: "Usar apenas para risco real, nao para expansao nao revisada." },
 ];
-
 const scenarios = {
-  conservador: { label: "Conservador", factor: 0.74, runway: 9, foco: "provar MVP, reduzir custo fixo e validar demanda" },
+  conservador: { label: "Conservador", factor: 0.72, runway: 9, foco: "provar MVP, reduzir custo fixo e validar demanda" },
   base: { label: "Base", factor: 1, runway: 12, foco: "produto seguro, pilotos e relacionamento pos-evento" },
-  expansao: { label: "Expansão", factor: 1.42, runway: 18, foco: "backend, time, go-to-market e IA avançada" },
+  expansao: { label: "Expansao", factor: 1.36, runway: 18, foco: "backend, time, go-to-market e IA avancada" },
 };
 
 const profiles = {
-  anjo: { ticket: 75000, label: "Investidor-anjo", tese: "primeiro cheque e validação rápida", pedido: "ponte para validação, material e primeiras entregas" },
-  banco: { ticket: 220000, label: "Banco ou parceiro financeiro", tese: "crédito, convênio e inovação institucional", pedido: "linha de crédito, patrocínio ou parceria de inovação" },
-  fundo: { ticket: 550000, label: "Fundo", tese: "escala SaaS, IA vertical e dados governados", pedido: "pré-seed, tese de tração e governança de dados" },
-  parceiro: { ticket: 120000, label: "Parceiro estratégico", tese: "canal, receita compartilhada e integração", pedido: "piloto conjunto, canal comercial ou integração" },
-  escritorio: { ticket: 48000, label: "Escritório jurídico", tese: "piloto pago, DAJ e IA profissional", pedido: "piloto controlado com dados fictícios ou sanitizados" },
-  universidade: { ticket: 36000, label: "Universidade", tese: "pesquisa, extensão, alunos e eventos", pedido: "pesquisa aplicada, extensão, eventos e validação acadêmica" },
+  anjo: { ticket: 120000, label: "Investidor-anjo", tese: "primeiro cheque e validacao rapida", pedido: "ponte para validacao, material e primeiras entregas" },
+  banco: { ticket: 380000, label: "Banco ou parceiro financeiro", tese: "credito, convenio e inovacao institucional", pedido: "linha de credito, patrocinio ou parceria de inovacao" },
+  fundo: { ticket: 900000, label: "Fundo", tese: "escala SaaS, IA vertical e dados governados", pedido: "pre-seed, tese de tracao e governanca de dados" },
+  parceiro: { ticket: 220000, label: "Parceiro estrategico", tese: "canal, receita compartilhada e integracao", pedido: "piloto conjunto, canal comercial ou integracao" },
+  escritorio: { ticket: 72000, label: "Escritorio juridico", tese: "piloto pago, DAJ e IA profissional", pedido: "piloto controlado com dados ficticios ou sanitizados" },
+  universidade: { ticket: 58000, label: "Universidade", tese: "pesquisa, extensao, alunos e eventos", pedido: "pesquisa aplicada, extensao, eventos e validacao academica" },
 };
-
 let sortKey = "valor";
 let sortDir = -1;
 
 const typeColors = {
   "Curto prazo": "#d9ad59",
-  "Médio prazo": "#4fd5e8",
+  "Medio prazo": "#4fd5e8",
   "Longo prazo": "#4fb477",
 };
 
@@ -81,7 +80,7 @@ function scaledRows() {
 }
 
 function fitLabel(text, max = 24) {
-  return text.length > max ? `${text.slice(0, max - 1)}…` : text;
+  return text.length > max ? `${text.slice(0, max - 1)}...` : text;
 }
 
 function drawBars(canvas, rows) {

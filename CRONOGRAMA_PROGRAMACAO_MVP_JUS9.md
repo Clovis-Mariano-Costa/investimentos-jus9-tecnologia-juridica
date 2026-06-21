@@ -1,4 +1,4 @@
-# Cronograma de Programação - MVP Jus 9
+﻿# Cronograma de Programação - MVP Jus 9
 
 CLASSIFICAÇÃO: PÚBLICO / PLANEJAMENTO / REVISÃO HUMANA
 
@@ -77,4 +77,4 @@ Objetivo: escala com governança.
 7. Área administrativa.
 8. Integrações externas.
 
-© Jus 9 Tecnologia Jurídica - planejamento público sujeito a revisão humana.
+(c) Jus 9 Tecnologia Jurídica - planejamento público sujeito a revisão humana.

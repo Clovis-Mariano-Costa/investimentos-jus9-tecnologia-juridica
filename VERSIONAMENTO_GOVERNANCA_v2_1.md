@@ -1,4 +1,4 @@
-# Versionamento — Governança v2.1
+﻿# Versionamento - Governança v2.1
 
 Repertório: `investimentos-jus9-tecnologia-juridica`
 

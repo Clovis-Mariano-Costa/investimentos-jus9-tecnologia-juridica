@@ -1,4 +1,4 @@
-# Jus 9 Tecnologia Jurídica — .gitignore padrão obrigatório
+﻿# Jus 9 Tecnologia Jurídica - .gitignore padrão obrigatório
 
 # Segredos e variáveis locais
 .env
@@ -63,3 +63,6 @@ id_rsa*
 
 # Nunca versionar histórico Git dentro de pacotes
 .git/
+
+# Cache local do Wrangler / Cloudflare
+.wrangler/
