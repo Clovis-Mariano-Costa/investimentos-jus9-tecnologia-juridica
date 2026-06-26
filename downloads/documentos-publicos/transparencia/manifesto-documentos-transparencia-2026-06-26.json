@@ -1,0 +1,67 @@
+{
+  "versao": "2026-06-26.v1",
+  "data_base": "2026-06-26",
+  "classificacao": "PUBLICO-CONTROLADO / TRANSPARENCIA / INVESTIDORES",
+  "aviso": "Materiais informativos. Nao sao proposta, contrato, oferta publica, promessa de retorno ou recomendacao de investimento. Uso sujeito a revisao humana, juridica e contabil.",
+  "politica_publicacao": {
+    "permitido": [
+      "materiais institucionais sanitizados",
+      "documentos informativos com aviso de natureza",
+      "hashes, versoes, datas e status de substituicao"
+    ],
+    "nao_publicar": [
+      "dados pessoais ou documentacao pessoal",
+      "dados de investidores, parceiros ou terceiros",
+      "contratos individualizados",
+      "parecer juridico sigiloso",
+      "cofres, credenciais, tokens, chaves ou segredos",
+      "detalhes internos exploraveis de seguranca"
+    ]
+  },
+  "documentos": [
+    {
+      "id": "doc-investidor-software-v3",
+      "titulo": "Documento Informativo Unico - Entrada e Exit do Investidor - Software V3",
+      "arquivo": "jus9-documento-investidor-software-v3-2026-06-26.pdf",
+      "data_documento": "2026-06-26",
+      "status": "publicado_publico_controlado",
+      "natureza": "visualizacao de horizonte comum",
+      "substitui": "materiais anteriores redundantes sobre entrada e exit do investidor",
+      "sha256": "668329C0099C41F70A4614D490C23D0B0A3B1F479BD43AE888076781DEE51FDA",
+      "observacao": "Restricao central: participacao referencial de ate 10% por ate R$ 800.000,00 apenas para o futuro CNPJ Software."
+    },
+    {
+      "id": "contratos-externos-modalidades",
+      "titulo": "Pacote Consolidado para Contratos Externos - Modalidades Possiveis de Parceria",
+      "arquivo": "jus9-contratos-externos-modalidades-2026-06-22.pdf",
+      "data_documento": "2026-06-22",
+      "status": "publicado_publico_controlado",
+      "natureza": "documento externo informativo",
+      "substitui": "versoes duplicadas locais do mesmo PDF",
+      "sha256": "017F699B5BEA0C47F1976045EDBD195AC68E28420B81E5529E5432790F821B8D",
+      "observacao": "Nao e proposta, nao e contrato e nao gera vinculo legal."
+    },
+    {
+      "id": "one-pager-investidores",
+      "titulo": "One Pager para Investidores",
+      "arquivo": "jus9-one-pager-investidores-2026-06-24.pdf",
+      "data_documento": "2026-06-24",
+      "status": "publicado_publico_controlado",
+      "natureza": "resumo executivo visual",
+      "substitui": "resumos executivos antigos quando houver redundancia narrativa",
+      "sha256": "D0E4F7E7B48A36092B4302B93317D26A0E01F6F21BB41BAFBA43635EEB44FA11",
+      "observacao": "Inspecao visual realizada antes da publicacao."
+    },
+    {
+      "id": "pitch-deck-completo-investidores",
+      "titulo": "Pitch Deck Completo para Investidores",
+      "arquivo": "jus9-pitch-deck-completo-investidores-2026-06-24.pdf",
+      "data_documento": "2026-06-24",
+      "status": "publicado_publico_controlado",
+      "natureza": "apresentacao visual para conversa com investidores",
+      "substitui": "pitch decks antigos quando a conversa for sobre rodada V3 Software",
+      "sha256": "0B494274D4384490F6D8AC050FFA7E346D43C2D2DB8D54C17BF5E699B5632684",
+      "observacao": "Inspecao visual realizada antes da publicacao."
+    }
+  ]
+}

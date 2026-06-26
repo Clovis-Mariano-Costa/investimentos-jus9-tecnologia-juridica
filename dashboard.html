@@ -22,22 +22,57 @@
       <a href="perfis.html">Perfis</a>
       <a href="web-summit.html">Web Summit</a>
       <a href="busca-parcerias.html">Parcerias</a>
+      <a href="transparencia.html">Transparencia</a>
       <a href="documentos.html">Documentos</a>
     </nav>
-    <a class="cta" href="custos.html">Novo orçamento</a>
+    <a class="cta" href="transparencia-documentos.html">Documentos V3</a>
   </div>
 </header>
 <main id="dashboard">
   <section class="hero compact-hero">
     <div class="container">
-      <h1>Captação, orçamento e prioridade em uma tela.</h1>
-      <p class="lead">Selecione cenario, perfil e horizonte. Os indicadores, graficos e a tabela exibem estimativas renovaveis do ciclo pos-evento, com base atual de R$ 1,248 mi para 12 meses.</p>
+      <div class="eyebrow">Dashboard publico-controlado</div>
+      <h1>Rodada V3, recursos e risco em uma tela.</h1>
+      <p class="lead">A leitura principal deste painel e a captacao pretendida de ate R$ 800 mil por ate 10%, limitada a futura Jus 9 Tecnologia Juridica - Software. Os graficos abaixo preservam o mapa estrutural renovavel de 12 meses como referencia operacional.</p>
+      <div class="actions">
+        <a class="btn primary" href="transparencia.html">Portal da Transparencia</a>
+        <a class="btn" href="transparencia-documentos.html">Documentos e hashes</a>
+        <a class="btn" href="transparencia-riscos.html">Riscos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Rodada V3 Software</div>
+          <h2>Captacao pretendida e destino dos recursos.</h2>
+        </div>
+        <p>Valores referenciais para conversa preliminar. Nao representam proposta, contrato, oferta publica, promessa de retorno ou recomendacao de investimento.</p>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi"><span>Captacao pretendida</span><strong>R$ 800 mil</strong></div>
+        <div class="kpi"><span>Participacao referencial</span><strong>10%</strong></div>
+        <div class="kpi"><span>Pre-money estimado</span><strong>R$ 7,2 mi</strong></div>
+        <div class="kpi"><span>Post-money estimado</span><strong>R$ 8 mi</strong></div>
+      </div>
+      <div class="grid">
+        <article class="card"><h3>25% Produto/MVPs</h3><p>Hub de aplicativos juridicos, fluxos de produto, documentos, portal e provas de uso.</p><strong>R$ 200 mil</strong></article>
+        <article class="card"><h3>25% Tecnologia</h3><p>Backend seguro, infraestrutura, cloud, automacoes, controle de acesso e base tecnica.</p><strong>R$ 200 mil</strong></article>
+        <article class="card"><h3>15% IA e governanca</h3><p>Governanca, LGPD, documentacao tecnico-juridica e limites de IA supervisionada.</p><strong>R$ 120 mil</strong></article>
+        <article class="card"><h3>15% Juridico e contabil</h3><p>CNPJ Software, contrato social, acordo de socios, cap table e revisoes formais.</p><strong>R$ 120 mil</strong></article>
+        <article class="card"><h3>10% Equipe e operacao</h3><p>Execucao, apoio tecnico, revisao humana, atendimento e coordenacao operacional.</p><strong>R$ 80 mil</strong></article>
+        <article class="card"><h3>10% Validacao e reserva</h3><p>Pilotos, eventos, relacionamento, contingencia e ajustes de seguranca.</p><strong>R$ 80 mil</strong></article>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container dashboard-shell">
       <aside class="card filters">
+        <h2>Mapa 12 meses</h2>
+        <p>Referencia operacional ampla, renovavel por cenario. Usar como apoio de diligencia, nao como promessa de desembolso.</p>
         <label>Cenário
           <select id="scenario">
             <option value="conservador">Conservador</option>
@@ -68,13 +103,13 @@
       </aside>
       <section>
         <div class="kpi-grid">
-          <div class="kpi"><span>Total estimado</span><strong id="kpiTotal">R$ 0</strong></div>
+          <div class="kpi"><span>Total estrutural</span><strong id="kpiTotal">R$ 0</strong></div>
           <div class="kpi"><span>Ticket referência</span><strong id="kpiTicket">R$ 0</strong></div>
           <div class="kpi"><span>Cobertura</span><strong id="kpiCoverage">0%</strong></div>
           <div class="kpi"><span>Runway</span><strong id="kpiRunway">0 meses</strong></div>
         </div>
         <div class="chart-grid">
-          <article class="chart-card"><h3>Orçamento por área</h3><canvas id="barChart" height="300"></canvas><div id="barLegend" class="chart-legend" aria-label="Legenda do orçamento por área"></div></article>
+          <article class="chart-card"><h3>Mapa estrutural por área</h3><canvas id="barChart" height="300"></canvas><div id="barLegend" class="chart-legend" aria-label="Legenda do orçamento por área"></div></article>
           <article class="chart-card"><h3>Distribuição por prioridade</h3><canvas id="donutChart" height="300"></canvas><div id="donutLegend" class="chart-legend" aria-label="Legenda da distribuição por prioridade"></div></article>
           <article class="chart-card"><h3>Total por fase</h3><canvas id="phaseChart" height="300"></canvas><div id="phaseLegend" class="chart-legend" aria-label="Legenda do total por fase"></div></article>
           <article class="chart-card"><h3>Backend seguro por item</h3><canvas id="backendDetailChart" height="300"></canvas><div id="backendDetailLegend" class="chart-legend" aria-label="Legenda do backend seguro"></div></article>

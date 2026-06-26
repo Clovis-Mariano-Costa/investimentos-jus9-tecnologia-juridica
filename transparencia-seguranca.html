@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Seguranca - Portal da Transparencia Jus 9</title>
+  <meta name="description" content="Principios publicos de seguranca, LGPD, controle de acesso e penteste para a futura Jus 9 Tecnologia Juridica - Software.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="/"><span>Jus 9 Investimentos</span></a>
+    <nav class="menu" aria-label="Navegacao de seguranca">
+      <a href="/">Inicio</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/documentos">Documentos</a>
+      <a href="/transparencia">Transparencia</a>
+      <a href="/transparencia-riscos">Riscos</a>
+      <a class="is-active" href="/transparencia-seguranca">Seguranca</a>
+      <a href="/transparencia-versionamento">Versionamento</a>
+    </nav>
+    <a class="cta" href="SECURITY.md">SECURITY.md</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero compact-hero">
+    <div class="container">
+      <div class="eyebrow">Seguranca por camadas</div>
+      <h1>Seguranca nao e promessa absoluta; e processo verificavel.</h1>
+      <p class="lead">A futura Jus 9 Tecnologia Juridica - Software deve nascer com governanca de dados, backend seguro, controle de acesso, logs minimizados, revisao humana e penteste qualificado.</p>
+      <div class="actions">
+        <a class="btn primary" href="/transparencia-riscos">Ver riscos</a>
+        <a class="btn" href="/transparencia-documentos">Ver documentos</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Principios publicos</div>
+          <h2>O que pode ser dito sem abrir a guarda.</h2>
+        </div>
+        <p>A pagina explica principios e marcos de seguranca. Ela nao divulga arquitetura interna sensivel, credenciais, tokens, detalhes exploraveis ou documentos de cofre.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>HTTPS e headers</h3>
+          <p>Ambiente publico deve operar com HTTPS/TLS e headers de seguranca quando possivel, incluindo HSTS, CSP, X-Content-Type-Options, Referrer-Policy e Permissions-Policy.</p>
+        </article>
+        <article class="card">
+          <h3>Controle de acesso</h3>
+          <p>Dados reais exigem autenticacao, permissoes por perfil, menor privilegio, separacao de ambientes e trilhas de acesso revisaveis.</p>
+        </article>
+        <article class="card">
+          <h3>Classificacao documental</h3>
+          <p>Todo material deve ser classificado como publico, publico-controlado, interno, juridico sigiloso ou cofre nao automatico antes de uso externo.</p>
+        </article>
+        <article class="card">
+          <h3>LGPD</h3>
+          <p>Coleta minima, finalidade clara, retencao proporcional, revisao humana e protecao de dados pessoais ou sensiveis.</p>
+        </article>
+        <article class="card">
+          <h3>Penteste qualificado</h3>
+          <p>O penteste deve ser marco de maturidade antes de operacao plena com dados reais ou nascimento operacional robusto do CNPJ Software.</p>
+        </article>
+        <article class="card">
+          <h3>Logs minimizados</h3>
+          <p>Logs devem apoiar auditoria e seguranca sem armazenar conteudo sensivel desnecessario.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="container grid two">
+      <article class="card">
+        <h3>O que fica fora do publico</h3>
+        <ul>
+          <li>Segredos, tokens, chaves, credenciais e `.env` real.</li>
+          <li>Detalhes internos exploraveis de infraestrutura.</li>
+          <li>Mapas de permissao com pessoas reais.</li>
+          <li>Documentos de cofre, contratos individuais e pareceres sigilosos.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Como Charlie Echo deve falar</h3>
+        <p>Charlie Echo deve explicar seguranca em camadas, lembrar que nao ha seguranca absoluta e encaminhar decisoes juridicas, contabeis, societarias, LGPD e dados sensiveis para revisao humana.</p>
+        <p><a href="ORIENTACOES/ENSINO_CHARLIE_ECHO_PORTAL_TRANSPARENCIA_2026-06-26.md">Abrir ensino Charlie Echo</a></p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">Seguranca publica por principios. Detalhes sensiveis permanecem protegidos.</div>
+</footer>
+</body>
+</html>

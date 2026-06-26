@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Documentos e Hashes - Portal da Transparencia Jus 9</title>
+  <meta name="description" content="Indice publico-controlado de documentos, hashes SHA-256, datas e substituicoes do Portal da Transparencia da Jus 9.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="logo" href="/"><span>Jus 9 Investimentos</span></a>
+    <nav class="menu" aria-label="Navegacao de documentos da transparencia">
+      <a href="/">Inicio</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/documentos">Documentos</a>
+      <a href="/transparencia">Transparencia</a>
+      <a class="is-active" href="/transparencia-documentos">Hashes</a>
+      <a href="/transparencia-versionamento">Versionamento</a>
+      <a href="/transparencia-riscos">Riscos</a>
+      <a href="/transparencia-seguranca">Seguranca</a>
+    </nav>
+    <a class="cta" href="downloads/documentos-publicos/transparencia/manifesto-documentos-transparencia-2026-06-26.json">Manifesto JSON</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero compact-hero">
+    <div class="container">
+      <div class="eyebrow">Documentos e hashes</div>
+      <h1>Arquivos publicados com rastro de integridade.</h1>
+      <p class="lead">Cada documento publico-controlado tem nome, data, status, arquivo e SHA-256. O hash ajuda a verificar se o arquivo baixado e o mesmo arquivo versionado no portal.</p>
+      <div class="actions">
+        <a class="btn primary" href="#indice-documental">Ver indice</a>
+        <a class="btn" href="downloads/documentos-publicos/transparencia/manifesto-documentos-transparencia-2026-06-26.json">Baixar manifesto JSON</a>
+        <a class="btn" href="/documentos">Voltar para biblioteca</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light" id="indice-documental">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Indice 2026-06-26.v1</div>
+          <h2>Documentos da rodada e transparencia.</h2>
+        </div>
+        <p>Arquivos publicados apos inventario local, conferencia de duplicidade e inspeccao visual dos PDFs que eram majoritariamente imagem.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Documento</th>
+              <th>Data</th>
+              <th>Status</th>
+              <th>Substituicao</th>
+              <th>SHA-256</th>
+              <th>Arquivo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Documento Informativo Unico - Entrada e Exit do Investidor - Software V3</strong></td>
+              <td>2026-06-26</td>
+              <td><span class="pill">publico-controlado</span></td>
+              <td>Substitui materiais redundantes sobre entrada e exit do investidor.</td>
+              <td><code>668329C0099C41F70A4614D490C23D0B0A3B1F479BD43AE888076781DEE51FDA</code></td>
+              <td><a href="downloads/documentos-publicos/transparencia/jus9-documento-investidor-software-v3-2026-06-26.pdf">Baixar PDF</a></td>
+            </tr>
+            <tr>
+              <td><strong>Pacote Consolidado para Contratos Externos - Modalidades Possiveis de Parceria</strong></td>
+              <td>2026-06-22</td>
+              <td><span class="pill">publico-controlado</span></td>
+              <td>Substitui copias locais duplicadas do mesmo PDF.</td>
+              <td><code>017F699B5BEA0C47F1976045EDBD195AC68E28420B81E5529E5432790F821B8D</code></td>
+              <td><a href="downloads/documentos-publicos/transparencia/jus9-contratos-externos-modalidades-2026-06-22.pdf">Baixar PDF</a></td>
+            </tr>
+            <tr>
+              <td><strong>One Pager para Investidores</strong></td>
+              <td>2026-06-24</td>
+              <td><span class="pill">publico-controlado</span></td>
+              <td>Substitui resumos executivos antigos quando houver redundancia narrativa.</td>
+              <td><code>D0E4F7E7B48A36092B4302B93317D26A0E01F6F21BB41BAFBA43635EEB44FA11</code></td>
+              <td><a href="downloads/documentos-publicos/transparencia/jus9-one-pager-investidores-2026-06-24.pdf">Baixar PDF</a></td>
+            </tr>
+            <tr>
+              <td><strong>Pitch Deck Completo para Investidores</strong></td>
+              <td>2026-06-24</td>
+              <td><span class="pill">publico-controlado</span></td>
+              <td>Substitui pitch decks antigos quando a conversa for sobre rodada V3 Software.</td>
+              <td><code>0B494274D4384490F6D8AC050FFA7E346D43C2D2DB8D54C17BF5E699B5632684</code></td>
+              <td><a href="downloads/documentos-publicos/transparencia/jus9-pitch-deck-completo-investidores-2026-06-24.pdf">Baixar PDF</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <article class="notice" style="margin-top:1rem">
+        Os hashes nao transformam os documentos em contrato. Eles apenas ajudam a verificar integridade e versionamento. Antes de qualquer decisao de investimento, parceria ou sociedade, usar revisao humana, juridica e contabil.
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">Documentos publico-controlados. Dados pessoais e materiais de cofre ficam fora do portal.</div>
+</footer>
+</body>
+</html>
