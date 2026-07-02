@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfólio Jus 9 Online</title>
+    <meta
+      name="description"
+      content="Portfólio público-controlado da Jus 9 Online com evidências, MVPs, equipe, governança, segurança, LGPD, limites e cronograma."
+    />
+    <style>
+      :root {
+        --bg: #061012;
+        --bg-2: #091619;
+        --panel: rgba(255, 255, 255, 0.055);
+        --panel-strong: rgba(255, 255, 255, 0.1);
+        --text: #f8f4eb;
+        --muted: #c7c1b6;
+        --subtle: #878077;
+        --gold: #d9a441;
+        --gold-2: #f2c76c;
+        --teal: #27d7cb;
+        --line: rgba(242, 199, 108, 0.22);
+        --line-cool: rgba(39, 215, 203, 0.2);
+        --shadow: 0 26px 70px rgba(0, 0, 0, 0.35);
+        --max: 1180px;
+        --radius: 8px;
+        color-scheme: dark;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at top left, rgba(217, 164, 65, 0.12), transparent 28rem),
+          linear-gradient(180deg, #04090a 0%, var(--bg) 42%, #050b0c 100%);
+        color: var(--text);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img,
+      svg {
+        display: block;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid var(--line);
+        background: rgba(4, 9, 10, 0.84);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav {
+        max-width: var(--max);
+        margin: 0 auto;
+        min-height: 72px;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: max-content;
+      }
+
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+        color: var(--gold-2);
+      }
+
+      .brand-name {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 26px;
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        color: #eee4d7;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .nav-links a {
+        color: #eee4d7;
+        transition: color 160ms ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--gold-2);
+      }
+
+      .button {
+        min-height: 42px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid rgba(242, 199, 108, 0.45);
+        border-radius: 6px;
+        padding: 0 18px;
+        color: #130d04;
+        background: linear-gradient(135deg, var(--gold-2), #bd8129);
+        font-size: 14px;
+        font-weight: 800;
+        white-space: nowrap;
+        box-shadow: 0 12px 28px rgba(217, 164, 65, 0.2);
+        transition:
+          transform 160ms ease,
+          border-color 160ms ease,
+          background 160ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        border-color: rgba(242, 199, 108, 0.9);
+      }
+
+      .button.secondary {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.035);
+        box-shadow: none;
+      }
+
+      .button svg {
+        width: 18px;
+        height: 18px;
+      }
+
+      .hero {
+        position: relative;
+        min-height: calc(100vh - 72px);
+        display: grid;
+        align-items: center;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(4, 9, 10, 0.98) 0%, rgba(4, 9, 10, 0.85) 35%, rgba(4, 9, 10, 0.22) 66%, rgba(4, 9, 10, 0.7) 100%),
+          linear-gradient(180deg, rgba(4, 9, 10, 0) 70%, var(--bg) 100%);
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .hero-visual {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.92;
+      }
+
+      .hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: var(--max);
+        width: 100%;
+        margin: 0 auto;
+        padding: 78px 24px 62px;
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.55fr);
+        gap: 76px;
+        align-items: center;
+      }
+
+      .hero h1 {
+        max-width: 740px;
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(48px, 8vw, 96px);
+        line-height: 0.96;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+
+      .hero h1 span {
+        color: var(--gold-2);
+      }
+
+      .hero-copy {
+        max-width: 650px;
+        margin: 24px 0 0;
+        color: #e3ded5;
+        font-size: clamp(17px, 2vw, 21px);
+        line-height: 1.58;
+      }
+
+      .hero-actions {
+        margin-top: 34px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .hero-note {
+        margin-top: 22px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        max-width: 560px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .hero-note svg {
+        flex: 0 0 auto;
+        width: 18px;
+        height: 18px;
+        color: var(--teal);
+        margin-top: 2px;
+      }
+
+      .principles {
+        display: grid;
+        gap: 0;
+        border-left: 1px solid rgba(242, 199, 108, 0.25);
+        background: rgba(4, 9, 10, 0.42);
+      }
+
+      .principle {
+        display: grid;
+        grid-template-columns: 38px 1fr;
+        gap: 18px;
+        padding: 24px 0 24px 24px;
+        border-bottom: 1px solid rgba(242, 199, 108, 0.2);
+      }
+
+      .principle:last-child {
+        border-bottom: 0;
+      }
+
+      .principle svg {
+        width: 34px;
+        height: 34px;
+        color: var(--gold-2);
+      }
+
+      .principle strong {
+        display: block;
+        font-size: 15px;
+        margin-bottom: 4px;
+      }
+
+      .principle p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      main {
+        overflow: hidden;
+      }
+
+      .section {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .wrap {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 54px 24px;
+      }
+
+      .section-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        border-top: 1px solid rgba(242, 199, 108, 0.18);
+      }
+
+      .section-grid.three {
+        grid-template-columns: 0.8fr 1fr 1.2fr;
+      }
+
+      .column {
+        min-width: 0;
+        padding: 0 26px;
+        border-left: 1px solid rgba(242, 199, 108, 0.18);
+      }
+
+      .column:first-child {
+        padding-left: 0;
+        border-left: 0;
+      }
+
+      .kicker {
+        margin: 0 0 18px;
+        color: var(--gold-2);
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.11em;
+        text-transform: uppercase;
+      }
+
+      .column p,
+      .column li,
+      .lead {
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .lead {
+        max-width: 760px;
+        margin: 0 0 28px;
+        font-size: 18px;
+      }
+
+      .identity-mark {
+        width: 68px;
+        height: 68px;
+        margin-bottom: 18px;
+        color: var(--gold-2);
+      }
+
+      .check-list,
+      .role-list,
+      .security-list {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .check-list li,
+      .role-list li,
+      .security-list li {
+        display: grid;
+        grid-template-columns: 20px 1fr;
+        gap: 10px;
+      }
+
+      .check-list svg,
+      .role-list svg,
+      .security-list svg {
+        width: 18px;
+        height: 18px;
+        margin-top: 3px;
+        color: var(--gold-2);
+      }
+
+      .security-list svg {
+        color: var(--teal);
+      }
+
+      .proof-section {
+        background:
+          linear-gradient(180deg, rgba(242, 199, 108, 0.04), transparent 45%),
+          var(--bg-2);
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 22px;
+        margin-bottom: 26px;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(34px, 5vw, 58px);
+        line-height: 1.02;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+
+      .section-heading p {
+        max-width: 520px;
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .proof-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .proof-card {
+        min-height: 238px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: var(--radius);
+        background: #f5f1e8;
+        color: #0d1a1d;
+        box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
+      }
+
+      .proof-card .meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        color: #5b6260;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .proof-card h3 {
+        margin: 12px 0 0;
+        font-size: 18px;
+        line-height: 1.25;
+      }
+
+      .tag {
+        display: inline-flex;
+        width: fit-content;
+        margin-top: 12px;
+        padding: 4px 8px;
+        border: 1px solid rgba(3, 104, 115, 0.28);
+        border-radius: 999px;
+        color: #064d58;
+        background: rgba(39, 215, 203, 0.12);
+        font-size: 11px;
+        font-weight: 900;
+      }
+
+      .proof-card p {
+        margin: 0;
+        color: #4b5250;
+        font-size: 14px;
+      }
+
+      .proof-card a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #08272d;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .proof-card svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .timeline {
+        position: relative;
+        margin-top: 30px;
+      }
+
+      .timeline-track {
+        position: absolute;
+        top: 16px;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, var(--gold), rgba(255, 255, 255, 0.45));
+      }
+
+      .timeline-list {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(8, minmax(110px, 1fr));
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .timeline-item {
+        min-width: 0;
+        padding-top: 40px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        top: 9px;
+        width: 14px;
+        height: 14px;
+        border: 2px solid #f8f4eb;
+        border-radius: 50%;
+        background: var(--bg);
+        box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.1);
+      }
+
+      .timeline-item:first-child::before {
+        border-color: var(--gold-2);
+        background: var(--gold);
+      }
+
+      .timeline-item strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--text);
+        font-size: 18px;
+        line-height: 1;
+      }
+
+      .limit-band {
+        background:
+          linear-gradient(90deg, rgba(39, 215, 203, 0.08), transparent 52%),
+          #061012;
+      }
+
+      .limit-box {
+        display: grid;
+        grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
+        gap: 42px;
+        align-items: start;
+      }
+
+      .limit-box h2 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(34px, 5vw, 58px);
+        line-height: 1.02;
+        font-weight: 500;
+      }
+
+      .notice-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .notice {
+        min-height: 164px;
+        padding: 18px;
+        border: 1px solid rgba(39, 215, 203, 0.2);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.045);
+      }
+
+      .notice strong {
+        display: block;
+        color: #fff8e8;
+        margin-bottom: 8px;
+      }
+
+      .notice p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .cta {
+        background:
+          linear-gradient(90deg, rgba(217, 164, 65, 0.18), rgba(39, 215, 203, 0.08)),
+          #050b0c;
+      }
+
+      .cta-inner {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 40px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+      }
+
+      .cta h2 {
+        margin: 0;
+        max-width: 620px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(28px, 4vw, 44px);
+        line-height: 1.05;
+        font-weight: 500;
+      }
+
+      .cta p {
+        margin: 12px 0 0;
+        max-width: 780px;
+        color: var(--muted);
+      }
+
+      .footer {
+        color: var(--subtle);
+        font-size: 13px;
+        background: #030708;
+      }
+
+      .footer .wrap {
+        padding-top: 24px;
+        padding-bottom: 24px;
+      }
+
+      @media (max-width: 1080px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero-inner {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .principles {
+          max-width: 720px;
+        }
+
+        .section-grid,
+        .section-grid.three {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 28px 0;
+        }
+
+        .proof-grid,
+        .notice-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .timeline {
+          overflow-x: auto;
+          padding-bottom: 8px;
+        }
+
+        .timeline-track,
+        .timeline-list {
+          min-width: 900px;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .nav {
+          min-height: 64px;
+          padding: 0 18px;
+        }
+
+        .brand-name {
+          font-size: 22px;
+        }
+
+        .nav .button {
+          display: none;
+        }
+
+        .hero {
+          min-height: auto;
+        }
+
+        .hero::before {
+          background:
+            linear-gradient(180deg, rgba(4, 9, 10, 0.8) 0%, rgba(4, 9, 10, 0.95) 42%, var(--bg) 100%),
+            linear-gradient(90deg, rgba(4, 9, 10, 0.95), rgba(4, 9, 10, 0.45));
+        }
+
+        .hero-visual {
+          opacity: 0.46;
+          object-position: center top;
+        }
+
+        .hero-inner {
+          padding: 58px 18px 42px;
+        }
+
+        .hero h1 {
+          font-size: clamp(42px, 14vw, 64px);
+        }
+
+        .hero-actions,
+        .cta-inner {
+          align-items: stretch;
+          flex-direction: column;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .principle {
+          padding-left: 0;
+          border-left: 0;
+        }
+
+        .principles {
+          border-left: 0;
+        }
+
+        .wrap {
+          padding: 42px 18px;
+        }
+
+        .section-grid,
+        .section-grid.three,
+        .proof-grid,
+        .notice-grid,
+        .limit-box {
+          grid-template-columns: 1fr;
+        }
+
+        .column {
+          padding: 0;
+          border-left: 0;
+        }
+
+        .section-heading {
+          align-items: start;
+          flex-direction: column;
+        }
+      }
+
+      @media print {
+        body {
+          background: #061012;
+        }
+
+        .site-header {
+          position: static;
+        }
+
+        .hero {
+          min-height: auto;
+        }
+
+        .button {
+          border: 1px solid var(--gold);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Navegação principal">
+        <a class="brand" href="#top" aria-label="Jus 9 Online">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M32 5 8 15v7h48v-7L32 5Z" fill="none" stroke="currentColor" stroke-width="3" />
+            <path d="M14 26v24m12-24v24m12-24v24m12-24v24M9 54h46" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+          </svg>
+          <span class="brand-name">Jus 9 Online</span>
+        </a>
+        <div class="nav-links">
+          <a href="#identidade">Identidade</a>
+          <a href="#problema">Problema</a>
+          <a href="#solucao">Solução</a>
+          <a href="#provas">Provas e MVPs</a>
+          <a href="#governanca">Governança</a>
+          <a href="#seguranca">Segurança</a>
+          <a href="#cronograma">Cronograma</a>
+        </div>
+        <a class="button secondary" href="/downloads/documentos-publicos/portfolio-jus9-online.pdf" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          Baixar PDF
+        </a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-visual" src="/assets/portfolio-hero-jus9.png" alt="" />
+        <div class="hero-inner">
+          <div>
+            <h1 id="hero-title">Portfólio <span>Jus 9 Online</span></h1>
+            <p class="hero-copy">
+              Evidências públicas, MVPs, equipe, governança humana e próximos passos do ecossistema Jus 9,
+              apresentados em formato público-controlado para parceiros, investidores e apoiadores institucionais.
+            </p>
+            <div class="hero-actions" aria-label="Ações principais">
+              <a class="button" href="#provas">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m0 0-5-5m5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                Abrir portfólio
+              </a>
+              <a class="button secondary" href="/downloads/documentos-publicos/portfolio-jus9-online.pdf" download>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                Baixar PDF
+              </a>
+            </div>
+            <p class="hero-note">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3 5 6v5c0 5 3 8 7 10 4-2 7-5 7-10V6l-7-3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+              </svg>
+              Documento informativo. Não substitui proposta, contrato, parecer jurídico, auditoria técnica ou due diligence.
+            </p>
+          </div>
+
+          <aside class="principles" aria-label="Princípios do portfólio">
+            <div class="principle">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3 3 7v2h18V7l-9-4ZM5 10v8m4-8v8m6-8v8m4-8v8M4 21h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+              <div>
+                <strong>Iniciativa pública-controlada</strong>
+                <p>Material institucional com governança, rastreabilidade e transparência proporcional.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 4v16M6 7h12M7 7l-4 8h8L7 7Zm10 0-4 8h8l-4-8Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div>
+                <strong>Finalidade</strong>
+                <p>Apoiar acesso à justiça, eficiência operacional e documentação responsável.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 3h9l3 3v15H6V3Zm8 0v5h5M9 12h6M9 16h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <div>
+                <strong>Transparência</strong>
+                <p>Evidências, documentos e decisões apresentados sem expor dados sensíveis.</p>
+              </div>
+            </div>
+            <div class="principle">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 11a4 4 0 1 1 8 0M3 20a5 5 0 0 1 10 0m-2 0a5 5 0 0 1 10 0M17 11a3 3 0 1 1 3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+              <div>
+                <strong>Colaboração</strong>
+                <p>Construído para diálogo com parceiros jurídicos, academia e comunidade técnica.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section" id="identidade">
+        <div class="wrap section-grid">
+          <article class="column">
+            <svg class="identity-mark" viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M32 5 10 15v14c0 14 8 23 22 30 14-7 22-16 22-30V15L32 5Z" fill="none" stroke="currentColor" stroke-width="3" />
+              <path d="M21 24h22M25 29v17m7-17v17m7-17v17M22 49h20" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+            </svg>
+            <h2 class="kicker">Identidade</h2>
+            <p>
+              A Jus 9 Online é o portfólio público-controlado do ecossistema Jus 9 Tecnologia Jurídica:
+              uma vitrine organizada de soluções legais digitais, MVPs, documentação, equipe e governança.
+            </p>
+          </article>
+          <article class="column" id="problema">
+            <h2 class="kicker">Problema</h2>
+            <p>
+              Sistemas jurídicos fragmentados, fluxos manuais e documentos dispersos elevam custos,
+              atrasam decisões e reduzem rastreabilidade.
+            </p>
+            <ul class="check-list">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Baixa interoperabilidade</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Processos lentos e onerosos</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Falta de dados estruturados</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Dificuldade de auditoria e controle</span></li>
+            </ul>
+          </article>
+          <article class="column" id="solucao">
+            <h2 class="kicker">Solução</h2>
+            <p>
+              Um ecossistema integrado com agenda, documentos, perfis jurídicos, IA supervisionada,
+              APIs e trilhas de decisão.
+            </p>
+            <ul class="check-list">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Automação responsável</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Dados estruturados e governáveis</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Interoperabilidade e APIs</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Transparência e rastreabilidade</span></li>
+            </ul>
+          </article>
+          <article class="column">
+            <h2 class="kicker">Encaixe</h2>
+            <p>
+              O portfólio organiza a narrativa em uma sequência verificável: contexto, solução, provas,
+              limites, cronograma e convite institucional.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section proof-section" id="provas">
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <h2>Provas e MVPs</h2>
+            </div>
+            <p>
+              Evidências e protótipos funcionais devem validar hipóteses críticas e demonstrar valor sem
+              expor dados sensíveis, negociações ou informações de terceiros.
+            </p>
+          </div>
+          <div class="proof-grid">
+            <article class="proof-card">
+              <div>
+                <div class="meta">
+                  <span>MVP 01</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Zm8 0v5h5M9 13h6M9 17h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+                </div>
+                <h3>Triagem Jurídica Inteligente</h3>
+                <span class="tag">MVP</span>
+              </div>
+              <p>Resumo do MVP, telas principais e fluxo supervisionado.</p>
+              <a href="https://investimentos.jus9tecnologia.com.br/roteiro-demo-investidor" aria-label="Ver evidência de Triagem Jurídica Inteligente">Ver evidência <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="proof-card">
+              <div>
+                <div class="meta">
+                  <span>MVP 02</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Zm8 0v5h5M9 13h6M9 17h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+                </div>
+                <h3>Pesquisa Jurídica Semântica</h3>
+                <span class="tag">MVP</span>
+              </div>
+              <p>Busca estruturada, fontes organizadas e rastreio de consultas.</p>
+              <a href="https://investimentos.jus9tecnologia.com.br/dashboard" aria-label="Ver evidência de Pesquisa Jurídica Semântica">Ver evidência <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="proof-card">
+              <div>
+                <div class="meta">
+                  <span>MVP 03</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Zm8 0v5h5M9 13h6M9 17h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg>
+                </div>
+                <h3>Geração de Peças Padronizadas</h3>
+                <span class="tag">MVP</span>
+              </div>
+              <p>Minutas com revisão humana, histórico e controles de versão.</p>
+              <a href="https://investimentos.jus9tecnologia.com.br/transparencia-documentos" aria-label="Ver evidência de Geração de Peças Padronizadas">Ver evidência <span aria-hidden="true">→</span></a>
+            </article>
+            <article class="proof-card">
+              <div>
+                <div class="meta">
+                  <span>Evidência</span>
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7V3Zm7 0v5h5M9 16h6M9 12h6" fill="none" stroke="#d32f2f" stroke-width="1.8" stroke-linecap="round" /></svg>
+                </div>
+                <h3>Relatório de Validação</h3>
+                <span class="tag">PDF</span>
+              </div>
+              <p>Consolidação de testes, métricas, aprendizados e próximos riscos.</p>
+              <a href="/downloads/documentos-publicos/portfolio-jus9-online.pdf" aria-label="Ver relatório em PDF">Ver documento <span aria-hidden="true">→</span></a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="governanca">
+        <div class="wrap section-grid three">
+          <article class="column">
+            <h2 class="kicker">Equipe e governança</h2>
+            <p>
+              Equipe multidisciplinar com competências jurídicas, tecnológicas e de gestão pública,
+              operando sob princípios de integridade, responsabilidade e prestação de contas.
+            </p>
+          </article>
+          <article class="column">
+            <ul class="role-list">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 11a4 4 0 1 1 8 0M4 21a8 8 0 0 1 16 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg><span><strong>Comitê de Governança</strong><br />Diretrizes, priorização e riscos.</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Zm8 0v5h5M9 13h6M9 17h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" /></svg><span><strong>Transparência Ativa</strong><br />Documentos, decisões e métricas proporcionais.</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 12 3 3 5-6M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg><span><strong>Participação de Parceiros</strong><br />Colaboração com instituições públicas, academia, advocacia e tecnologia.</span></li>
+            </ul>
+          </article>
+          <article class="column" id="seguranca">
+            <h2 class="kicker">Segurança, LGPD e limites</h2>
+            <ul class="security-list">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Adequação à LGPD e políticas de privacidade.</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Proteção de dados em trânsito e em repouso.</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span>Controle de acesso, auditoria e segregação de ambientes.</span></li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg><span>IA generativa sempre apresentada como apoio supervisionado, não decisão autônoma.</span></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section limit-band">
+        <div class="wrap limit-box">
+          <div>
+            <h2>Limites públicos do material</h2>
+            <p class="lead">
+              O portfólio deve aumentar confiança sem abrir dados privados, estratégias sensíveis ou obrigações jurídicas não pactuadas.
+            </p>
+          </div>
+          <div class="notice-grid">
+            <article class="notice">
+              <strong>Público-controlado</strong>
+              <p>Conteúdo apto à leitura externa, com revisão humana e sem exposição de dados pessoais sensíveis.</p>
+            </article>
+            <article class="notice">
+              <strong>MVP e piloto</strong>
+              <p>Protótipos demonstram hipótese e direção técnica; não representam promessa de produção final.</p>
+            </article>
+            <article class="notice">
+              <strong>Sem substituição jurídica</strong>
+              <p>O material não substitui proposta, contrato, parecer profissional, auditoria, compliance ou due diligence.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="cronograma">
+        <div class="wrap">
+          <div class="section-heading">
+            <h2>Cronograma</h2>
+            <p>Execução rápida com revisão incremental entre 02/07/2026 e 09/07/2026.</p>
+          </div>
+          <div class="timeline" aria-label="Cronograma de publicação">
+            <div class="timeline-track" aria-hidden="true"></div>
+            <ol class="timeline-list">
+              <li class="timeline-item"><strong>02/07</strong>Planejamento, escopo e linguagem pública-controlada.</li>
+              <li class="timeline-item"><strong>03/07</strong>Levantamento de links, documentos, prints e evidências.</li>
+              <li class="timeline-item"><strong>04/07</strong>Redação da versão 1 em HTML e texto de PDF.</li>
+              <li class="timeline-item"><strong>05/07</strong>Revisão jurídica, LGPD, limites e ajustes de risco.</li>
+              <li class="timeline-item"><strong>06/07</strong>Consolidação visual, card, PDF e evidências.</li>
+              <li class="timeline-item"><strong>07/07</strong>Inserção do card em /documentos e teste de navegação.</li>
+              <li class="timeline-item"><strong>08/07</strong>Validação mobile, links, PDF e revisão final por parceiros.</li>
+              <li class="timeline-item"><strong>09/07</strong>Entrega, publicação e registro da versão 1.0.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="proximo-passo">
+        <div class="cta-inner">
+          <div>
+            <h2>Vamos construir uma justiça digital mais acessível e eficiente.</h2>
+            <p>
+              Próximo passo recomendado: validar os MVPs com parceiros jurídicos e instituições públicas,
+              ampliar integrações e avançar para pilotos controlados com avaliação contínua de impacto, segurança e conformidade.
+            </p>
+          </div>
+          <a class="button" href="mailto:contato@jus9tecnologia.com.br?subject=Portf%C3%B3lio%20Jus%209%20Online">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 2 11 13m11-11-7 20-4-9-9-4 20-7Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Iniciar conversa
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        Portfólio Jus 9 Online · Versão 1.0 · Gerado em 02/07/2026 · Material informativo público-controlado.
+      </div>
+    </footer>
+  </body>
+</html>

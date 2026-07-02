@@ -136,6 +136,18 @@ code{overflow-wrap:anywhere;word-break:break-word}
   .priority-page .hero{padding-top:44px}
 }
 
+.portfolio-feature-card{display:grid;grid-template-columns:minmax(0,1fr) 230px;gap:1.25rem;margin:0 0 1rem;padding:1.25rem;border:1px solid rgba(244,213,141,.42);border-radius:8px;background:linear-gradient(135deg,rgba(217,173,89,.16),rgba(79,213,232,.07) 42%,rgba(16,38,61,.96));box-shadow:var(--shadow)}
+.portfolio-feature-card h3{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:500;letter-spacing:0;margin:.2rem 0 .5rem;color:#fff}
+.portfolio-feature-card p{max-width:720px}
+.portfolio-feature-main{min-width:0}
+.portfolio-feature-aside{display:grid;align-content:start;gap:.65rem;padding-left:1rem;border-left:1px solid rgba(244,213,141,.28)}
+.portfolio-feature-aside span{width:max-content;max-width:100%;border:1px solid rgba(79,213,232,.38);border-radius:999px;padding:.28rem .55rem;color:var(--cyan);background:rgba(79,213,232,.08);font-size:.78rem;font-weight:950}
+.portfolio-feature-aside p{margin:.15rem 0 0;font-size:.9rem;color:#dbe8f5}
+@media(max-width:760px){
+  .portfolio-feature-card{grid-template-columns:1fr}
+  .portfolio-feature-aside{padding-left:0;padding-top:1rem;border-left:0;border-top:1px solid rgba(244,213,141,.28)}
+}
+
 /* Pacote mobile Samsung - responsividade Jus 9 */
 html,body{max-width:100%;overflow-x:hidden}
 img,video,canvas,svg{max-width:100%;height:auto}
