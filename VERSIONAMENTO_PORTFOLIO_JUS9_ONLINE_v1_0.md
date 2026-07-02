@@ -13,6 +13,7 @@ Data: 2026-07-02
 - Adicionado PDF:
   - `downloads/documentos-publicos/portfolio-jus9-online.pdf`
 - Atualizado `sitemap.xml`.
+- Atualizado o bloco `#cronograma` para uma visao de 12 meses voltada a deixar todos os MVPs prontos para demonstracao e pilotos controlados.
 
 ## Classificacao
 

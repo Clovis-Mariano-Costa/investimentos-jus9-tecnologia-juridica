@@ -484,6 +484,10 @@
         margin-top: 30px;
       }
 
+      #cronograma {
+        scroll-margin-top: 96px;
+      }
+
       .timeline-track {
         position: absolute;
         top: 16px;
@@ -533,6 +537,35 @@
         color: var(--text);
         font-size: 18px;
         line-height: 1;
+      }
+
+      .year-timeline .timeline-track {
+        display: none;
+      }
+
+      .year-timeline .timeline-list {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .year-timeline .timeline-item {
+        position: relative;
+        min-height: 146px;
+        padding: 50px 16px 16px;
+        border: 1px solid rgba(242, 199, 108, 0.18);
+        border-radius: var(--radius);
+        background:
+          linear-gradient(180deg, rgba(217, 164, 65, 0.08), rgba(255, 255, 255, 0.035)),
+          rgba(255, 255, 255, 0.025);
+      }
+
+      .year-timeline .timeline-item::before {
+        top: 18px;
+        left: 16px;
+      }
+
+      .year-timeline .timeline-item strong {
+        color: var(--gold-2);
       }
 
       .limit-band {
@@ -658,6 +691,19 @@
         .timeline-list {
           min-width: 900px;
         }
+
+        .year-timeline {
+          overflow-x: visible;
+        }
+
+        .year-timeline .timeline-track,
+        .year-timeline .timeline-list {
+          min-width: 0;
+        }
+
+        .year-timeline .timeline-list {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
       }
 
       @media (max-width: 720px) {
@@ -736,6 +782,10 @@
         .section-heading {
           align-items: start;
           flex-direction: column;
+        }
+
+        .year-timeline .timeline-list {
+          grid-template-columns: 1fr;
         }
       }
 
@@ -1028,20 +1078,24 @@
       <section class="section" id="cronograma">
         <div class="wrap">
           <div class="section-heading">
-            <h2>Cronograma</h2>
-            <p>Execução rápida com revisão incremental entre 02/07/2026 e 09/07/2026.</p>
+            <h2>Cronograma de 12 meses</h2>
+            <p>Visão ampla para deixar todos os MVPs prontos para demonstração e pilotos controlados, com governança, segurança, validação jurídica e revisão humana contínua.</p>
           </div>
-          <div class="timeline" aria-label="Cronograma de publicação">
+          <div class="timeline year-timeline" aria-label="Cronograma de 12 meses para maturação dos MVPs">
             <div class="timeline-track" aria-hidden="true"></div>
             <ol class="timeline-list">
-              <li class="timeline-item"><strong>02/07</strong>Planejamento, escopo e linguagem pública-controlada.</li>
-              <li class="timeline-item"><strong>03/07</strong>Levantamento de links, documentos, prints e evidências.</li>
-              <li class="timeline-item"><strong>04/07</strong>Redação da versão 1 em HTML e texto de PDF.</li>
-              <li class="timeline-item"><strong>05/07</strong>Revisão jurídica, LGPD, limites e ajustes de risco.</li>
-              <li class="timeline-item"><strong>06/07</strong>Consolidação visual, card, PDF e evidências.</li>
-              <li class="timeline-item"><strong>07/07</strong>Inserção do card em /documentos e teste de navegação.</li>
-              <li class="timeline-item"><strong>08/07</strong>Validação mobile, links, PDF e revisão final por parceiros.</li>
-              <li class="timeline-item"><strong>09/07</strong>Entrega, publicação e registro da versão 1.0.</li>
+              <li class="timeline-item"><strong>Mês 1</strong>Definir escopo final dos MVPs, responsáveis, critérios de pronto e riscos prioritários.</li>
+              <li class="timeline-item"><strong>Mês 2</strong>Consolidar arquitetura, dados, segurança, LGPD, auditoria e trilhas de versionamento.</li>
+              <li class="timeline-item"><strong>Mês 3</strong>Evoluir Triagem Jurídica Inteligente com fluxos supervisionados e registros de decisão.</li>
+              <li class="timeline-item"><strong>Mês 4</strong>Ampliar Pesquisa Jurídica Semântica com fontes, filtros, histórico e rastreabilidade.</li>
+              <li class="timeline-item"><strong>Mês 5</strong>Maturar Geração de Peças Padronizadas com revisão humana, modelos e controles de versão.</li>
+              <li class="timeline-item"><strong>Mês 6</strong>Integrar Agenda Jus 9, DAJ, documentos, prazos e rotinas operacionais essenciais.</li>
+              <li class="timeline-item"><strong>Mês 7</strong>Estruturar perfis jurídicos, áreas de cliente, estudantes, parceiros e painéis de acompanhamento.</li>
+              <li class="timeline-item"><strong>Mês 8</strong>Consolidar IA generativa multimodal jurista como apoio supervisionado, com limites explícitos.</li>
+              <li class="timeline-item"><strong>Mês 9</strong>Conectar APIs, logs, permissões, cofre documental e ambientes segregados para testes.</li>
+              <li class="timeline-item"><strong>Mês 10</strong>Executar pilotos controlados com parceiros, coletando métricas, evidências e aprendizados.</li>
+              <li class="timeline-item"><strong>Mês 11</strong>Fazer hardening técnico, revisão jurídica, testes de segurança, documentação e ajustes finais.</li>
+              <li class="timeline-item"><strong>Mês 12</strong>Chegar a todos os MVPs prontos para demonstração ampliada, pilotos supervisionados e próxima rodada de evolução.</li>
             </ol>
           </div>
         </div>
