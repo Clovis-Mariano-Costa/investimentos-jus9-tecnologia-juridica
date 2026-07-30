@@ -1,5 +1,5 @@
 {
-  "versao": "2026-07-30.v2",
+  "versao": "2026-07-30.v3",
   "data_base": "2026-07-30",
   "classificacao": "PUBLICO-CONTROLADO / TRANSPARENCIA / INVESTIDORES",
   "aviso": "Materiais informativos. Nao sao proposta, contrato, oferta publica, promessa de retorno ou recomendacao de investimento. Uso sujeito a revisao humana, juridica e contabil.",
@@ -24,6 +24,19 @@
     ]
   },
   "documentos": [
+    {
+      "id": "one-page-investimento-2026-07-30",
+      "titulo": "Jus 9 — One-page de investimento",
+      "arquivo": "../jus9-one-page-investimento-2026-07-30.pdf",
+      "fonte_editavel": "../fontes-editaveis/jus9-one-page-investimento-2026-07-30.html",
+      "data_documento": "2026-07-30",
+      "status": "publicado_publico_controlado",
+      "natureza": "resumo executivo de investimento com fatos, lacunas e hipoteses",
+      "substitui": "One Pager para Investidores de 24/06/2026 como referencia vigente",
+      "sha256_pdf": "D85DD5D8B2005CC675396FB3D312B6BEE8DE0C8CDD870950D10FB455BF82C807",
+      "sha256_fonte_editavel": "79B7FE74CD8B14C74B9D87975E40C9B324D8497750C3E856DC42876F7740EEDA",
+      "observacao": "Sintese de uma pagina alinhada ao pitch vigente; participacao, valuation e compromissos permanecem a validar."
+    },
     {
       "id": "pitch-investimento-mvp-advogados-2026-07-30",
       "titulo": "Pitch de investimento — MVP Advogados",
@@ -75,10 +88,10 @@
       "titulo": "One Pager para Investidores",
       "arquivo": "jus9-one-pager-investidores-2026-06-24.pdf",
       "data_documento": "2026-06-24",
-      "status": "historico_em_revisao",
+      "status": "substituido_historico",
       "natureza": "resumo executivo visual",
       "sha256": "D0E4F7E7B48A36092B4302B93317D26A0E01F6F21BB41BAFBA43635EEB44FA11",
-      "observacao": "Preservado; requer sincronizacao com a narrativa, os marcos e os numeros vigentes."
+      "observacao": "Preservado para rastreabilidade; substituido pelo one-page vigente de 30/07/2026."
     },
     {
       "id": "pitch-deck-completo-investidores",
