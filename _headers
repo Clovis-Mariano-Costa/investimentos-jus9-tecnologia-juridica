@@ -1,0 +1,26 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/web-summit*
+  X-Robots-Tag: noindex, nofollow
+
+/emergencia-evento*
+  X-Robots-Tag: noindex, nofollow
+
+/kit-offline-web-summit*
+  X-Robots-Tag: noindex, nofollow
+
+/downloads/documentos-publicos/jus9-pitch-deck-web-summit-rio-2026*
+  X-Robots-Tag: noindex, nofollow
+
+/downloads/documentos-publicos/*-bndes.pdf
+  X-Robots-Tag: noindex, nofollow
+
+/downloads/documentos-publicos/transparencia/jus9-pitch-deck-completo-investidores-2026-06-24.pdf
+  X-Robots-Tag: noindex, nofollow
+
+/downloads/documentos-publicos/transparencia/jus9-one-pager-investidores-2026-06-24.pdf
+  X-Robots-Tag: noindex, nofollow
+
