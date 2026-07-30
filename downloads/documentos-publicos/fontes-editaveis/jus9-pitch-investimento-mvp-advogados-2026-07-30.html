@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Jus 9 — Pitch de investimento | MVP Advogados</title>
+  <style>
+    :root{
+      --night:#030711;--navy:#071426;--card:#0e2037;--gold:#e2b85f;
+      --gold2:#ffe3a0;--cyan:#5bd8eb;--ink:#f5f8fc;--muted:#b9c8d9;
+      --line:rgba(226,184,95,.34);--ok:#72dfb0;--warn:#ffcf70;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:#111;color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif}
+    body{counter-reset:slide}
+    .slide{
+      position:relative;width:13.333in;height:7.5in;overflow:hidden;padding:.55in .65in;
+      background:
+        radial-gradient(circle at 88% 12%,rgba(91,216,235,.14),transparent 30%),
+        radial-gradient(circle at 12% 88%,rgba(226,184,95,.13),transparent 32%),
+        linear-gradient(140deg,var(--night),var(--navy));
+      page-break-after:always;counter-increment:slide
+    }
+    .slide:last-child{page-break-after:auto}
+    .slide::after{
+      content:counter(slide);position:absolute;right:.42in;bottom:.28in;
+      color:#7890aa;font-size:10pt;font-weight:800
+    }
+    .rail{position:absolute;left:0;top:0;bottom:0;width:.11in;background:linear-gradient(var(--gold),var(--cyan))}
+    .logo{width:.76in;height:.76in;border-radius:50%;object-fit:cover;box-shadow:0 0 28px rgba(226,184,95,.26)}
+    .brand{display:flex;align-items:center;gap:.17in}
+    .brand strong{font-size:12pt;letter-spacing:.12em;color:var(--gold2)}
+    .kicker{color:var(--cyan);text-transform:uppercase;letter-spacing:.14em;font-size:10pt;font-weight:900;margin-bottom:.1in}
+    h1{font-size:31pt;line-height:1.03;margin:.08in 0 .2in;max-width:10.7in}
+    h2{font-size:23pt;line-height:1.08;margin:.08in 0 .2in}
+    h3{font-size:14pt;line-height:1.15;margin:0 0 .08in;color:var(--gold2)}
+    p,li{font-size:12pt;line-height:1.4;color:var(--muted)}
+    p{margin:.07in 0 .13in}
+    strong{color:var(--ink)}
+    .lead{font-size:16pt;line-height:1.34;max-width:10.8in}
+    .gold{color:var(--gold2)}.cyan{color:var(--cyan)}.ok{color:var(--ok)}.warn{color:var(--warn)}
+    .grid2,.grid3,.grid4{display:grid;gap:.18in;margin-top:.18in}
+    .grid2{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:repeat(3,1fr)}.grid4{grid-template-columns:repeat(4,1fr)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.035));border:1px solid var(--line);border-radius:.14in;padding:.2in}
+    .card p:last-child{margin-bottom:0}
+    .metric{font-size:25pt;color:var(--gold2);font-weight:900;line-height:1}
+    .metric small{display:block;font-size:9pt;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:.08in}
+    .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.05in .11in;margin:.03in .03in .03in 0;font-size:9pt;color:var(--ink)}
+    table{width:100%;border-collapse:collapse;margin-top:.16in;font-size:10.5pt}
+    th,td{padding:.09in .11in;border-bottom:1px solid rgba(255,255,255,.13);text-align:left;vertical-align:top}
+    th{color:var(--gold2);text-transform:uppercase;letter-spacing:.06em;font-size:8.5pt}
+    td{color:var(--muted);line-height:1.28}
+    .flow{display:grid;grid-template-columns:1fr .3in 1fr .3in 1fr;align-items:stretch;gap:.05in;margin-top:.22in}
+    .arrow{display:grid;place-items:center;color:var(--gold);font-size:21pt}
+    .step{border:1px solid var(--line);border-radius:.14in;padding:.18in;background:rgba(255,255,255,.05)}
+    .step .n{font-size:9pt;color:var(--cyan);font-weight:900;letter-spacing:.08em}
+    .bar{height:.12in;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;margin:.06in 0 .14in}
+    .bar span{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--cyan))}
+    .note{border-left:4px solid var(--gold);background:rgba(226,184,95,.08);padding:.12in .16in;border-radius:.08in;margin-top:.15in}
+    .note p{font-size:10.5pt;margin:0}
+    .source{font-size:8pt;color:#8196ad;position:absolute;left:.66in;right:.7in;bottom:.27in;line-height:1.25}
+    .cover{display:grid;grid-template-columns:1.25fr .75fr;align-items:center}
+    .cover .hero-logo{width:3.55in;height:3.55in;object-fit:cover;border-radius:.25in;box-shadow:0 0 60px rgba(226,184,95,.25)}
+    .bigline{font-size:42pt;line-height:.98}
+    .trajectory{display:grid;grid-template-columns:1fr .2in 1fr .2in 1.12fr;gap:.08in;align-items:stretch;margin-top:.22in}
+    .trajectory .stage{border:1px solid var(--line);border-radius:.16in;padding:.2in;background:rgba(255,255,255,.05)}
+    .stage.current{box-shadow:inset 0 0 0 2px rgba(91,216,235,.35)}
+    .stage.future{border-style:dashed}
+    .stage .value{font-size:23pt;color:var(--gold2);font-weight:900}
+    .gate{font-size:9.5pt;color:var(--cyan);font-weight:800;margin-top:.08in}
+    .watermark{position:absolute;right:.65in;top:.52in;color:rgba(255,255,255,.16);font-size:8.5pt;letter-spacing:.08em;text-transform:uppercase}
+    .two-col-list{columns:2;column-gap:.35in}
+    .two-col-list li{break-inside:avoid;margin-bottom:.08in}
+    @page{size:13.333in 7.5in;margin:0}
+    @media print{html,body{background:#fff}.slide{margin:0}}
+  </style>
+</head>
+<body>
+  <section class="slide cover">
+    <div class="rail"></div>
+    <div>
+      <div class="kicker">Legaltech brasileira · MVP em validação</div>
+      <h1 class="bigline">Jus 9<br><span class="gold">Tecnologia Jurídica</span></h1>
+      <p class="lead">Pitch de investimento — MVP Advogados</p>
+      <div class="grid2">
+        <div class="card"><div class="metric">até R$ 800 mil<small>rodada atual, liberada por marcos</small></div></div>
+        <div class="card"><div class="metric">pré-seed<small>sem receita recorrente comprovada</small></div></div>
+      </div>
+      <p><strong>Fundador:</strong> Clovis Mariano da Costa · <strong>Data:</strong> 30/07/2026</p>
+    </div>
+    <img class="hero-logo" src="../../../assets/logo-oficial-jus9-completo.png" alt="Logo oficial Jus 9">
+    <div class="source">Material informativo. Não constitui oferta pública de valores mobiliários, promessa de retorno ou proposta fechada.</div>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div><div class="watermark">Tese em uma página</div>
+    <div class="brand"><img class="logo" src="../../../assets/logo-oficial-jus9-completo.png" alt=""><strong>JUS 9</strong></div>
+    <div class="kicker">Resumo executivo</div>
+    <h2>Começar focado. Construir o ecossistema com provas.</h2>
+    <div class="grid3">
+      <div class="card"><h3>Produto inicial</h3><p>Gestão jurídica para advogados autônomos e pequenos escritórios, com processos, prazos, clientes e documentos.</p></div>
+      <div class="card"><h3>Diferenciação em validação</h3><p>Sigilo granular por caso, IA profissional supervisionada e trilha de auditoria como desenho de produto.</p></div>
+      <div class="card"><h3>Visão de longo prazo</h3><p>Um ecossistema jurídico-tecnológico modular, condicionado ao sucesso do produto inicial e à governança verificável.</p></div>
+    </div>
+    <div class="note"><p><strong>Estado atual:</strong> MVP demonstrativo e documentação técnica; ainda faltam pilotos externos, clientes pagantes, métricas de retenção e auditoria independente.</p></div>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div>
+    <div class="kicker">Problema</div>
+    <h2>A advocacia opera entre fragmentação, urgência e confiança.</h2>
+    <div class="grid3">
+      <div class="card"><h3>Fragmentação</h3><p>Planilhas, mensagens, calendários, arquivos e ferramentas isoladas aumentam retrabalho e perda de contexto.</p></div>
+      <div class="card"><h3>Operação</h3><p>Prazos, tarefas, documentos e comunicação disputam o tempo que deveria ir ao trabalho jurídico de maior valor.</p></div>
+      <div class="card"><h3>Sigilo e governança</h3><p>Casos sensíveis exigem acesso mínimo, titularidade, registro de ações e decisão humana — não apenas armazenamento.</p></div>
+    </div>
+    <div class="grid2">
+      <div class="card"><div class="metric">1,49 milhão<small>advogados(as) regulares e recadastrados no quadro OAB consultado em 30/07/2026</small></div></div>
+      <div class="card"><div class="metric">75 milhões<small>processos pendentes ao início de 2026, segundo o CNJ</small></div></div>
+    </div>
+    <div class="source">Fontes: Conselho Federal da OAB, Quadro da Advocacia; CNJ, “Judiciário inicia 2026 com o menor estoque de processos pendentes em seis anos”. Consultas em 30/07/2026.</div>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div>
+    <div class="kicker">Solução inicial</div>
+    <h2>MVP Advogados: um fluxo operacional integrado.</h2>
+    <div class="grid4">
+      <div class="card"><h3>Workspace</h3><p>Equipe, cliente, caso, tarefas e histórico em contexto comum.</p></div>
+      <div class="card"><h3>Processos e prazos</h3><p>Cadastro, agenda, alertas e acompanhamento governado.</p></div>
+      <div class="card"><h3>Portal do cliente</h3><p>Comunicação e visibilidade adequadas ao perfil e ao caso.</p></div>
+      <div class="card"><h3>Cofre jurídico</h3><p>Documentos classificados, permissões nominais e auditoria.</p></div>
+    </div>
+    <div class="card" style="margin-top:.2in">
+      <h3>IA profissional supervisionada</h3>
+      <p class="lead">A IA organiza, sugere, resume e prepara rascunhos; efeitos jurídicos, publicação, envio, exclusão e decisões sensíveis permanecem sob autorização humana.</p>
+      <span class="pill">mínimo privilégio</span><span class="pill">revisão humana</span><span class="pill">fontes rastreáveis</span><span class="pill">logs minimizados</span><span class="pill">falha fechada</span>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div>
+    <div class="kicker">Por que agora</div>
+    <h2>Mercado relevante; tese brasileira ainda precisa de validação.</h2>
+    <div class="grid3">
+      <div class="card"><div class="metric">US$ 28,7 bi<small>mercado global de legal technology em 2025</small></div></div>
+      <div class="card"><div class="metric">US$ 69,7 bi<small>projeção global para 2033</small></div></div>
+      <div class="card"><div class="metric">12,2%<small>CAGR projetado, 2026–2033</small></div></div>
+    </div>
+    <p class="lead">Esses dados dimensionam uma categoria global; <strong>não são TAM comprovado da Jus 9 no Brasil</strong>. O mercado endereçável do MVP será medido com pilotos, segmentação, disposição a pagar e custo de aquisição reais.</p>
+    <div class="note"><p>O pitch evita multiplicar o número de advogados por preço de tabela para fabricar um TAM. A próxima diligência deve produzir TAM/SAM/SOM brasileiro com metodologia documentada.</p></div>
+    <div class="source">Fonte: Grand View Research, “Legal Technology Market Size, Share & Trends”, edição 2026–2033. Consulta em 30/07/2026.</div>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div>
+    <div class="kicker">Concorrência</div>
+    <h2>A Jus 9 entra em categoria existente — não em mercado vazio.</h2>
+    <table>
+      <thead><tr><th>Grupo</th><th>Exemplos</th><th>Força observável</th><th>Hipótese de diferenciação Jus 9</th></tr></thead>
+      <tbody>
+        <tr><td>Gestão jurídica</td><td>Astrea, Projuris ADV, ADVBOX, Legal One</td><td>Produtos estabelecidos, rotinas e bases ativas</td><td>Sigilo por caso + IA supervisionada + auditoria integrada</td></tr>
+        <tr><td>Suite de ferramentas</td><td>Jusfy</td><td>Amplitude funcional e entrada de baixo custo</td><td>Fluxo operacional governado, não apenas ferramentas avulsas</td></tr>
+        <tr><td>Solução pontual</td><td>Legalcloud</td><td>Especialização e preço acessível</td><td>Integração de prazos, clientes, documentos e IA</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><p><strong>Disciplina:</strong> diferenciação é hipótese até que usuários a escolham, paguem por ela e permaneçam. Não se afirma exclusividade sem prova comparativa abrangente.</p></div>
+    <div class="source">Preços e fontes primárias detalhados no documento “Concorrentes e preços do software jurídico”, versão 2026-07-30.v1.</div>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div>
+    <div class="kicker">Modelo de negócio</div>
+    <h2>SaaS: tabela como hipótese de teste, não oferta vigente.</h2>
+    <table>
+      <thead><tr><th>Hipótese de plano</th><th>Referência mensal</th><th>Objetivo do teste</th></tr></thead>
+      <tbody>
+        <tr><td>Entrada individual</td><td>R$ 0</td><td>Ativação, aprendizagem e limite de uso sustentável</td></tr>
+        <tr><td>Profissional</td><td>R$ 99,90</td><td>Disposição a pagar por operação individual ampliada</td></tr>
+        <tr><td>Profissional avançado</td><td>R$ 299,90</td><td>Valor percebido em volume, IA e governança</td></tr>
+        <tr><td>Equipe / escritório</td><td>R$ 599,99</td><td>Colaboração, permissões, auditoria e suporte</td></tr>
+        <tr><td>Institucional</td><td>sob consulta</td><td>Integrações e governança após maturidade do produto</td></tr>
+      </tbody>
+    </table>
+    <p>Antes de publicação comercial: validar escopo, impostos, suporte, limites de IA, armazenamento, CAC, margem bruta e política de cancelamento.</p>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div>
+    <div class="kicker">Tração e lacunas</div>
+    <h2>O que existe — e o que ainda precisa ser conquistado.</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3 class="ok">Evidências disponíveis</h3>
+        <ul>
+          <li>ambientes demonstrativos públicos e fluxos de MVP;</li>
+          <li>repositórios e arquitetura documentados;</li>
+          <li>testes automatizados de governança e segurança;</li>
+          <li>mapa de capacidades e limites da IA;</li>
+          <li>portais públicos com versionamento.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 class="warn">Provas ausentes</h3>
+        <ul>
+          <li>pilotos externos formalizados;</li>
+          <li>clientes pagantes e MRR;</li>
+          <li>retenção, uso recorrente e NPS;</li>
+          <li>CAC, payback e margem observados;</li>
+          <li>penteste e auditoria independente.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><p>Números de usuários, receita, integrações ou clientes só entram em versão futura quando acompanhados de evidência documental apropriada.</p></div>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div>
+    <div class="kicker">Governança de IA</div>
+    <h2>O diferencial de longo prazo é controle verificável, não “IA mágica”.</h2>
+    <div class="flow">
+      <div class="step"><div class="n">1 · CLASSIFICAR</div><h3>Contexto e risco</h3><p>Público, interno, sigiloso, jurídico ou efeito oficial.</p></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">2 · ASSISTIR</div><h3>IA com limites</h3><p>Fontes, escopo, incerteza e resposta adequada ao papel.</p></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">3 · DECIDIR</div><h3>Porta humana</h3><p>Revisão, autorização, auditoria e possibilidade de recusa.</p></div>
+    </div>
+    <div class="grid3">
+      <div class="card"><h3>Privacidade</h3><p>Minimização, separação de dados e acesso pelo menor privilégio.</p></div>
+      <div class="card"><h3>Rastreabilidade</h3><p>Versão, fonte, ação, responsável e motivo registráveis.</p></div>
+      <div class="card"><h3>Falha fechada</h3><p>Sem credencial, fonte ou autorização, o sistema não simula sucesso.</p></div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div>
+    <div class="kicker">Rodada atual</div>
+    <h2>Até R$ 800 mil — liberação por provas, não por calendário.</h2>
+    <div class="flow">
+      <div class="step"><div class="n">TRANCHE 1</div><div class="metric">R$ 200 mil<small>produto</small></div><p>MVP ponta a ponta, arquitetura fechada, demonstração reproduzível e plano de pilotos.</p></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">TRANCHE 2</div><div class="metric">R$ 250 mil<small>pilotos</small></div><p>3–5 pilotos formalizados, backend seguro, permissões e métricas de uso.</p></div>
+      <div class="arrow">→</div>
+      <div class="step"><div class="n">TRANCHE 3</div><div class="metric">R$ 350 mil<small>receita</small></div><p>Primeiros clientes pagantes, segurança/LGPD testadas e aprendizado de retenção.</p></div>
+    </div>
+    <div class="note"><p>Datas são janelas de planejamento. A liberação depende do aceite das evidências definidas no instrumento de investimento.</p></div>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div>
+    <div class="kicker">Trajetória de capital</div>
+    <h2>Três horizontes que não podem ser confundidos.</h2>
+    <div class="trajectory">
+      <div class="stage current"><div class="value">até R$ 800 mil</div><h3>Rodada atual</h3><p>Validar produto, pilotos, segurança e primeiros clientes.</p><div class="gate">GATE: evidências por tranche</div></div>
+      <div class="arrow">→</div>
+      <div class="stage future"><div class="value">R$ 1,248 mi</div><h3>Plano ampliado de 12 meses</h3><p>Referência operacional histórica; só se torna orçamento após revisão, financiamento e capacidade de execução.</p><div class="gate">GATE: orçamento aprovado</div></div>
+      <div class="arrow">→</div>
+      <div class="stage future"><div class="value">R$ 7–8 mi</div><h3>Trajetória potencial</h3><p>Corredor cumulativo de capital para ampliar produto e ecossistema — não é rodada atual, receita, valuation nem meta automática.</p><div class="gate">GATE: PMF + segurança + governança + escala</div></div>
+    </div>
+    <div class="note"><p><strong>Mensagem central:</strong> o horizonte de R$ 7–8 milhões só existe como caminho condicionado a marcos sucessivos e nova diligência em cada etapa.</p></div>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div>
+    <div class="kicker">Uso proposto dos recursos</div>
+    <h2>Alocação da rodada atual — hipótese para diligência.</h2>
+    <div class="grid2">
+      <div>
+        <h3>Produto, backend e segurança · 45%</h3><div class="bar"><span style="width:45%"></span></div>
+        <h3>Pilotos, suporte e validação comercial · 20%</h3><div class="bar"><span style="width:20%"></span></div>
+        <h3>LGPD, contratos e auditoria independente · 15%</h3><div class="bar"><span style="width:15%"></span></div>
+        <h3>Infraestrutura e ferramentas · 10%</h3><div class="bar"><span style="width:10%"></span></div>
+        <h3>Reserva e contingência · 10%</h3><div class="bar"><span style="width:10%"></span></div>
+      </div>
+      <div class="card">
+        <h3>Condições de governança</h3>
+        <ul>
+          <li>orçamento detalhado antes de cada tranche;</li>
+          <li>aprovação de despesas materiais;</li>
+          <li>relatório de evidências e aprendizado;</li>
+          <li>segregação entre capital captado e projeções;</li>
+          <li>reprecificação e continuidade somente após diligência.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><p>Percentuais são proposta inicial; valores finais dependem de orçamento, instrumento jurídico, tributos e cronograma aprovado.</p></div>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div>
+    <div class="kicker">Ecossistema</div>
+    <h2>A visão ampla permanece — depois do foco provar valor.</h2>
+    <div class="grid3">
+      <div class="card"><h3>Fase 1 · Operação</h3><p>MVP Advogados: processos, prazos, clientes, documentos e IA supervisionada.</p><span class="pill">rodada atual</span></div>
+      <div class="card"><h3>Fase 2 · Conhecimento</h3><p>Educação, biblioteca, dados e ferramentas conectadas ao uso comprovado.</p><span class="pill">condicionada a PMF</span></div>
+      <div class="card"><h3>Fase 3 · Rede</h3><p>Integrações, parceiros, jornadas e serviços institucionais com governança madura.</p><span class="pill">condicionada a escala</span></div>
+    </div>
+    <p class="lead">O ecossistema é uma <strong>opção estratégica</strong>. Não aumenta o valor da rodada atual por si só; torna-se ativo à medida que módulos compartilham identidade, dados governados, distribuição e confiança.</p>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div>
+    <div class="kicker">Riscos</div>
+    <h2>O investimento deve comprar redução de incerteza.</h2>
+    <table>
+      <thead><tr><th>Risco</th><th>Estado honesto</th><th>Prova exigida</th></tr></thead>
+      <tbody>
+        <tr><td>Receita</td><td>Sem MRR comprovada</td><td>clientes pagantes, coortes e retenção</td></tr>
+        <tr><td>Produto</td><td>Demos não equivalem a operação em escala</td><td>pilotos acompanhados e métricas de uso</td></tr>
+        <tr><td>Segurança</td><td>Governança documentada não substitui penteste</td><td>auditoria independente e correções</td></tr>
+        <tr><td>Equipe</td><td>Dependência elevada do fundador</td><td>liderança técnica e comercial contratada</td></tr>
+        <tr><td>Regulação e integrações</td><td>CNJ/PDPJ e terceiros exigem autorização própria</td><td>termos, credenciais e homologação formal</td></tr>
+        <tr><td>Escopo</td><td>Visão de ecossistema pode dispersar</td><td>gates que preservem foco no MVP Advogados</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="slide">
+    <div class="rail"></div>
+    <div class="kicker">Equipe e próximos 12 meses</div>
+    <h2>Fundador com visão; lacunas explícitas para execução.</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Clovis Mariano da Costa</h3>
+        <p><strong>Fundador · estratégia jurídica e de produto</strong></p>
+        <p>Conduz visão, arquitetura conceitual, documentação, parcerias e governança humana.</p>
+      </div>
+      <div class="card">
+        <h3>Contratações prioritárias</h3>
+        <ul>
+          <li>liderança técnica sênior;</li>
+          <li>engenharia de backend e segurança;</li>
+          <li>operação de pilotos e sucesso do cliente;</li>
+          <li>apoio jurídico-contábil e proteção de dados.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><p>Cargos, vínculos, dedicação, remuneração e participação societária só devem ser apresentados após formalização documental.</p></div>
+  </section>
+
+  <section class="slide cover">
+    <div class="rail"></div>
+    <div>
+      <div class="kicker">Próximo passo</div>
+      <h1>Financiar provas.<br><span class="gold">Construir confiança.</span></h1>
+      <p class="lead">Buscamos investidores e parceiros estratégicos para validar o MVP Advogados com marcos claros, governança verificável e expansão responsável.</p>
+      <p><strong>clovis@jus9tecnologia.com.br</strong><br>jus9tecnologia.com.br<br>investimentos.jus9tecnologia.com.br</p>
+      <p><span class="pill">produto</span><span class="pill">pilotos</span><span class="pill">segurança</span><span class="pill">primeira receita</span></p>
+    </div>
+    <img class="hero-logo" src="../../../assets/logo-oficial-jus9-completo.png" alt="Logo oficial Jus 9">
+    <div class="source">Versão 2026-07-30.v1 · Material informativo sujeito a revisão humana, jurídica, contábil e financeira.</div>
+  </section>
+</body>
+</html>
