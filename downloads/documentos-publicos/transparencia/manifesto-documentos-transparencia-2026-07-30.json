@@ -1,5 +1,5 @@
 {
-  "versao": "2026-07-30.v1",
+  "versao": "2026-07-30.v2",
   "data_base": "2026-07-30",
   "classificacao": "PUBLICO-CONTROLADO / TRANSPARENCIA / INVESTIDORES",
   "aviso": "Materiais informativos. Nao sao proposta, contrato, oferta publica, promessa de retorno ou recomendacao de investimento. Uso sujeito a revisao humana, juridica e contabil.",
@@ -24,6 +24,19 @@
     ]
   },
   "documentos": [
+    {
+      "id": "pitch-investimento-mvp-advogados-2026-07-30",
+      "titulo": "Pitch de investimento — MVP Advogados",
+      "arquivo": "../jus9-pitch-investimento-mvp-advogados-2026-07-30.pdf",
+      "fonte_editavel": "../fontes-editaveis/jus9-pitch-investimento-mvp-advogados-2026-07-30.html",
+      "data_documento": "2026-07-30",
+      "status": "publicado_publico_controlado",
+      "natureza": "apresentacao de investimento com fatos, hipoteses e trajetoria por marcos",
+      "substitui": "Jus9_Pitch_Reestruturado.pdf e o pitch deck de 24/06/2026 como referencia vigente",
+      "sha256_pdf": "CF32DE8ABB141F47B90CA373F13F072D06D2E44895D8C46DF064D180393F0D76",
+      "sha256_fonte_editavel": "7B7002A0CF3AA399CA1DC05DA6B9C1E02CD924A1BC8107FDB2B43B3381D173F6",
+      "observacao": "Distingue a rodada atual de ate R$ 800 mil, o plano historico expandido de R$ 1,248 milhao e a trajetoria potencial cumulativa de R$ 7–8 milhoes; esta ultima nao e rodada atual, receita, valuation ou meta automatica."
+    },
     {
       "id": "panorama-concorrentes-precos-2026-07-30",
       "titulo": "Concorrentes e precos do software juridico",
@@ -72,10 +85,10 @@
       "titulo": "Pitch Deck Completo para Investidores",
       "arquivo": "jus9-pitch-deck-completo-investidores-2026-06-24.pdf",
       "data_documento": "2026-06-24",
-      "status": "historico_em_revisao",
+      "status": "substituido_historico",
       "natureza": "apresentacao visual para conversa com investidores",
       "sha256": "0B494274D4384490F6D8AC050FFA7E346D43C2D2DB8D54C17BF5E699B5632684",
-      "observacao": "Preservado; sera substituido apos reconstrucao e verificacao do pitch vigente."
+      "observacao": "Preservado para rastreabilidade; substituido pelo pitch vigente de 30/07/2026."
     }
   ]
 }
