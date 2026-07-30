@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jus 9 - Panorama de concorrentes e preços - 30/07/2026</title>
+  <style>
+    :root {
+      --ink: #06101d;
+      --navy: #081727;
+      --navy-2: #0d2238;
+      --blue: #0f6d91;
+      --cyan: #39b5dd;
+      --gold: #d9a928;
+      --gold-2: #f2d27a;
+      --paper: #f6f2e8;
+      --white: #ffffff;
+      --muted: #607083;
+      --line: #d9d3c3;
+      --good: #1d7358;
+      --warn: #9b6114;
+      --risk: #963d3d;
+    }
+
+    * { box-sizing: border-box; }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #d9dde2;
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 10.4pt;
+      line-height: 1.4;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+
+    .page {
+      position: relative;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 8mm auto;
+      padding: 19mm 18mm 17mm;
+      background: var(--paper);
+      overflow: hidden;
+      page-break-after: always;
+    }
+
+    .page:last-child { page-break-after: auto; }
+
+    .page::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 5mm;
+      background: linear-gradient(90deg, var(--gold), var(--cyan), var(--navy));
+    }
+
+    .cover {
+      display: grid;
+      grid-template-columns: 1.12fr .88fr;
+      align-items: center;
+      gap: 13mm;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 77% 25%, rgba(57,181,221,.2), transparent 35%),
+        linear-gradient(145deg, #030914 0%, #081727 57%, #0d2d46 100%);
+    }
+
+    .cover::before { height: 3mm; background: var(--gold); }
+    .cover .logo { width: 100%; filter: drop-shadow(0 7mm 8mm rgba(0,0,0,.45)); }
+    .cover .kicker { color: var(--gold-2); letter-spacing: .18em; text-transform: uppercase; font-weight: 700; }
+    .cover h1 { margin: 5mm 0 4mm; color: var(--white); font: 700 31pt/1.03 Georgia, serif; }
+    .cover .subtitle { color: #dbeaf3; font-size: 15pt; line-height: 1.35; }
+    .cover .meta { margin-top: 15mm; padding-top: 5mm; border-top: 1px solid rgba(242,210,122,.55); color: #bfd0dd; }
+
+    h1, h2, h3 { color: var(--navy); }
+    h2 { margin: 0 0 5mm; font: 700 23pt/1.08 Georgia, serif; }
+    h3 { margin: 0 0 2mm; font-size: 13.5pt; }
+    p { margin: 0 0 3mm; }
+
+    .eyebrow {
+      margin-bottom: 3mm;
+      color: var(--blue);
+      font-size: 8.8pt;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .lead { max-width: 155mm; color: #34475a; font-size: 13pt; line-height: 1.45; }
+
+    .rule { height: 1px; margin: 5mm 0; background: linear-gradient(90deg, var(--gold), transparent); }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+
+    .card {
+      padding: 5mm;
+      background: rgba(255,255,255,.76);
+      border: 1px solid var(--line);
+      border-radius: 3mm;
+      break-inside: avoid;
+    }
+
+    .card.dark { color: var(--white); background: var(--navy-2); border-color: var(--navy-2); }
+    .card.dark h3 { color: var(--gold-2); }
+
+    .metric {
+      display: block;
+      margin-bottom: 1mm;
+      color: var(--gold);
+      font-size: 24pt;
+      font-weight: 800;
+    }
+
+    .badge {
+      display: inline-block;
+      margin: 0 1.5mm 1.5mm 0;
+      padding: 1mm 2.4mm;
+      border-radius: 10mm;
+      background: #dceaf0;
+      color: #174f67;
+      font-size: 8.3pt;
+      font-weight: 700;
+    }
+
+    .badge.warn { background: #f2e5c8; color: #7b5016; }
+    .badge.risk { background: #f0d8d8; color: #7f3030; }
+    .badge.good { background: #d7ece4; color: #1f604c; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 4mm 0;
+      background: rgba(255,255,255,.72);
+      font-size: 8.8pt;
+    }
+
+    th {
+      padding: 2.6mm 2.3mm;
+      text-align: left;
+      color: var(--white);
+      background: var(--navy-2);
+      border: 1px solid var(--navy-2);
+    }
+
+    td {
+      padding: 2.35mm 2.3mm;
+      vertical-align: top;
+      border: 1px solid var(--line);
+    }
+
+    tr:nth-child(even) td { background: rgba(238,242,241,.72); }
+
+    .small { color: var(--muted); font-size: 8.4pt; line-height: 1.35; }
+    .tiny { color: var(--muted); font-size: 7.5pt; line-height: 1.3; }
+    .strong { font-weight: 750; }
+
+    .callout {
+      margin: 5mm 0;
+      padding: 4mm 5mm;
+      border-left: 2.2mm solid var(--gold);
+      background: #fff9e9;
+    }
+
+    .callout.blue { border-left-color: var(--cyan); background: #eaf6fa; }
+    .callout.risk { border-left-color: var(--risk); background: #f8eaea; }
+
+    ul { margin: 2mm 0 0; padding-left: 5mm; }
+    li { margin-bottom: 1.7mm; }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: 38mm 1fr 1fr;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
+    }
+
+    .matrix > div { padding: 3mm; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .matrix > div:nth-child(3n) { border-right: 0; }
+    .matrix .head { color: var(--white); background: var(--navy-2); font-weight: 800; }
+    .matrix .label { font-weight: 750; }
+
+    .source {
+      margin-bottom: 3.2mm;
+      padding-bottom: 3.2mm;
+      border-bottom: 1px solid var(--line);
+      break-inside: avoid;
+    }
+
+    .source:last-child { border-bottom: 0; }
+    .source a { overflow-wrap: anywhere; }
+
+    .page-number {
+      position: absolute;
+      right: 18mm;
+      bottom: 8mm;
+      color: #687688;
+      font-size: 8pt;
+    }
+
+    .footer-mark {
+      position: absolute;
+      left: 18mm;
+      bottom: 8mm;
+      color: #687688;
+      font-size: 8pt;
+    }
+
+    .decision {
+      display: grid;
+      grid-template-columns: 31mm 1fr;
+      gap: 4mm;
+      align-items: start;
+      margin-bottom: 4mm;
+      padding: 4mm;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.7);
+    }
+
+    .decision .step { color: var(--blue); font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+
+    @media print {
+      body { background: transparent; }
+      .page { margin: 0; }
+    }
+  </style>
+</head>
+<body>
+  <section class="page cover">
+    <div>
+      <div class="kicker">Inteligência de mercado · versão 1.0</div>
+      <h1>Concorrentes e preços</h1>
+      <p class="subtitle">Panorama fundamentado do software jurídico para advocacia no Brasil</p>
+      <div class="meta">
+        <p><strong>Data-base:</strong> 30 de julho de 2026</p>
+        <p><strong>Escopo:</strong> preços públicos, posicionamento e implicações para o MVP Advogados</p>
+        <p><strong>Status:</strong> documento público-controlado; revalidar antes de negociação</p>
+      </div>
+    </div>
+    <div>
+      <img class="logo" src="../../../assets/logo-oficial-jus9-completo.png" alt="Logo oficial da Jus 9 Tecnologia Jurídica">
+    </div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Leitura executiva</div>
+    <h2>O mercado não cabe em uma única tabela de mensalidades.</h2>
+    <p class="lead">Há pelo menos três categorias diferentes disputando o orçamento do advogado: gestão completa do escritório, plataformas de ferramentas e soluções pontuais. Compará-las sem separar escopo, periodicidade e limites cria uma falsa equivalência.</p>
+    <div class="rule"></div>
+
+    <div class="grid-3">
+      <article class="card dark">
+        <span class="metric">R$ 79</span>
+        <h3>Entrada publicada</h3>
+        <p>Projuris ADV Start Solo, para 1 usuário e até 100 processos.</p>
+      </article>
+      <article class="card dark">
+        <span class="metric">R$ 209</span>
+        <h3>Gestão anual equivalente</h3>
+        <p>Astrea Up, valor mensal equivalente em contratação anual.</p>
+      </article>
+      <article class="card dark">
+        <span class="metric">R$ 5.000+</span>
+        <h3>Operações grandes</h3>
+        <p>ADVBOX Big Offices, com API e estrutura dedicada.</p>
+      </article>
+    </div>
+
+    <div class="callout">
+      <strong>Conclusão corrigida:</strong> a faixa de entrada de gestão jurídica publicada em julho de 2026 começa abaixo dos R$ 197 indicados no documento anterior. O Projuris ADV Start reposiciona a referência de entrada em R$ 79/mês.
+    </div>
+
+    <div class="grid-2">
+      <article class="card">
+        <h3>O que já pode ser afirmado</h3>
+        <ul>
+          <li>Há alternativas gratuitas ou promocionais, mas com limites e condições.</li>
+          <li>Preço sozinho não revela o custo total: usuários, processos, monitoramento, implantação e módulos alteram a comparação.</li>
+          <li>A Jus 9 entrará contra marcas com produto, suporte e bases ativas; documentação não substitui tração.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>O que ainda não pode ser afirmado</h3>
+        <ul>
+          <li>Que a Jus 9 é mais segura, completa ou econômica antes de implementar e testar o MVP.</li>
+          <li>Que “sigilo por processo” é exclusividade sem auditoria funcional detalhada dos concorrentes.</li>
+          <li>Que a tabela proposta é validada sem pilotos pagantes e custo unitário medido.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="footer-mark">Jus 9 Tecnologia Jurídica · inteligência de mercado</div>
+    <div class="page-number">2</div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Método</div>
+    <h2>Como os dados foram tratados.</h2>
+    <p class="lead">A pesquisa priorizou páginas oficiais de produto e preço. Quando o fornecedor não publica preço, o relatório registra “sob consulta” em vez de estimar.</p>
+
+    <div class="grid-2" style="margin-top:7mm">
+      <article class="card">
+        <h3>Critérios de inclusão</h3>
+        <ul>
+          <li>Atuação relevante para advogados ou escritórios no Brasil.</li>
+          <li>Página oficial acessível em 30/07/2026.</li>
+          <li>Preço público ou indicação explícita de contratação consultiva.</li>
+          <li>Escopo suficientemente claro para classificar a solução.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Normalização</h3>
+        <ul>
+          <li>Valores em reais e por mês quando publicados dessa forma.</li>
+          <li>Equivalente mensal anual marcado como <em>anual</em>.</li>
+          <li>Promoção separada do preço de tabela.</li>
+          <li>Taxa de ativação e contratação sob consulta destacadas.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="callout blue">
+      <strong>Regra de comparabilidade:</strong> dois preços só são comparáveis depois de verificar periodicidade, quantidade de usuários, processos monitorados, termos de captura, armazenamento, implantação, suporte e módulos cobrados à parte.
+    </div>
+
+    <h3>Escala de confiança</h3>
+    <table>
+      <thead>
+        <tr><th>Nível</th><th>Uso no relatório</th><th>Tratamento</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="badge good">Alta</span></td><td>Preço e condição visíveis em página oficial.</td><td>Pode ser citado com data e URL.</td></tr>
+        <tr><td><span class="badge warn">Média</span></td><td>Informação oficial dinâmica, promocional ou sujeita a configuração.</td><td>Citar com ressalva; confirmar antes da contratação.</td></tr>
+        <tr><td><span class="badge risk">Não utilizada</span></td><td>Blog de terceiro, anúncio antigo ou número sem fonte rastreável.</td><td>Não transformar em fato.</td></tr>
+      </tbody>
+    </table>
+
+    <p class="small">Limite: esta é uma análise documental pública. Não substitui teste de produto, proposta comercial, diligência técnica, parecer jurídico ou validação com clientes.</p>
+    <div class="footer-mark">Data-base: 30/07/2026</div>
+    <div class="page-number">3</div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Mapa competitivo</div>
+    <h2>Quem concorre em qual trabalho.</h2>
+    <p class="lead">A Jus 9 deve comparar o MVP Advogados principalmente com plataformas de gestão de prática. Ferramentas pontuais ajudam a entender orçamento e expectativa, mas não oferecem o mesmo conjunto.</p>
+
+    <div class="grid-2" style="margin-top:7mm">
+      <article class="card">
+        <h3>Gestão de prática jurídica</h3>
+        <p><span class="badge">Astrea</span><span class="badge">ADVBOX</span><span class="badge">Projuris ADV</span><span class="badge">Legal One</span></p>
+        <p>Processos, prazos, clientes, documentos, atividades, financeiro e recursos de equipe em diferentes níveis.</p>
+        <p class="small"><strong>Comparação direta:</strong> maior proximidade com o produto inicial pretendido pela Jus 9.</p>
+      </article>
+      <article class="card">
+        <h3>Suíte de ferramentas para o advogado</h3>
+        <p><span class="badge">Jusfy</span></p>
+        <p>Cálculos, consultas, jurisprudência, IA, prospecção, monitoramento e assinaturas por créditos ou limites.</p>
+        <p class="small"><strong>Comparação adjacente:</strong> disputa atenção e assinatura, mas não equivale automaticamente a ERP jurídico.</p>
+      </article>
+      <article class="card">
+        <h3>Solução pontual</h3>
+        <p><span class="badge">Legalcloud</span></p>
+        <p>Calculadora e acompanhamento de prazos processuais, agenda e informes.</p>
+        <p class="small"><strong>Comparação de orçamento:</strong> preço baixo decorre de escopo muito mais estreito.</p>
+      </article>
+      <article class="card dark">
+        <h3>Jus 9 - estágio atual</h3>
+        <p><span class="badge warn">MVP em validação</span><span class="badge warn">Sem preço validado</span></p>
+        <p>Tese de gestão jurídica com controle de sigilo, IA supervisionada e trilha de auditoria.</p>
+        <p class="small" style="color:#c8d5df"><strong>Posição correta:</strong> promessa de produto a validar, não paridade comprovada.</p>
+      </article>
+    </div>
+
+    <div class="callout">
+      <strong>Legal One:</strong> permanece no mapa como referência de gestão jurídica para escritórios e departamentos, mas a página oficial consultada direciona para demonstração e contato; não foi encontrado preço público confiável.
+    </div>
+
+    <div class="footer-mark">Classificação por escopo funcional público</div>
+    <div class="page-number">4</div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Tabela consolidada</div>
+    <h2>Preços públicos observados.</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Fornecedor</th>
+          <th>Plano</th>
+          <th>Preço observado</th>
+          <th>Condição relevante</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="5"><strong>Astrea</strong></td><td>Light</td><td>Gratuito por 1 ano</td><td>1 usuário; 40 processos monitorados.</td></tr>
+        <tr><td>Up</td><td>R$ 209/mês equivalente</td><td>Plano anual de R$ 2.508; 2 usuários.</td></tr>
+        <tr><td>Smart</td><td>R$ 379/mês equivalente</td><td>Anual; mensal publicado a R$ 439; 5 usuários.</td></tr>
+        <tr><td>Company</td><td>R$ 689/mês equivalente</td><td>Plano anual; 10 usuários.</td></tr>
+        <tr><td>VIP</td><td>R$ 1.249/mês equivalente</td><td>Plano anual; 30 usuários.</td></tr>
+        <tr><td rowspan="5"><strong>ADVBOX</strong></td><td>Essencial</td><td>A partir de R$ 220/mês</td><td>Taxa de ativação adicional.</td></tr>
+        <tr><td>Banca Jurídica</td><td>A partir de R$ 450/mês</td><td>Taxa de ativação adicional.</td></tr>
+        <tr><td>Banca Max</td><td>A partir de R$ 900/mês</td><td>Taxa de ativação adicional.</td></tr>
+        <tr><td>Elite</td><td>A partir de R$ 1.800/mês</td><td>Calculadora dinâmica pode variar; confirmar proposta.</td></tr>
+        <tr><td>Big Offices</td><td>A partir de R$ 5.000/mês</td><td>Operações acima de 20 mil processos; API dedicada.</td></tr>
+        <tr><td rowspan="2"><strong>Projuris</strong></td><td>Solo</td><td>A partir de R$ 79/mês</td><td>1 usuário; até 100 processos; ADV Start.</td></tr>
+        <tr><td>Compartilhado</td><td>A partir de R$ 349/mês</td><td>Gestão ampliada; confirmar usuários e configuração.</td></tr>
+      </tbody>
+    </table>
+    <p class="tiny">Fonte: páginas oficiais indicadas ao final. Preços e condições podem mudar. “Equivalente mensal” não significa cobrança mensal; no Astrea, refere-se à anuidade publicada.</p>
+    <div class="footer-mark">Valores de tabela observados em 30/07/2026</div>
+    <div class="page-number">5</div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Ferramentas adjacentes</div>
+    <h2>Preço menor não significa produto equivalente.</h2>
+
+    <table>
+      <thead>
+        <tr><th>Fornecedor</th><th>Plano</th><th>Preço de tabela</th><th>Promoção/condição em 30/07/2026</th></tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="3"><strong>Jusfy</strong></td><td>Starter</td><td>R$ 77/mês</td><td>R$ 5 no primeiro mês na oferta consultada.</td></tr>
+        <tr><td>Master</td><td>R$ 97/mês</td><td>R$ 5 no primeiro mês na oferta consultada.</td></tr>
+        <tr><td>Ultimate</td><td>R$ 117/mês</td><td>R$ 5 no primeiro mês na oferta consultada.</td></tr>
+        <tr><td rowspan="2"><strong>Legalcloud</strong></td><td>Básico</td><td>R$ 0</td><td>Limites de uso; ferramenta pontual.</td></tr>
+        <tr><td>Premium</td><td>R$ 46,99/mês</td><td>R$ 199/semestral ou R$ 379/anual publicados.</td></tr>
+        <tr><td><strong>Legal One</strong></td><td>Soluções para escritórios e departamentos</td><td>Sob consulta</td><td>Solicitação de demonstração e contato comercial.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="grid-2">
+      <article class="card">
+        <h3>Por que a Jusfy importa</h3>
+        <p>Mostra que o advogado individual aceita uma assinatura de ferramentas em torno de R$ 77 a R$ 117, com promoção agressiva de aquisição. A comparação deve considerar créditos e escopo.</p>
+      </article>
+      <article class="card">
+        <h3>Por que a Legalcloud importa</h3>
+        <p>Define uma âncora baixa para uma dor específica. Não deve ser usada como comparável de uma plataforma completa de gestão.</p>
+      </article>
+    </div>
+
+    <div class="callout risk">
+      <strong>Evitar no material público:</strong> dizer que a Jusfy é concorrente direto completo, somar preço promocional a preço recorrente ou usar “gratuito” sem informar prazo e limites.
+    </div>
+
+    <div class="footer-mark">Categoria e condição importam tanto quanto o preço</div>
+    <div class="page-number">6</div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Jus 9</div>
+    <h2>Como as hipóteses de preço se posicionam.</h2>
+    <p class="lead">Os valores abaixo são referências internas de validação, não oferta comercial definitiva. Precisam ser testados com pilotos e confrontados com custo de infraestrutura, suporte, captura processual, IA e armazenamento.</p>
+
+    <table>
+      <thead>
+        <tr><th>Hipótese Jus 9</th><th>Valor</th><th>Leitura de mercado atualizada</th><th>Portão de validação</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Profissional Pequeno</td><td><strong>R$ 0</strong></td><td>Há referência gratuita, mas Astrea limita e condiciona a 1 ano.</td><td>Definir limites e custo máximo por usuário gratuito.</td></tr>
+        <tr><td>Profissional Médio</td><td><strong>R$ 99,90</strong></td><td>Próximo de Jusfy Master/Ultimate; acima do Projuris Solo.</td><td>Provar valor além de ferramentas avulsas e do plano Solo.</td></tr>
+        <tr><td>Profissional Grande</td><td><strong>R$ 299,90</strong></td><td>Entre Astrea Up anual, ADVBOX Essencial e Projuris Compartilhado.</td><td>Validar usuários, processos, IA e monitoramento incluídos.</td></tr>
+        <tr><td>Equipe / Escritório</td><td><strong>R$ 599,99</strong></td><td>Entre ADVBOX Banca Jurídica e Astrea Company anual.</td><td>Backend multiusuário, permissões, suporte e SLA demonstráveis.</td></tr>
+        <tr><td>Institucional</td><td><strong>R$ 1.500+</strong></td><td>Entre Astrea VIP anual e ADVBOX Elite.</td><td>Integrações, governança e segurança contratáveis de verdade.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>Diagnóstico:</strong> a escada de preços é plausível como hipótese, mas não está validada. O risco não é apenas cobrar caro ou barato; é prometer uma combinação de recursos, segurança e suporte que o MVP ainda não consegue entregar de forma repetível.
+    </div>
+
+    <p><span class="badge warn">Hipótese</span><span class="badge risk">Não publicar como produto disponível</span><span class="badge good">Testar em pilotos</span></p>
+
+    <div class="footer-mark">Precificação sujeita a pilotos e unit economics</div>
+    <div class="page-number">7</div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Diferenciação responsável</div>
+    <h2>O diferencial precisa ser demonstrado, não declarado.</h2>
+
+    <div class="matrix">
+      <div class="head">Tese</div><div class="head">O que conta como evidência</div><div class="head">Como comunicar agora</div>
+      <div class="label">Sigilo por processo</div><div>Matriz de permissões implementada, testes de acesso negado, logs e avaliação de segurança.</div><div>“Arquitetura em desenvolvimento para controle granular por caso.”</div>
+      <div class="label">IA supervisionada</div><div>Fluxo de revisão humana, rastreabilidade de fontes, registro de versão e prevenção de ação autônoma.</div><div>“IA de apoio sob revisão humana; não decide nem substitui profissional.”</div>
+      <div class="label">Trilha de auditoria</div><div>Eventos imutáveis, identidade, data, ação, retenção e consulta autorizada.</div><div>“Trilha planejada; cobertura e retenção serão validadas no backend.”</div>
+      <div class="label">Ecossistema</div><div>Módulos conectados por identidade, dados e governança, com produto principal validado.</div><div>“Visão de expansão condicionada ao sucesso do MVP Advogados.”</div>
+    </div>
+
+    <div class="grid-2" style="margin-top:6mm">
+      <article class="card dark">
+        <h3>Diferencial de curto prazo</h3>
+        <p>Resolver com clareza uma rotina concreta do advogado e provar segurança básica, usabilidade e suporte em pilotos reais.</p>
+      </article>
+      <article class="card dark">
+        <h3>Diferencial de longo prazo</h3>
+        <p>Governança de IA e arquitetura de ecossistema capazes de conectar prática, educação, conhecimento e dados sem apagar responsabilidade humana.</p>
+      </article>
+    </div>
+
+    <div class="callout blue">
+      A governança de IA pode ser um diferencial defensável se estiver incorporada ao produto, aos registros e às decisões. Enquanto for apenas documentação, é uma tese de execução.
+    </div>
+
+    <div class="footer-mark">Visão ampla, afirmações proporcionais à evidência</div>
+    <div class="page-number">8</div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Recomendação</div>
+    <h2>Da tabela à validação comercial.</h2>
+    <p class="lead">A próxima decisão de preço deve nascer de uso real. A sequência abaixo reduz o risco de congelar uma tabela antes de conhecer custo, percepção de valor e capacidade operacional.</p>
+
+    <div style="margin-top:7mm">
+      <div class="decision"><div class="step">1 · Oferta</div><div><strong>Definir um único pacote piloto.</strong><br>Escopo fechado, limites explícitos, suporte supervisionado e sem prometer todos os módulos do ecossistema.</div></div>
+      <div class="decision"><div class="step">2 · Pilotos</div><div><strong>Selecionar 3 a 5 escritórios.</strong><br>Registrar perfil, processos, usuários, tempo de implantação, uso semanal, incidentes e disposição a pagar.</div></div>
+      <div class="decision"><div class="step">3 · Custo</div><div><strong>Medir unit economics mínimos.</strong><br>Infraestrutura, IA, captura, armazenamento, suporte, onboarding, inadimplência e impostos.</div></div>
+      <div class="decision"><div class="step">4 · Preço</div><div><strong>Testar faixas, não um número isolado.</strong><br>Comparar R$ 79-149 no individual e uma faixa de equipe somente depois do backend multiusuário.</div></div>
+      <div class="decision"><div class="step">5 · Evidência</div><div><strong>Publicar o que foi comprovado.</strong><br>Converter aprendizados em tabela comercial, política de limites e comparativo funcional verificável.</div></div>
+    </div>
+
+    <div class="callout">
+      <strong>Recomendação editorial:</strong> no site público, chamar a tabela atual de “hipóteses de planos para validação” até existir oferta efetivamente contratável. Para investidores, mostrar o método de validação é mais confiável do que apresentar precisão artificial.
+    </div>
+
+    <div class="footer-mark">Próximo marco: pilotos reais e custo por conta</div>
+    <div class="page-number">9</div>
+  </section>
+
+  <section class="page">
+    <div class="eyebrow">Fontes oficiais</div>
+    <h2>Referências e rastreabilidade.</h2>
+
+    <div class="source">
+      <h3>Astrea / Aurum</h3>
+      <p>Planos, preços, periodicidade, usuários e processos monitorados.</p>
+      <p class="small"><a href="https://www.aurum.com.br/astrea/planos-e-precos/">https://www.aurum.com.br/astrea/planos-e-precos/</a></p>
+    </div>
+    <div class="source">
+      <h3>ADVBOX</h3>
+      <p>Planos, preços, taxa de ativação, limites e Big Offices.</p>
+      <p class="small"><a href="https://advbox.com.br/planos">https://advbox.com.br/planos</a></p>
+    </div>
+    <div class="source">
+      <h3>Projuris ADV</h3>
+      <p>Oferta ADV Start, planos Solo e Compartilhado e escopo público.</p>
+      <p class="small"><a href="https://www.projuris.com.br/adv/?v=start">https://www.projuris.com.br/adv/?v=start</a></p>
+    </div>
+    <div class="source">
+      <h3>Jusfy</h3>
+      <p>Preços de tabela, promoção de primeiro mês, créditos e ferramentas incluídas.</p>
+      <p class="small"><a href="https://jusfy.com.br/#planos">https://jusfy.com.br/#planos</a></p>
+    </div>
+    <div class="source">
+      <h3>Legalcloud</h3>
+      <p>Plano básico, Premium, periodicidades e escopo da calculadora de prazos.</p>
+      <p class="small"><a href="https://legalcloud.com.br/experimentar-premium-informe/">https://legalcloud.com.br/experimentar-premium-informe/</a></p>
+    </div>
+    <div class="source">
+      <h3>Legal One / Thomson Reuters</h3>
+      <p>Posicionamento para escritórios e departamentos; preço não publicado na página consultada.</p>
+      <p class="small"><a href="https://www.thomsonreuters.com.br/pt/juridico/legal-one.html">https://www.thomsonreuters.com.br/pt/juridico/legal-one.html</a></p>
+    </div>
+
+    <p class="tiny">Consulta realizada em 30/07/2026. As páginas podem aplicar geolocalização, testes A/B, promoções, impostos e configurações dinâmicas. Confirmar proposta diretamente com cada fornecedor antes de decisão comercial.</p>
+
+    <div class="footer-mark">Fontes primárias · consulta em 30/07/2026</div>
+    <div class="page-number">10</div>
+  </section>
+
+  <section class="page cover">
+    <div>
+      <div class="kicker">Conclusão</div>
+      <h1>Preço é hipótese.<br>Evidência é estratégia.</h1>
+      <p class="subtitle">A Jus 9 deve entrar no mercado com escopo honesto, pilotos mensuráveis e governança incorporada ao produto.</p>
+      <div class="meta">
+        <p><strong>Versão:</strong> 1.0 · 30/07/2026</p>
+        <p><strong>Responsabilidade:</strong> revisão humana, jurídica, contábil e comercial antes de uso em negociação.</p>
+        <p><strong>Contato:</strong> contato@jus9tecnologia.com.br</p>
+      </div>
+    </div>
+    <div>
+      <img class="logo" src="../../../assets/logo-oficial-jus9-completo.png" alt="Logo oficial da Jus 9 Tecnologia Jurídica">
+    </div>
+  </section>
+</body>
+</html>
