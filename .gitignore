@@ -37,6 +37,10 @@ desktop.ini
 
 # Arquivos compactados e backups
 *.zip
+
+# Fontes públicas governadas: ZIP evita transformação dinâmica do HTML pela
+# borda e permite verificação SHA-256 do artefato efetivamente baixado.
+!downloads/documentos-publicos/fontes-editaveis/*-fonte.zip
 *.rar
 *.7z
 *.tar
