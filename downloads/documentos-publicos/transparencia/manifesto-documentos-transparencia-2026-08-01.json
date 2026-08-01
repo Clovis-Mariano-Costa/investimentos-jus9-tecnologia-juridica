@@ -1,0 +1,112 @@
+{
+  "versao": "2026-08-01.v4",
+  "data_base": "2026-08-01",
+  "classificacao": "PUBLICO-CONTROLADO / TRANSPARENCIA / INVESTIDORES",
+  "aviso": "Materiais informativos. Nao sao proposta, contrato, oferta publica, promessa de retorno ou recomendacao de investimento. Uso sujeito a revisao humana, juridica e contabil.",
+  "historico": {
+    "manifesto_anterior": "manifesto-documentos-transparencia-2026-07-30.json",
+    "politica": "Manifestos anteriores permanecem preservados. Uma nova versao acrescenta ou reclassifica documentos sem apagar o historico."
+  },
+  "revisao_integridade": {
+    "motivo": "revisao integral dos pacotes identificou dois hashes de fontes editaveis que nao correspondiam aos arquivos em producao",
+    "acao": "hashes das fontes vigentes recalculados diretamente sobre os bytes publicados; PDFs e conteudo editorial nao foram alterados",
+    "data_verificacao": "2026-08-01"
+  },
+  "politica_publicacao": {
+    "permitido": [
+      "materiais institucionais sanitizados",
+      "documentos informativos com aviso de natureza",
+      "fontes editaveis publicas sem dados sensiveis",
+      "hashes, versoes, datas, fontes e status de substituicao"
+    ],
+    "nao_publicar": [
+      "dados pessoais ou documentacao pessoal",
+      "dados de investidores, parceiros ou terceiros",
+      "contratos individualizados",
+      "parecer juridico sigiloso",
+      "cofres, credenciais, tokens, chaves ou segredos",
+      "detalhes internos exploraveis de seguranca"
+    ]
+  },
+  "documentos": [
+    {
+      "id": "one-page-investimento-2026-07-30",
+      "titulo": "Jus 9 — One-page de investimento",
+      "arquivo": "../jus9-one-page-investimento-2026-07-30.pdf",
+      "fonte_editavel": "../fontes-editaveis/jus9-one-page-investimento-2026-07-30.html",
+      "data_documento": "2026-07-30",
+      "status": "publicado_publico_controlado",
+      "natureza": "resumo executivo de investimento com fatos, lacunas e hipoteses",
+      "substitui": "One Pager para Investidores de 24/06/2026 como referencia vigente",
+      "sha256_pdf": "D85DD5D8B2005CC675396FB3D312B6BEE8DE0C8CDD870950D10FB455BF82C807",
+      "sha256_fonte_editavel": "79B7FE74CD8B14C74B9D87975E40C9B324D8497750C3E856DC42876F7740EEDA",
+      "observacao": "Sintese de uma pagina alinhada ao pitch vigente; participacao, valuation e compromissos permanecem a validar."
+    },
+    {
+      "id": "pitch-investimento-mvp-advogados-2026-07-30",
+      "titulo": "Pitch de investimento — MVP Advogados",
+      "arquivo": "../jus9-pitch-investimento-mvp-advogados-2026-07-30.pdf",
+      "fonte_editavel": "../fontes-editaveis/jus9-pitch-investimento-mvp-advogados-2026-07-30.html",
+      "data_documento": "2026-07-30",
+      "status": "publicado_publico_controlado",
+      "natureza": "apresentacao de investimento com fatos, hipoteses e trajetoria por marcos",
+      "substitui": "Jus9_Pitch_Reestruturado.pdf e o pitch deck de 24/06/2026 como referencia vigente",
+      "sha256_pdf": "CF32DE8ABB141F47B90CA373F13F072D06D2E44895D8C46DF064D180393F0D76",
+      "sha256_fonte_editavel": "66D08CF88DAC22A7F1E685F65B83F8791A084B172440DF83362A36780210C7E7",
+      "observacao": "Distingue a rodada atual de ate R$ 800 mil, o plano historico expandido de R$ 1,248 milhao e a trajetoria potencial cumulativa de R$ 7–8 milhoes; esta ultima nao e rodada atual, receita, valuation ou meta automatica."
+    },
+    {
+      "id": "panorama-concorrentes-precos-2026-07-30",
+      "titulo": "Concorrentes e precos do software juridico",
+      "arquivo": "../jus9-panorama-concorrentes-precos-2026-07-30.pdf",
+      "fonte_editavel": "../fontes-editaveis/jus9-panorama-concorrentes-precos-2026-07-30.html",
+      "data_documento": "2026-07-30",
+      "status": "publicado_publico_controlado",
+      "natureza": "inteligencia de mercado com fontes oficiais",
+      "substitui": "Jus9_Concorrentes_e_Precos.pdf como referencia vigente",
+      "sha256_pdf": "9025D9E184EC188F56AF6BA9546B226138F6BF16BF4333F82AB14220A2D73698",
+      "sha256_fonte_editavel": "5CBC075D48EF78CD33EE755FBA5E30B384ED44B1F66A438AFBD306ECB64169E3",
+      "observacao": "Precos e condicoes consultados em paginas oficiais em 30/07/2026; revalidar antes de negociacao."
+    },
+    {
+      "id": "doc-investidor-software-v3",
+      "titulo": "Documento Informativo Unico - Entrada e Exit do Investidor - Software V3",
+      "arquivo": "jus9-documento-investidor-software-v3-2026-06-26.pdf",
+      "data_documento": "2026-06-26",
+      "status": "historico_em_revisao",
+      "natureza": "visualizacao de horizonte comum",
+      "sha256": "668329C0099C41F70A4614D490C23D0B0A3B1F479BD43AE888076781DEE51FDA",
+      "observacao": "Preservado para historico; valores e estrutura da rodada exigem harmonizacao com a tese por marcos."
+    },
+    {
+      "id": "contratos-externos-modalidades",
+      "titulo": "Pacote Consolidado para Contratos Externos - Modalidades Possiveis de Parceria",
+      "arquivo": "jus9-contratos-externos-modalidades-2026-06-22.pdf",
+      "data_documento": "2026-06-22",
+      "status": "publicado_publico_controlado",
+      "natureza": "documento externo informativo",
+      "sha256": "017F699B5BEA0C47F1976045EDBD195AC68E28420B81E5529E5432790F821B8D",
+      "observacao": "Nao e proposta, nao e contrato e nao gera vinculo legal."
+    },
+    {
+      "id": "one-pager-investidores",
+      "titulo": "One Pager para Investidores",
+      "arquivo": "jus9-one-pager-investidores-2026-06-24.pdf",
+      "data_documento": "2026-06-24",
+      "status": "substituido_historico",
+      "natureza": "resumo executivo visual",
+      "sha256": "D0E4F7E7B48A36092B4302B93317D26A0E01F6F21BB41BAFBA43635EEB44FA11",
+      "observacao": "Preservado para rastreabilidade; substituido pelo one-page vigente de 30/07/2026."
+    },
+    {
+      "id": "pitch-deck-completo-investidores",
+      "titulo": "Pitch Deck Completo para Investidores",
+      "arquivo": "jus9-pitch-deck-completo-investidores-2026-06-24.pdf",
+      "data_documento": "2026-06-24",
+      "status": "substituido_historico",
+      "natureza": "apresentacao visual para conversa com investidores",
+      "sha256": "0B494274D4384490F6D8AC050FFA7E346D43C2D2DB8D54C17BF5E699B5632684",
+      "observacao": "Preservado para rastreabilidade; substituido pelo pitch vigente de 30/07/2026."
+    }
+  ]
+}
